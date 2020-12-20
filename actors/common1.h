@@ -250,4 +250,9 @@ extern const Gfx wooden_signpost_seg3_dl_0302DCD0[];
 extern const Gfx wooden_signpost_seg3_dl_0302DD08[];
 extern const Collision wooden_signpost_seg3_collision_0302DD80[];
 
+
+//star door
+extern const GeoLayout star_door_geo[];
+extern const Gfx star_door_DL[];
+extern const Collision collision_star_door[];
 #endif

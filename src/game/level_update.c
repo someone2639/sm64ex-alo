@@ -1055,7 +1055,7 @@ s32 play_mode_paused(void) {
         if (gDebugLevelSelect) {
             fade_into_special_warp(-9, 1);
         } else {
-            initiate_warp(LEVEL_CASTLE_COURTYARD, 1, 0x40, 0);
+            initiate_warp(LEVEL_CASTLE_COURTYARD, gCurrAreaIndex, 0x40, 0);
             fade_into_special_warp(0, 0);
             gSavedCourseNum = COURSE_NONE;
         }

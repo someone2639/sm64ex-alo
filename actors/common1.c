@@ -1,9 +1,8 @@
-#include <PR/ultratypes.h>
-#include <PR/gbi.h>
-
-#include "macros.h"
+#include <ultra64.h>
+#include "sm64.h"
 #include "surface_terrains.h"
-#include "types.h"
+#include "geo_commands.h"
+
 #include "make_const_nonconst.h"
 
 #include "mist/model.inc.c"
@@ -84,3 +83,7 @@ UNUSED static const u64 binid_21 = 21;
 
 #include "tree/model.inc.c"
 UNUSED static const u64 binid_22 = 22;
+
+#include "star_door/model.inc.c"
+#include "star_door/collision.inc.c"
+UNUSED static const u64 binid_23 = 23;
