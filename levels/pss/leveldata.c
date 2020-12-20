@@ -9,7 +9,6 @@
 #include "dialog_ids.h"
 
 #include "make_const_nonconst.h"
-
 #include "levels/pss/texture.inc.c"
 #include "levels/pss/areas/1/1/model.inc.c"
 #include "levels/pss/areas/1/2/model.inc.c"
@@ -20,9 +19,3 @@
 #include "levels/pss/areas/1/7/model.inc.c"
 #include "levels/pss/areas/1/collision.inc.c"
 #include "levels/pss/areas/1/macro.inc.c"
-#include "levels/pss/areas/1/movtextNew.inc.c"
-#include "levels/pss/areas/1/model.inc.c"
-#include "levels/pss/areas/2/movtextNew.inc.c"
-#include "levels/pss/areas/2/model.inc.c"
-#include "levels/pss/areas/2/collision.inc.c"
-#include "levels/pss/textureNew.inc.c"

@@ -14,4 +14,3 @@
 #include "levels/sa/header.h"
 
 #include "levels/sa/areas/1/geo.inc.c"
-#include "levels/sa/areas/2/geo.inc.c"
