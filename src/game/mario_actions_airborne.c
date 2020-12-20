@@ -4,6 +4,7 @@
 #include "area.h"
 #include "audio/external.h"
 #include "camera.h"
+#include "engine/extended_bounds.h"
 #include "engine/graph_node.h"
 #include "engine/math_util.h"
 #include "game_init.h"
@@ -2192,8 +2193,45 @@ s32 check_common_airborne_cancels(struct MarioState *m) {
     return FALSE;
 }
 
+#if FIX_MOVING_PLATFORMS_INERTIA
+// abs but with floats
+f32 absf2(f32 x) {
+    if (x >= 0) {
+        return x;
+    } else {
+        return -x;
+    }
+}
+#endif
+
 s32 mario_execute_airborne_action(struct MarioState *m) {
     u32 cancel;
+
+#if FIX_MOVING_PLATFORMS_INERTIA
+    f32 x;
+    f32 z;
+    f32 magnitude;
+    const float inertiaDisplacementScale = 16.0f;
+
+    magnitude = sqrtf((m->controller->stickX*m->controller->stickX + m->controller->stickY*m->controller->stickY)); 
+    magnitude = magnitude/inertiaDisplacementScale;
+    
+    //16.0f by default 
+    x = magnitude * sins(m->intendedYaw); 
+    z = magnitude * coss(m->intendedYaw);
+
+    //reduce displacement if you arent holding in the direction of it
+    m->pos[0]+=m->platformDisplacement[0];
+    m->vel[1]+=m->platformDisplacement[1];
+    m->platformDisplacement[1] = 0;
+    m->pos[2]+=m->platformDisplacement[2];
+    if (absf2(m->platformDisplacement[0]+ x) < absf2(m->platformDisplacement[0])){
+        m->platformDisplacement[0]+=x;
+    }
+    if (absf2(m->platformDisplacement[2]+ z) < absf2(m->platformDisplacement[2])){
+        m->platformDisplacement[2]+=z;
+    }
+#endif
 
     if (check_common_airborne_cancels(m)) {
         return TRUE;

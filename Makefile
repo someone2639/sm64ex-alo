@@ -46,7 +46,7 @@ TARGET_ARCH ?= 0
 TARGET_BITS ?= 0
 
 # Disable better camera by default
-BETTERCAMERA ?= 0
+BETTERCAMERA ?= 1
 # Disable no drawing distance by default
 NODRAWINGDISTANCE ?= 0
 # Disable QoL fixes by default (helps with them purists)
