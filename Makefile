@@ -632,6 +632,19 @@ ifeq ($(COMPILER_N64),gcc)
   CFLAGS := -march=vr4300 -mfix4300 -mabi=32 -mno-shared -G 0 $(COMMON_CFLAGS) -mhard-float -mdivide-breaks -fno-stack-protector -fno-common -fno-zero-initialized-in-bss -I include -I $(BUILD_DIR) -I $(BUILD_DIR)/include -I src -I . -fno-PIC -mno-abicalls -fno-strict-aliasing -fno-inline-functions -ffreestanding -fwrapv -Wall -Wextra
 endif
 
+# Check for Puppycam option
+ifeq ($(BETTERCAMERA),1)
+  CC_CHECK += -DBETTERCAMERA
+  CFLAGS += -DBETTERCAMERA
+  EXT_OPTIONS_MENU := 1
+endif
+
+# Check for extended options menu option
+ifeq ($(EXT_OPTIONS_MENU),1)
+  CC_CHECK += -DEXT_OPTIONS_MENU -DCHEATS_ACTIONS
+  CFLAGS += -DEXT_OPTIONS_MENU -DCHEATS_ACTIONS
+endif
+
 ifeq ($(shell getconf LONG_BIT), 32)
   # Work around memory allocation bug in QEMU
   export QEMU_GUEST_BASE := 1
