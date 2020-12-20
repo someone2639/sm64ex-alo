@@ -2523,6 +2523,18 @@ const BehaviorScript bhvSmallPenguin[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvFish2[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    SET_INT(oBehParams2ndByte, 0),
+    GOTO(bhvFishSpawner + 1),
+};
+
+const BehaviorScript bhvFish3[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    SET_INT(oBehParams2ndByte, 1),
+    GOTO(bhvFishSpawner + 1),
+};
+
 const BehaviorScript bhvManyBlueFishSpawner[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     SET_INT(oBehParams2ndByte, 0),
@@ -2532,6 +2544,11 @@ const BehaviorScript bhvManyBlueFishSpawner[] = {
 const BehaviorScript bhvFewBlueFishSpawner[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     SET_INT(oBehParams2ndByte, 1),
+    GOTO(bhvFishSpawner + 1),
+};
+
+const BehaviorScript bhvLargeFishGroup[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
     GOTO(bhvFishSpawner + 1),
 };
 

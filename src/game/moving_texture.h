@@ -9,6 +9,8 @@
 #define ROTATE_CLOCKWISE         0
 #define ROTATE_COUNTER_CLOCKWISE 1
 
+void *GetRomhackWaterBox(u32 id);
+
 /// Ids for textures used for moving textures
 enum MovtexRectTextureId
 {

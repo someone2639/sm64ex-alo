@@ -589,7 +589,7 @@ void *get_quad_collection_from_id(u32 id) {
         case TTM_MOVTEX_PUDDLE:
             return ttm_movtex_puddle;
         default:
-            return NULL;
+            return GetRomhackWaterBox(id);
     }
 }
 
