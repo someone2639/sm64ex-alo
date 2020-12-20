@@ -28,7 +28,7 @@ NON_MATCHING ?= 1
 COMPILER_N64 ?= gcc
 
 # Build for original N64 (no pc code)
-TARGET_N64 = 0
+TARGET_N64 = 1
 # Build and optimize for Raspberry Pi(s)
 TARGET_RPI ?= 0
 # Build for Emscripten/WebGL
@@ -42,7 +42,7 @@ TARGET_SWITCH ?= 0
 # Makeflag to enable OSX fixes
 OSX_BUILD ?= 0
 # Specify the target you are building for, TARGET_BITS=0 means native
-TARGET_ARCH ?= native
+TARGET_ARCH ?= 0
 TARGET_BITS ?= 0
 
 # Disable better camera by default
