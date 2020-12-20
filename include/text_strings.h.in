@@ -194,6 +194,9 @@
 #define TEXT_COURSE _("COURSE")
 #define TEXT_MYSCORE _("MYSCORE")
 #define TEXT_CONTINUE _("CONTINUE")
+#define TEXT_SWAP_VER _("SWAP VERSION")
+#define TEXT_SM74 _("SM74")
+#define TEXT_SM74EE _("SM74 EXTREME EDITION")
 #define TEXT_EXIT_COURSE _("EXIT COURSE")
 #define TEXT_EXIT_GAME _("EXIT GAME")
 #ifndef VERSION_EU // "R" text is different in EU

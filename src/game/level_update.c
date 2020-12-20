@@ -1255,7 +1255,7 @@ s32 init_level(void) {
                         set_mario_action(gMarioState, ACT_IDLE, 0);
                         val4 = 0;
 #endif
-#endif
+// #endif
                     }
                 }
             }
