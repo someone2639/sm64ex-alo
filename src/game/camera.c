@@ -3460,6 +3460,9 @@ void init_camera(struct Camera *c) {
     c->nextYaw = gLakituState.yaw;
 
 #ifdef BETTERCAMERA
+	newcam_active = 1;
+	gLakituState.mode = CAMERA_MODE_NEWCAM;
+	gLakituState.defMode = CAMERA_MODE_NEWCAM;
     newcam_init(c, 0);
     newcam_init_settings();
 #endif
