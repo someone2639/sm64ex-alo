@@ -1242,11 +1242,11 @@ s32 init_level(void) {
                         set_mario_action(gMarioState, ACT_IDLE, 0);
                         val4 = 0;
                     } else
-#ifndef TARGET_N64
-                        if (gCLIOpts.SkipIntro == 0 && configSkipIntro == 0) {
-                            set_mario_action(gMarioState, ACT_INTRO_CUTSCENE, 0);
-                            val4 = 1;
-#else
+// #ifndef TARGET_N64
+                        // if (gCLIOpts.SkipIntro == 0 && configSkipIntro == 0) {
+                            // set_mario_action(gMarioState, ACT_INTRO_CUTSCENE, 0);
+                            // val4 = 1;
+// #else
                         {
 #if !SKIP_INTRO_CUTSCENE
                         set_mario_action(gMarioState, ACT_INTRO_CUTSCENE, 0);
