@@ -864,7 +864,7 @@ void initiate_delayed_warp(void) {
         } else {
             switch (sDelayedWarpOp) {
                 case WARP_OP_GAME_OVER:
-                    save_file_reload();
+                    // save_file_reload();
                     warp_special(-3);
                     break;
 
@@ -1049,29 +1049,25 @@ s32 play_mode_paused(void) {
         gCameraMovementFlags &= ~CAM_MOVE_PAUSE_SCREEN;
         set_play_mode(PLAY_MODE_NORMAL);
     } else
-#ifndef TARGET_N64
         if (gPauseScreenMode == 2)
-#endif
         {
         // Exit level
         if (gDebugLevelSelect) {
             fade_into_special_warp(-9, 1);
         } else {
-            initiate_warp(LEVEL_CASTLE, 1, 0x1F, 0);
+            initiate_warp(LEVEL_CASTLE_COURTYARD, 1, 0x40, 0);
             fade_into_special_warp(0, 0);
             gSavedCourseNum = COURSE_NONE;
         }
         
-        gCameraMovementFlags &= ~CAM_MOVE_PAUSE_SCREEN;
+        // gCameraMovementFlags &= ~CAM_MOVE_PAUSE_SCREEN;
     } 
-#ifndef TARGET_N64
     else if (gPauseScreenMode == 3) {
         // We should only be getting "int 3" to here
-        initiate_warp(LEVEL_CASTLE, 1, 0x1F, 0);
+        initiate_warp(gCurrLevelNum, gCurrAreaIndex^3, 10, 0);
         fade_into_special_warp(0, 0);
-        game_exit();
+		gSavedCourseNum = COURSE_NONE;
     }
-#endif
 
     return 0;
 }

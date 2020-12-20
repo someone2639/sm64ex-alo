@@ -73,15 +73,7 @@ const GeoLayout geo_menu_erase_button[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 524288),
       GEO_OPEN_NODE(),
-#ifdef WIDESCREEN
-         GEO_SWITCH_CASE(2, geo_switch_anim_state),
-         GEO_OPEN_NODE(),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_erase_button),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_erase_button_dynamic),
-#else
-        GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_erase_button),
-#endif
-        GEO_CLOSE_NODE(),
+         GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_erase_button),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),
@@ -93,15 +85,7 @@ const GeoLayout geo_menu_copy_button[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 524288),
       GEO_OPEN_NODE(),
-#ifdef WIDESCREEN
-         GEO_SWITCH_CASE(2, geo_switch_anim_state),
-         GEO_OPEN_NODE(),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_copy_button),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_copy_button_dynamic),
-#else
-        GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_copy_button),
-#endif
-        GEO_CLOSE_NODE(),
+         GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_copy_button),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),
@@ -113,15 +97,7 @@ const GeoLayout geo_menu_file_button[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 524288),
       GEO_OPEN_NODE(),
-#ifdef WIDESCREEN
-         GEO_SWITCH_CASE(2, geo_switch_anim_state),
-         GEO_OPEN_NODE(),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_file_button),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_file_button_dynamic),
-#else
-        GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_file_button),
-#endif
-        GEO_CLOSE_NODE(),
+         GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_file_button),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),
@@ -133,15 +109,7 @@ const GeoLayout geo_menu_score_button[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 524288),
       GEO_OPEN_NODE(),
-#ifdef WIDESCREEN
-         GEO_SWITCH_CASE(2, geo_switch_anim_state),
-         GEO_OPEN_NODE(),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_score_button),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_score_button_dynamic),
-#else
-        GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_score_button),
-#endif
-        GEO_CLOSE_NODE(),
+         GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_score_button),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),
@@ -153,15 +121,7 @@ const GeoLayout geo_menu_sound_button[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 524288),
       GEO_OPEN_NODE(),
-#ifdef WIDESCREEN
-         GEO_SWITCH_CASE(2, geo_switch_anim_state),
-         GEO_OPEN_NODE(),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_sound_button),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_sound_button_dynamic),
-#else
-        GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_sound_button),
-#endif
-        GEO_CLOSE_NODE(),
+         GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_sound_button),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),
@@ -173,15 +133,7 @@ const GeoLayout geo_menu_generic_button[] = {
    GEO_OPEN_NODE(),
       GEO_SCALE(0x00, 524288),
       GEO_OPEN_NODE(),
-#ifdef WIDESCREEN
-         GEO_SWITCH_CASE(2, geo_switch_anim_state),
-         GEO_OPEN_NODE(),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_generic_button),
-            GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_generic_button_dynamic),
-#else
-        GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_generic_button),
-#endif
-        GEO_CLOSE_NODE(),
+         GEO_DISPLAY_LIST(LAYER_OPAQUE, dl_menu_generic_button),
       GEO_CLOSE_NODE(),
    GEO_CLOSE_NODE(),
    GEO_END(),

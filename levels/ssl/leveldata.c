@@ -1,22 +1,16 @@
-#include <PR/ultratypes.h>
-#include <PR/gbi.h>
-
-#include "dialog_ids.h"
-#include "level_misc_macros.h"
-#include "macros.h"
-#include "macro_preset_names.h"
-#include "moving_texture_macros.h"
-#include "special_preset_names.h"
+#include <ultra64.h>
+#include "sm64.h"
 #include "surface_terrains.h"
+#include "moving_texture_macros.h"
+#include "level_misc_macros.h"
+#include "macro_preset_names.h"
+#include "special_preset_names.h"
 #include "textures.h"
-#include "types.h"
+#include "dialog_ids.h"
 
 #include "make_const_nonconst.h"
-// LEVEL DATA
+
 #include "levels/ssl/texture.inc.c"
-// This is an oddity, but it is assumed this because of the likelyhood SSL's
-// course used to be smaller in a prototype build and that moving areas around
-// caused this discrepency. (See the 3 Star Course theory)
 #include "levels/ssl/areas/2/4/model.inc.c"
 #include "levels/ssl/areas/1/1/model.inc.c"
 #include "levels/ssl/areas/1/2/model.inc.c"
@@ -49,3 +43,8 @@
 #include "levels/ssl/pyramid_elevator/collision.inc.c"
 #include "levels/ssl/eyerok_col/collision.inc.c"
 #include "levels/ssl/areas/2/movtext.inc.c"
+#include "levels/ssl/areas/1/movtextNew.inc.c"
+#include "levels/ssl/areas/1/model.inc.c"
+#include "levels/ssl/areas/2/movtextNew.inc.c"
+#include "levels/ssl/areas/2/model.inc.c"
+#include "levels/ssl/textureNew.inc.c"

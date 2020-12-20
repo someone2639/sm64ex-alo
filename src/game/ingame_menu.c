@@ -2513,10 +2513,10 @@ void render_pause_castle_course_stars(s16 x, s16 y, s16 fileNum, s16 courseNum) 
 
     u16 nextStar = 0;
 
-    if (starFlags & 0x40) {
-        starCount--;
-        print_generic_string(x + 89, y - 5, textStar);
-    }
+    // if (starFlags & 0x40) {
+        // starCount--;
+        // print_generic_string(x + 89, y - 5, textStar);
+    // }
 
     while (hasStar != starCount) {
         if (starFlags & (1 << nextStar)) {
@@ -2530,7 +2530,7 @@ void render_pause_castle_course_stars(s16 x, s16 y, s16 fileNum, s16 courseNum) 
         nextStar++;
     }
 
-    if (starCount == nextStar && starCount != 6) {
+    if (starCount == nextStar && starCount != 7) {
         str[nextStar * 2] = DIALOG_CHAR_STAR_OPEN;
         str[nextStar * 2 + 1] = DIALOG_CHAR_SPACE;
         nextStar++;

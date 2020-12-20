@@ -403,8 +403,8 @@ void save_file_do_save(s32 fileIndex) {
                                  sizeof(gSaveBuffer.files[fileIndex][0]), SAVE_FILE_MAGIC);
 
         // Copy to backup slot
-        bcopy(&gSaveBuffer.files[fileIndex][0], &gSaveBuffer.files[fileIndex][1],
-              sizeof(gSaveBuffer.files[fileIndex][1]));
+        // bcopy(&gSaveBuffer.files[fileIndex][0], &gSaveBuffer.files[fileIndex][1],
+              // sizeof(gSaveBuffer.files[fileIndex][1]));
 
         // Write to EEPROM
 #if BSAVE_FILE_PC
@@ -424,7 +424,7 @@ void save_file_erase(s32 fileIndex) {
 
     touch_high_score_ages(fileIndex);
     bzero(&gSaveBuffer.files[fileIndex][0], sizeof(gSaveBuffer.files[fileIndex][0]));
-
+    bzero(&gSaveBuffer.files[fileIndex][1], sizeof(gSaveBuffer.files[fileIndex][1]));
     gSaveFileModified = TRUE;
     save_file_do_save(fileIndex);
 }
@@ -437,6 +437,8 @@ BAD_RETURN(s32) save_file_copy(s32 srcFileIndex, s32 destFileIndex) {
     touch_high_score_ages(destFileIndex);
     bcopy(&gSaveBuffer.files[srcFileIndex][0], &gSaveBuffer.files[destFileIndex][0],
           sizeof(gSaveBuffer.files[destFileIndex][0]));
+    bcopy(&gSaveBuffer.files[srcFileIndex][1], &gSaveBuffer.files[destFileIndex][1],
+          sizeof(gSaveBuffer.files[destFileIndex][1]));
 
     gSaveFileModified = TRUE;
     save_file_do_save(destFileIndex);
@@ -471,38 +473,38 @@ void save_file_load_all(void) {
 #endif
 
     // Verify the main menu data and create a backup copy if only one of the slots is valid.
-    validSlots = verify_save_block_signature(&gSaveBuffer.menuData[0], sizeof(gSaveBuffer.menuData[0]), MENU_DATA_MAGIC);
-    validSlots |= verify_save_block_signature(&gSaveBuffer.menuData[1], sizeof(gSaveBuffer.menuData[1]),MENU_DATA_MAGIC) << 1;
-    switch (validSlots) {
-        case 0: // Neither copy is correct
-            wipe_main_menu_data();
-            break;
-        case 1: // Slot 0 is correct and slot 1 is incorrect
-            restore_main_menu_data(0);
-            break;
-        case 2: // Slot 1 is correct and slot 0 is incorrect
-            restore_main_menu_data(1);
-            break;
-    }
+    // validSlots = verify_save_block_signature(&gSaveBuffer.menuData[0], sizeof(gSaveBuffer.menuData[0]), MENU_DATA_MAGIC);
+    // validSlots |= verify_save_block_signature(&gSaveBuffer.menuData[1], sizeof(gSaveBuffer.menuData[1]),MENU_DATA_MAGIC) << 1;
+    // switch (validSlots) {
+        // case 0: // Neither copy is correct
+            // wipe_main_menu_data();
+            // break;
+        // case 1: // Slot 0 is correct and slot 1 is incorrect
+            // restore_main_menu_data(0);
+            // break;
+        // case 2: // Slot 1 is correct and slot 0 is incorrect
+            // restore_main_menu_data(1);
+            // break;
+    // }
 
-    for (file = 0; file < NUM_SAVE_FILES; file++) {
+    // for (file = 0; file < NUM_SAVE_FILES; file++) {
         // Verify the save file and create a backup copy if only one of the slots is valid.
-        validSlots = verify_save_block_signature(&gSaveBuffer.files[file][0], sizeof(gSaveBuffer.files[file][0]), SAVE_FILE_MAGIC);
-        validSlots |= verify_save_block_signature(&gSaveBuffer.files[file][1], sizeof(gSaveBuffer.files[file][1]), SAVE_FILE_MAGIC) << 1;
-        switch (validSlots) {
-            case 0: // Neither copy is correct
-                save_file_erase(file);
-                break;
-            case 1: // Slot 0 is correct and slot 1 is incorrect
-                restore_save_file_data(file, 0);
-                break;
-            case 2: // Slot 1 is correct and slot 0 is incorrect
-                restore_save_file_data(file, 1);
-                break;
-        }
-    }
+        // validSlots = verify_save_block_signature(&gSaveBuffer.files[file][0], sizeof(gSaveBuffer.files[file][0]), SAVE_FILE_MAGIC);
+        // validSlots |= verify_save_block_signature(&gSaveBuffer.files[file][1], sizeof(gSaveBuffer.files[file][1]), SAVE_FILE_MAGIC) << 1;
+        // switch (validSlots) {
+            // case 0: // Neither copy is correct
+                // save_file_erase(file);
+                // break;
+            // case 1: // Slot 0 is correct and slot 1 is incorrect
+                // restore_save_file_data(file, 0);
+                // break;
+            // case 2: // Slot 1 is correct and slot 0 is incorrect
+                // restore_save_file_data(file, 1);
+                // break;
+        // }
+    // }
 #endif // TEXTSAVES
-    stub_save_file_1();
+    // stub_save_file_1();
 }
 
 /**
@@ -547,7 +549,7 @@ void save_file_collect_star_or_key(s16 coinScore, s16 starIndex) {
         }
 
         if (coinScore > save_file_get_course_coin_score(fileIndex, courseIndex)) {
-            gSaveBuffer.files[fileIndex][0].courseCoinScores[courseIndex] = coinScore;
+            gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].courseCoinScores[courseIndex] = coinScore;
             touch_coin_score_age(fileIndex, courseIndex);
 
             gGotFileCoinHiScore = TRUE;
@@ -580,7 +582,7 @@ void save_file_collect_star_or_key(s16 coinScore, s16 starIndex) {
 }
 
 s32 save_file_exists(s32 fileIndex) {
-    return (gSaveBuffer.files[fileIndex][0].flags & SAVE_FLAG_FILE_EXISTS) != 0;
+    return (gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].flags & SAVE_FLAG_FILE_EXISTS) != 0;
 }
 
 /**
@@ -636,13 +638,13 @@ s32 save_file_get_total_star_count(s32 fileIndex, s32 minCourse, s32 maxCourse) 
 }
 
 void save_file_set_flags(u32 flags) {
-    gSaveBuffer.files[gCurrSaveFileNum - 1][0].flags |= (flags | SAVE_FLAG_FILE_EXISTS);
+    gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].flags |= (flags | SAVE_FLAG_FILE_EXISTS);
     gSaveFileModified = TRUE;
 }
 
 void save_file_clear_flags(u32 flags) {
-    gSaveBuffer.files[gCurrSaveFileNum - 1][0].flags &= ~flags;
-    gSaveBuffer.files[gCurrSaveFileNum - 1][0].flags |= SAVE_FLAG_FILE_EXISTS;
+    gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].flags &= ~flags;
+    gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].flags |= SAVE_FLAG_FILE_EXISTS;
     gSaveFileModified = TRUE;
 }
 
@@ -650,7 +652,7 @@ u32 save_file_get_flags(void) {
     if (gCurrCreditsEntry != NULL || gCurrDemoInput != NULL) {
         return 0;
     }
-    return gSaveBuffer.files[gCurrSaveFileNum - 1][0].flags;
+    return gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].flags;
 }
 
 /**
@@ -663,7 +665,7 @@ u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
     if (courseIndex == -1) {
         starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
     } else {
-        starFlags = gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] & 0x7F;
+        starFlags = gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].courseStars[courseIndex] & 0x7F;
     }
 
     return starFlags;
@@ -671,7 +673,7 @@ u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
 
 u32 save_file_get_cannon_flags(s32 fileIndex, s32 courseIndex) {
 
-    if (gSaveBuffer.files[fileIndex][0].courseStars[courseIndex+1] & 0x80) {return 1;}
+    if (gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].courseStars[courseIndex+1] & 0x80) {return 1;}
 
     return 0;
 }
@@ -682,9 +684,9 @@ u32 save_file_get_cannon_flags(s32 fileIndex, s32 courseIndex) {
  */
 void save_file_set_star_flags(s32 fileIndex, s32 courseIndex, u32 starFlags) {
     if (courseIndex == -1) {
-        gSaveBuffer.files[fileIndex][0].flags |= STAR_FLAG_TO_SAVE_FLAG(starFlags);
+        gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].flags |= STAR_FLAG_TO_SAVE_FLAG(starFlags);
     } else {
-        gSaveBuffer.files[fileIndex][0].courseStars[courseIndex] |= starFlags;
+        gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].courseStars[courseIndex] |= starFlags;
     }
 
     gSaveBuffer.files[fileIndex][0].flags |= SAVE_FLAG_FILE_EXISTS;
@@ -692,27 +694,27 @@ void save_file_set_star_flags(s32 fileIndex, s32 courseIndex, u32 starFlags) {
 }
 
 s32 save_file_get_course_coin_score(s32 fileIndex, s32 courseIndex) {
-    return gSaveBuffer.files[fileIndex][0].courseCoinScores[courseIndex];
+    return gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].courseCoinScores[courseIndex];
 }
 
 /**
  * Return TRUE if the cannon is unlocked in the current course.
  */
 s32 save_file_is_cannon_unlocked(void) {
-    return (gSaveBuffer.files[gCurrSaveFileNum - 1][0].courseStars[gCurrCourseNum] & 0x80) != 0;
+    return (gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].courseStars[gCurrCourseNum] & 0x80) != 0;
 }
 
 /**
  * Sets the cannon status to unlocked in the current course.
  */
 void save_file_set_cannon_unlocked(void) {
-    gSaveBuffer.files[gCurrSaveFileNum - 1][0].courseStars[gCurrCourseNum] |= 0x80;
-    gSaveBuffer.files[gCurrSaveFileNum - 1][0].flags |= SAVE_FLAG_FILE_EXISTS;
+    gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].courseStars[gCurrCourseNum] |= 0x80;
+    gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1].flags |= SAVE_FLAG_FILE_EXISTS;
     gSaveFileModified = TRUE;
 }
 
 void save_file_set_cap_pos(s16 x, s16 y, s16 z) {
-    struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
+    struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1];
 
     saveFile->capLevel = gCurrLevelNum;
     saveFile->capArea = gCurrAreaIndex;
@@ -721,7 +723,7 @@ void save_file_set_cap_pos(s16 x, s16 y, s16 z) {
 }
 
 s32 save_file_get_cap_pos(Vec3s capPos) {
-    struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][0];
+    struct SaveFile *saveFile = &gSaveBuffer.files[gCurrSaveFileNum - 1][gCurrAreaIndex-1];
     s32 flags = save_file_get_flags();
 
     if (saveFile->capLevel == gCurrLevelNum && saveFile->capArea == gCurrAreaIndex
