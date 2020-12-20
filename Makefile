@@ -50,7 +50,7 @@ BETTERCAMERA ?= 1
 # Disable no drawing distance by default
 NODRAWINGDISTANCE ?= 0
 # Disable QoL fixes by default (helps with them purists)
-QOL_FIXES ?= 0
+QOL_FIXES ?= 1
 # Enable extended options menu by default
 EXT_OPTIONS_MENU ?= 1
 # Disable text-based save-files by default
@@ -62,13 +62,13 @@ DISCORDRPC ?= 0
 # Enable rumble functions (Originally in Shindou)
 RUMBLE_FEEDBACK ?= 0
 # Enable PC Port defines
-PC_PORT_DEFINES ?= 0
+PC_PORT_DEFINES ?= 1
 
 # Various workarounds for weird toolchains
 NO_BZERO_BCOPY ?= 0
 NO_LDIV ?= 0
 # Check if is compiling on a console
-TARGET_GAME_CONSOLE ?= 0
+TARGET_GAME_CONSOLE ?= 1
 
 # Backend selection
 
