@@ -30,9 +30,12 @@ EXIT(),
 
 //AREA 2 LOADS
 const static LevelScript level_jrb_area2load[] = {
+LOAD_MIO0(5,_group1_mio0SegmentRomStart,_group1_mio0SegmentRomEnd),
+LOAD_RAW(12,_group1_geoSegmentRomStart,_group1_geoSegmentRomEnd),
 LOAD_MIO0(6,_group14_mio0SegmentRomStart,_group14_mio0SegmentRomEnd),
 LOAD_RAW(13,_group14_geoSegmentRomStart,_group14_geoSegmentRomEnd),
 ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_2),
 JUMP_LINK(script_func_global_15),
 JUMP(level_jrb_POSTLOAD)
 };
@@ -191,9 +194,9 @@ OBJECT_WITH_ACTS(129,2055,3125,5189,0,0,0,0x0, bhvHiddenObject,31),
 OBJECT_WITH_ACTS(129,1073,3021,5183,0,0,0,0x0, bhvHiddenObject,31),
 OBJECT_WITH_ACTS(129,202,3385,4764,0,-29,0,0x0, bhvHiddenObject,31),
 OBJECT_WITH_ACTS(58,-208,1306,625,0,0,0,0x0, bhvLllRotatingBlockWithFireBars,31),
-OBJECT_WITH_ACTS(13,-5365,3542,-3021,0,59,0,0x0, bhvStaticObject,31),
-OBJECT_WITH_ACTS(13,-5000,3490,-3958,0,59,0,0x0, bhvStaticObject,31),
-OBJECT_WITH_ACTS(13,-3542,3542,-3281,0,-91,0,0x0, bhvStaticObject,31),
+// OBJECT_WITH_ACTS(13,-5365,3542,-3021,0,59,0,0x0, bhvStaticObject,31),
+// OBJECT_WITH_ACTS(13,-5000,3490,-3958,0,59,0,0x0, bhvStaticObject,31),
+// OBJECT_WITH_ACTS(13,-3542,3542,-3281,0,-91,0,0x0, bhvStaticObject,31),
 OBJECT_WITH_ACTS(100,6250,3589,6510,0,0,0,0x0, bhvPiranhaPlant,31),
 OBJECT_WITH_ACTS(100,4271,4118,-2552,0,0,0,0x0, bhvPiranhaPlant,31),
 OBJECT_WITH_ACTS(100,3073,4581,990,0,0,0,0x0, bhvPiranhaPlant,31),

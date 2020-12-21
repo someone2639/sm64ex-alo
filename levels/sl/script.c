@@ -31,8 +31,8 @@ EXIT(),
 //AREA 2 LOADS
 const static LevelScript level_sl_area2load[] = {
 LOAD_MIO0(0xA,_ccm_skybox_mio0SegmentRomStart,_ccm_skybox_mio0SegmentRomEnd),
-LOAD_MIO0(6,_group7_mio0SegmentRomStart,_group7_mio0SegmentRomEnd),
-LOAD_RAW(13,_group7_geoSegmentRomStart,_group7_geoSegmentRomEnd),
+LOAD_MIO0(5,_group7_mio0SegmentRomStart,_group7_mio0SegmentRomEnd),
+LOAD_RAW(12,_group7_geoSegmentRomStart,_group7_geoSegmentRomEnd),
 LOAD_MIO0(6,_group16_mio0SegmentRomStart,_group16_mio0SegmentRomEnd),
 LOAD_RAW(13,_group16_geoSegmentRomStart,_group16_geoSegmentRomEnd),
 ALLOC_LEVEL_POOL(),
