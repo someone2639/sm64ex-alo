@@ -41,7 +41,23 @@ enum SeqId {
     SEQ_EVENT_CUTSCENE_VICTORY,       // 0x1F
     SEQ_EVENT_CUTSCENE_ENDING,        // 0x20
     SEQ_MENU_FILE_SELECT,             // 0x21
-    SEQ_EVENT_CUTSCENE_LAKITU,        // 0x22 (not in JP)
+    SEQ_EVENT_CUTSCENE_LAKITU,        // 0x22
+	//EE seqs
+    SEQEE_EVENT_RACE,                   // 0x14
+    SEQEE_EVENT_CUTSCENE_STAR_SPAWN,    // 0x15
+    SEQEE_EVENT_BOSS,                   // 0x16
+    SEQEE_EVENT_CUTSCENE_COLLECT_KEY,   // 0x17
+    SEQEE_EVENT_ENDLESS_STAIRS,         // 0x18
+    SEQEE_LEVEL_BOSS_KOOPA_FINAL,       // 0x19
+    SEQEE_EVENT_CUTSCENE_CREDITS,       // 0x1A
+    SEQEE_EVENT_SOLVE_PUZZLE,           // 0x1B
+    SEQEE_EVENT_TOAD_MESSAGE,           // 0x1C
+    SEQEE_EVENT_PEACH_MESSAGE,          // 0x1D
+    SEQEE_EVENT_CUTSCENE_INTRO,         // 0x1E
+    SEQEE_EVENT_CUTSCENE_VICTORY,       // 0x1F
+    SEQEE_EVENT_CUTSCENE_ENDING,        // 0x20
+    SEQEE_MENU_FILE_SELECT,             // 0x21
+    SEQEE_EVENT_CUTSCENE_LAKITU,        // 0x22 (not in JP)
     SEQ_COUNT
 };
 

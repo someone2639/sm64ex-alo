@@ -49,5 +49,20 @@
 	"21_Seq_sm74_custom": ["25"],
     "21_menu_file_select": null,
 	"22_Seq_sm74_custom": ["25"],
-    "22_cutscene_lakitu": null
+    "22_cutscene_lakitu": null,
+	"23_Seq_sm74EE_custom": ["25"],
+	"24_Seq_sm74EE_custom": ["24"],
+	"25_Seq_sm74EE_custom": ["25"],
+	"26_Seq_sm74EE_custom": ["13"],
+	"27_Seq_sm74EE_custom": ["11"],
+	"28_Seq_sm74EE_custom": ["25"],
+	"29_Seq_sm74EE_custom": ["23"],
+	"2A_Seq_sm74EE_custom": ["21"],
+	"2B_Seq_sm74EE_custom": ["25"],
+	"2C_Seq_sm74EE_custom": ["25"],
+	"2D_Seq_sm74EE_custom": ["0E"],
+	"2E_Seq_sm74EE_custom": ["18"],
+	"2F_Seq_sm74EE_custom": ["1D_bowser_organ"],
+	"30_Seq_sm74EE_custom": ["23"],
+	"31_Seq_sm74EE_custom": ["11"]
 }

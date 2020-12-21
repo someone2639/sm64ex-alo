@@ -144,7 +144,7 @@ RETURN()
 const LevelScript local_area_ssl_2_[] = {
 AREA(2,Geo_ssl_2_0x19001700),
 TERRAIN(col_ssl_2_0xe032008),
-SET_BACKGROUND_MUSIC(0,6),
+SET_BACKGROUND_MUSIC(0,0x27),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_ssl_2_),
 JUMP_LINK(local_warps_ssl_2_),

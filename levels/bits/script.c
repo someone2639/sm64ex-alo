@@ -145,7 +145,7 @@ RETURN()
 const LevelScript local_area_bits_2_[] = {
 AREA(2,Geo_bits_2_0x19001700),
 TERRAIN(col_bits_2_0xe062de8),
-SET_BACKGROUND_MUSIC(0,24),
+SET_BACKGROUND_MUSIC(0,0x2E),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_bits_2_),
 JUMP_LINK(local_warps_bits_2_),

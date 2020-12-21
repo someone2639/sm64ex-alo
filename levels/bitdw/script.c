@@ -117,7 +117,7 @@ RETURN()
 const LevelScript local_area_bitdw_2_[] = {
 AREA(2,Geo_bitdw_2_0x19001700),
 TERRAIN(col_bitdw_2_0xe01f528),
-SET_BACKGROUND_MUSIC(0,19),
+SET_BACKGROUND_MUSIC(0,0x2D),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_bitdw_2_),
 JUMP_LINK(local_warps_bitdw_2_),

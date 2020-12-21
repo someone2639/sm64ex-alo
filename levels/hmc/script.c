@@ -174,7 +174,7 @@ RETURN()
 const LevelScript local_area_hmc_2_[] = {
 AREA(2,Geo_hmc_2_0x19001700),
 TERRAIN(col_hmc_2_0xe027df8),
-SET_BACKGROUND_MUSIC(0,12),
+SET_BACKGROUND_MUSIC(0,0x2B),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_hmc_2_),
 JUMP_LINK(local_warps_hmc_2_),

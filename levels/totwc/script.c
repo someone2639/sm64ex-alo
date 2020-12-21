@@ -105,7 +105,7 @@ RETURN()
 const LevelScript local_area_totwc_2_[] = {
 AREA(2,Geo_totwc_2_0x19001700),
 TERRAIN(col_totwc_2_0xe00f268),
-SET_BACKGROUND_MUSIC(0,6),
+SET_BACKGROUND_MUSIC(0,0x27),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_totwc_2_),
 JUMP_LINK(local_warps_totwc_2_),

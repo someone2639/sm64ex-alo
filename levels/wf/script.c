@@ -122,7 +122,7 @@ RETURN()
 const LevelScript local_area_wf_2_[] = {
 AREA(2,Geo_wf_2_0x19001700),
 TERRAIN(col_wf_2_0xe01eed0),
-SET_BACKGROUND_MUSIC(0,2),
+SET_BACKGROUND_MUSIC(0,0x23),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_wf_2_),
 JUMP_LINK(local_warps_wf_2_),

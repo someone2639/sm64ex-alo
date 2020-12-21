@@ -142,7 +142,7 @@ RETURN()
 const LevelScript local_area_ccm_2_[] = {
 AREA(2,Geo_ccm_2_0x19001700),
 TERRAIN(col_ccm_2_0xe02f0f0),
-SET_BACKGROUND_MUSIC(0,10),
+SET_BACKGROUND_MUSIC(0,0x2a),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_ccm_2_),
 JUMP_LINK(local_warps_ccm_2_),

@@ -110,7 +110,7 @@ RETURN()
 const LevelScript local_area_vcutm_2_[] = {
 AREA(2,Geo_vcutm_2_0x19001700),
 TERRAIN(col_vcutm_2_0xe025f88),
-SET_BACKGROUND_MUSIC(0,12),
+SET_BACKGROUND_MUSIC(0,0x2B),
 TERRAIN_TYPE(2),
 JUMP_LINK(local_objects_vcutm_2_),
 JUMP_LINK(local_warps_vcutm_2_),
