@@ -12,22 +12,11 @@
 #include "make_const_nonconst.h"
 
 #include "levels/bbh/header.h"
-const LevelScript level_bbh_entry[] = {
-INIT_LEVEL(),
-LOAD_MIO0(0x07, _bbh_segment_7SegmentRomStart, _bbh_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
-LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
-LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
-LOAD_MIO0(5,_group9_mio0SegmentRomStart,_group9_mio0SegmentRomEnd),
-LOAD_RAW(12,_group9_geoSegmentRomStart,_group9_geoSegmentRomEnd),
-LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
-LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
-ALLOC_LEVEL_POOL(),
+
+const static LevelScript level_bbh_POSTLOAD[] = {
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
 JUMP_LINK(script_func_global_1),
-JUMP_LINK(script_func_global_10),
-JUMP_LINK(script_func_global_18),
 JUMP_LINK(local_area_bbh_1_),
 JUMP_LINK(local_area_bbh_2_),
 FREE_LEVEL_POOL(),
@@ -38,6 +27,37 @@ CLEAR_LEVEL(),
 SLEEP_BEFORE_EXIT(/*frames*/ 1),
 EXIT(),
 };
+
+//AREA 2 LOADS
+const static LevelScript level_bbh_area2load[] = {
+LOAD_MIO0(5,_group4_mio0SegmentRomStart,_group4_mio0SegmentRomEnd),
+LOAD_RAW(12,_group4_geoSegmentRomStart,_group4_geoSegmentRomEnd),
+LOAD_MIO0(6,_group13_mio0SegmentRomStart,_group13_mio0SegmentRomEnd),
+LOAD_RAW(13,_group13_geoSegmentRomStart,_group13_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_5),
+JUMP_LINK(script_func_global_14),
+JUMP(level_bbh_POSTLOAD)
+};
+
+const LevelScript level_bbh_entry[] = {
+INIT_LEVEL(),
+LOAD_MIO0(0x07, _bbh_segment_7SegmentRomStart, _bbh_segment_7SegmentRomEnd),
+LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
+LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
+JUMP_AREA(0,2,level_bbh_area2load),
+//AREA 1 LOADS
+LOAD_MIO0(5,_group9_mio0SegmentRomStart,_group9_mio0SegmentRomEnd),
+LOAD_RAW(12,_group9_geoSegmentRomStart,_group9_geoSegmentRomEnd),
+LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
+LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_10),
+JUMP_LINK(script_func_global_18),
+JUMP(level_bbh_POSTLOAD)
+};
+
 const LevelScript local_area_bbh_1_[] = {
 AREA(1,Geo_bbh_1_0x19001700),
 TERRAIN(col_bbh_1_0xe020f10),

@@ -12,22 +12,13 @@
 #include "make_const_nonconst.h"
 
 #include "levels/ttc/header.h"
-const LevelScript level_ttc_entry[] = {
-INIT_LEVEL(),
-LOAD_MIO0(0x07, _ttc_segment_7SegmentRomStart, _ttc_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_clouds_skybox_mio0SegmentRomStart,_clouds_skybox_mio0SegmentRomEnd),
-LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
-LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
-LOAD_MIO0(5,_group11_mio0SegmentRomStart,_group11_mio0SegmentRomEnd),
-LOAD_RAW(12,_group11_geoSegmentRomStart,_group11_geoSegmentRomEnd),
-LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
-LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
-ALLOC_LEVEL_POOL(),
+
+const static LevelScript level_ttc_POSTLOAD[] = {
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
+LOAD_MODEL_FROM_GEO(17, palm_tree_geo),
 JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_12),
-JUMP_LINK(script_func_global_18),
 JUMP_LINK(local_area_ttc_1_),
 JUMP_LINK(local_area_ttc_2_),
 FREE_LEVEL_POOL(),
@@ -38,6 +29,34 @@ CLEAR_LEVEL(),
 SLEEP_BEFORE_EXIT(/*frames*/ 1),
 EXIT(),
 };
+
+//AREA 2 LOADS
+const static LevelScript level_ttc_area2load[] = {
+LOAD_MIO0(0xA,_bidw_skybox_mio0SegmentRomStart,_bidw_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
+LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_18),
+JUMP(level_ttc_POSTLOAD)
+};
+
+const LevelScript level_ttc_entry[] = {
+INIT_LEVEL(),
+LOAD_MIO0(0x07, _ttc_segment_7SegmentRomStart, _ttc_segment_7SegmentRomEnd),
+LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
+LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
+LOAD_MIO0(5,_group11_mio0SegmentRomStart,_group11_mio0SegmentRomEnd),
+LOAD_RAW(12,_group11_geoSegmentRomStart,_group11_geoSegmentRomEnd),
+JUMP_AREA(0,2,level_ttc_area2load),
+//AREA 1 LOADS
+LOAD_MIO0(0xA,_clouds_skybox_mio0SegmentRomStart,_clouds_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(6,_group14_mio0SegmentRomStart,_group14_mio0SegmentRomEnd),
+LOAD_RAW(13,_group14_geoSegmentRomStart,_group14_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_15),
+JUMP(level_ttc_POSTLOAD)
+};
+
 const LevelScript local_area_ttc_1_[] = {
 AREA(1,Geo_ttc_1_0x19001700),
 TERRAIN(col_ttc_1_0xe05e350),
@@ -48,7 +67,7 @@ JUMP_LINK(local_warps_ttc_1_),
 END_AREA(),
 RETURN()
 };
-//The commented out objects are actually important but I don't have a solution for them.
+
 const LevelScript local_objects_ttc_1_[] = {
 OBJECT_WITH_ACTS(0,625,-2154,-156,0,0,0,0xa0000, bhvSpinAirborneWarp,31),
 OBJECT_WITH_ACTS(122,6213,4089,4665,0,0,0,0x0, bhvStar,31),
@@ -120,12 +139,12 @@ OBJECT_WITH_ACTS(180,6406,610,-2292,0,0,0,0x0, bhvFireSpitter,31),
 OBJECT_WITH_ACTS(220,-885,-573,6771,0,0,0,0x10000, bhvFlyGuy,31),
 OBJECT_WITH_ACTS(220,-5938,2095,-6979,0,0,0,0x10000, bhvFlyGuy,31),
 OBJECT_WITH_ACTS(0,625,-1025,-6927,0,0,0,0x0, bhvGoombaTripletSpawner,31),
-// OBJECT_WITH_ACTS(107,5104,2326,4063,0,0,0,0x0, bhvWoodenPost,31),
+OBJECT_WITH_ACTS(107,5104,2326,4063,0,0,0,0x0, bhvWoodenPost,31),
 OBJECT_WITH_ACTS(223,-7032,1678,-6875,0,0,0,0x0, bhvChuckya,31),
 OBJECT_WITH_ACTS(223,-5417,1678,-6875,0,0,0,0x0, bhvChuckya,31),
 OBJECT_WITH_ACTS(84,2031,-521,6823,0,0,0,0x0, bhvEnemyLakitu,31),
 OBJECT_WITH_ACTS(84,5208,2639,4219,0,0,0,0x0, bhvEnemyLakitu,31),
-// OBJECT_WITH_ACTS(103,-1979,1678,-6927,0,0,0,0x0, bhvSmallWhomp,31),
+OBJECT_WITH_ACTS(103,-1979,1678,-6927,0,0,0,0x0, bhvSmallWhomp,31),
 OBJECT_WITH_ACTS(137,3177,1991,-7552,0,0,0,0x70000, bhvExclamationBox,31),
 OBJECT_WITH_ACTS(137,-3594,1678,-7344,0,0,0,0xf0000, bhvExclamationBox,31),
 OBJECT_WITH_ACTS(137,-5937,3358,-1979,0,0,0,0xf0000, bhvExclamationBox,31),
