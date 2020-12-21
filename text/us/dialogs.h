@@ -640,7 +640,7 @@ more than 100. And I \n\
 want those. If you \n\
 collect 100 coins in \n\
 one of those levels...\n\
-...you get a ★!))
+...you get a ★!"))
 
 DEFINE_DIALOG(DIALOG_062,1,3,30,200, _("Hello! I'm Info-Toad...\n\
 number... uhh...\n\
