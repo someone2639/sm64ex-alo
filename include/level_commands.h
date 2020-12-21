@@ -98,6 +98,11 @@
     CMD_W(arg), \
     CMD_PTR(target)
 
+#define JUMP_AREA(op, arg, target) \
+    CMD_BBBB(0x3F, 0x0C, op, 0x00), \
+    CMD_W(arg), \
+    CMD_PTR(target)
+
 #define JUMP_LINK_IF(op, arg, target) \
     CMD_BBBB(0x0D, 0x0C, op, 0x00), \
     CMD_W(arg), \

@@ -1,0 +1,21 @@
+src/engine/level_script.c:	if (gMarioSpawnInfo->areaIndex==arg)
+src/engine/level_script.c:    vec3s_set(gMarioSpawnInfo->startPos, 0, 0, 0);
+src/engine/level_script.c:    vec3s_set(gMarioSpawnInfo->startAngle, 0, 0, 0);
+src/engine/level_script.c:    gMarioSpawnInfo->activeAreaIndex = -1;
+src/engine/level_script.c:    gMarioSpawnInfo->areaIndex = 0;
+src/engine/level_script.c:    gMarioSpawnInfo->behaviorArg = CMD_GET(u32, 4);
+src/engine/level_script.c:    gMarioSpawnInfo->behaviorScript = CMD_GET(void *, 8);
+src/engine/level_script.c:    gMarioSpawnInfo->unk18 = gLoadedGraphNodes[CMD_GET(u8, 3)];
+src/engine/level_script.c:    gMarioSpawnInfo->next = NULL;
+src/engine/level_script.c:    gMarioSpawnInfo->areaIndex = CMD_GET(u8, 2);
+src/engine/level_script.c:    vec3s_set(gMarioSpawnInfo->startPos, CMD_GET(s16, 6), CMD_GET(s16, 8), CMD_GET(s16, 10));
+src/engine/level_script.c:    vec3s_copy(gMarioSpawnInfo->startPos, CMD_GET(Vec3s, 6));
+src/engine/level_script.c:    vec3s_set(gMarioSpawnInfo->startAngle, 0, CMD_GET(s16, 4) * 0x8000 / 180, 0);
+src/game/area.c:    gMarioSpawnInfo->areaIndex = -1;
+src/game/area.c:    load_area(gMarioSpawnInfo->areaIndex);
+src/game/area.c:    if (gCurrentArea->index == gMarioSpawnInfo->areaIndex) {
+src/game/area.c:        unload_objects_from_area(0, gMarioSpawnInfo->activeAreaIndex);
+src/game/area.c:        gMarioObject->header.gfx.areaIndex = index, gMarioSpawnInfo->areaIndex = index;
+src/game/mario.c:        find_water_level(gMarioSpawnInfo->startPos[0], gMarioSpawnInfo->startPos[2]);
+src/game/mario.c:    vec3s_copy(gMarioState->faceAngle, gMarioSpawnInfo->startAngle);
+src/game/mario.c:    vec3s_to_vec3f(gMarioState->pos, gMarioSpawnInfo->startPos);

@@ -8,6 +8,7 @@
 #include "buffers/framebuffers.h"
 #include "buffers/zbuffer.h"
 #include "game/area.h"
+#include "game/level_update.h"
 #include "game/game_init.h"
 #include "game/mario.h"
 #include "game/memory.h"
@@ -59,6 +60,14 @@ static struct LevelCommand *sCurrentCmd;
 #ifdef USE_SYSTEM_MALLOC
 static struct MemoryPool *sMemPoolForGoddard;
 #endif
+
+//new level cmd
+static eval_script_area(s32 arg){
+	if (sWarpDest.areaIdx==arg)
+		return 1;
+	else
+		return 0;
+};
 
 static s32 eval_script_op(s8 op, s32 arg) {
     s32 result = 0;
@@ -197,6 +206,14 @@ static void level_cmd_loop_until(void) {
 
 static void level_cmd_jump_if(void) {
     if (eval_script_op(CMD_GET(u8, 2), CMD_GET(s32, 4)) != 0) {
+        sCurrentCmd = segmented_to_virtual(CMD_GET(void *, 8));
+    } else {
+        sCurrentCmd = CMD_NEXT;
+    }
+}
+
+static void level_cmd_jump_area(void) {
+    if (eval_script_area(CMD_GET(s32, 4)) != 0) {
         sCurrentCmd = segmented_to_virtual(CMD_GET(void *, 8));
     } else {
         sCurrentCmd = CMD_NEXT;
@@ -887,6 +904,7 @@ static void (*LevelScriptJumpTable[])(void) = {
     /*3C*/ level_cmd_get_or_set_var,
     /*3D*/ level_cmd_advdemo,
     /*3E*/ level_cmd_cleardemoptr,
+    /*3F*/ level_cmd_jump_area,
 };
 
 struct LevelCommand *level_script_execute(struct LevelCommand *cmd) {
