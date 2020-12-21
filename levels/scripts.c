@@ -324,6 +324,8 @@ const LevelScript script_func_global_15[] = {
     LOAD_MODEL_FROM_GEO(MODEL_CHAIN_CHOMP,             chain_chomp_geo),
     LOAD_MODEL_FROM_GEO(MODEL_KOOPA_FLAG,              koopa_flag_geo),
     LOAD_MODEL_FROM_GEO(MODEL_WOODEN_POST,             wooden_post_geo),
+    LOAD_MODEL_FROM_GEO(55,             lll_geo_sinking_rock),
+    LOAD_MODEL_FROM_GEO(58,             lll_geo_rotate_firebars),
     RETURN(),
 };
 

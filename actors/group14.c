@@ -38,3 +38,9 @@ UNUSED static const u64 binid_5 = 5;
 #include "chain_chomp/anims/data.inc.c"
 #include "chain_chomp/anims/table.inc.c"
 UNUSED static const u64 binid_6 = 6;
+
+#include "sinking_rock_block/model.inc.c"
+#include "sinking_rock_block/collision.inc.c"
+
+#include "rotating_block_fire_bars/model.inc.c"
+#include "rotating_block_fire_bars/collision.inc.c"

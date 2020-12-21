@@ -133,4 +133,14 @@ extern const Gfx whomp_seg6_dl_06020038[];
 extern const struct Animation *const whomp_seg6_anims_06020A04[];
 extern const Collision whomp_seg6_collision_06020A0C[];
 
+//LLL sinking rock
+extern const GeoLayout lll_geo_sinking_rock[];
+extern const Gfx lll_sinking_rock[];
+extern const Collision lll_sinking_rock_col[];
+
+//LLL sinking rock
+extern const GeoLayout lll_geo_rotate_firebars[];
+extern const Gfx lll_rotate_firebars[];
+extern const Collision lll_col_rotate_firebars[];
+
 #endif

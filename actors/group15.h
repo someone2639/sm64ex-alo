@@ -86,10 +86,5 @@ extern const Gfx toad_seg6_dl_06008A90[];
 extern const Gfx toad_seg6_dl_06008BD8[];
 extern const struct Animation *const toad_seg6_anims_0600FB58[];
 
-//LLL sinking rock
-
-extern const GeoLayout lll_geo_sinking_rock[];
-extern const Gfx lll_sinking_rock[];
-extern const Collision lll_sinking_rock_col[];
 
 #endif

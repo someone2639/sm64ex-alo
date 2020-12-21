@@ -14,3 +14,5 @@
 #include "whomp/geo.inc.c"
 #include "chain_ball/geo.inc.c"
 #include "chain_chomp/geo.inc.c"
+#include "sinking_rock_block/geo.inc.c"
+#include "rotating_block_fire_bars/geo.inc.c"

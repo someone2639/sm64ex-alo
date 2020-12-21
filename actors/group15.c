@@ -25,6 +25,5 @@ UNUSED static const u64 binid_2 = 2;
 UNUSED static const u64 binid_3 = 3;
 
 
-#include "sinking_rock_block/model.inc.c"
-#include "sinking_rock_block/collision.inc.c"
+
 
