@@ -12,23 +12,13 @@
 #include "make_const_nonconst.h"
 
 #include "levels/sl/header.h"
-const LevelScript level_sl_entry[] = {
-INIT_LEVEL(),
-LOAD_MIO0(0x07, _sl_segment_7SegmentRomStart, _sl_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
-LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
-LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
-LOAD_MIO0(5,_group1_mio0SegmentRomStart,_group1_mio0SegmentRomEnd),
-LOAD_RAW(12,_group1_geoSegmentRomStart,_group1_geoSegmentRomEnd),
-LOAD_MIO0(6,_group14_mio0SegmentRomStart,_group14_mio0SegmentRomEnd),
-LOAD_RAW(13,_group14_geoSegmentRomStart,_group14_geoSegmentRomEnd),
-ALLOC_LEVEL_POOL(),
+
+const static LevelScript level_sl_POSTLOAD[] = {
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
 LOAD_MODEL_FROM_GEO(24, spiky_tree_geo),
+LOAD_MODEL_FROM_GEO(18, snow_tree_geo),
 JUMP_LINK(script_func_global_1),
-JUMP_LINK(script_func_global_2),
-JUMP_LINK(script_func_global_15),
 JUMP_LINK(local_area_sl_1_),
 JUMP_LINK(local_area_sl_2_),
 FREE_LEVEL_POOL(),
@@ -39,6 +29,40 @@ CLEAR_LEVEL(),
 SLEEP_BEFORE_EXIT(/*frames*/ 1),
 EXIT(),
 };
+
+//AREA 2 LOADS
+const static LevelScript level_sl_area2load[] = {
+LOAD_MIO0(6,_group7_mio0SegmentRomStart,_group7_mio0SegmentRomEnd),
+LOAD_RAW(13,_group7_geoSegmentRomStart,_group7_geoSegmentRomEnd),
+LOAD_MIO0(6,_group16_mio0SegmentRomStart,_group16_mio0SegmentRomEnd),
+LOAD_RAW(13,_group16_geoSegmentRomStart,_group16_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_8),
+JUMP_LINK(script_func_global_17),
+JUMP(level_sl_POSTLOAD)
+};
+
+
+const LevelScript level_sl_entry[] = {
+INIT_LEVEL(),
+LOAD_MIO0(0x07, _sl_segment_7SegmentRomStart, _sl_segment_7SegmentRomEnd),
+LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(        /*seg*/ 0x0B, _effect_mio0SegmentRomStart, _effect_mio0SegmentRomEnd),
+LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
+LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
+JUMP_AREA(0,2,level_sl_area2load),
+//AREA 1 LOADS
+LOAD_MIO0(5,_group1_mio0SegmentRomStart,_group1_mio0SegmentRomEnd),
+LOAD_RAW(12,_group1_geoSegmentRomStart,_group1_geoSegmentRomEnd),
+LOAD_MIO0(6,_group14_mio0SegmentRomStart,_group14_mio0SegmentRomEnd),
+LOAD_RAW(13,_group14_geoSegmentRomStart,_group14_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_2),
+JUMP_LINK(script_func_global_15),
+JUMP(level_sl_POSTLOAD)
+};
+
+
 const LevelScript local_area_sl_1_[] = {
 AREA(1,Geo_sl_1_0x19001700),
 TERRAIN(col_sl_1_0xe039568),

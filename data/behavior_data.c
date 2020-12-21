@@ -2263,7 +2263,7 @@ const BehaviorScript bhvLllRotatingHexagonalPlatform[] = {
 const BehaviorScript bhvLllSinkingRockBlock[] = {
     BEGIN(OBJ_LIST_SURFACE),
     OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    LOAD_COLLISION_DATA(lll_seg7_collision_floating_block),
+    LOAD_COLLISION_DATA(lll_sinking_rock_col),
     ADD_FLOAT(oPosY, -50),
     SET_HOME(),
     BEGIN_LOOP(),
