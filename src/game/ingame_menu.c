@@ -1718,7 +1718,10 @@ void render_dialog_entries(void) {
             break;
     }
 #else
-    dialogTable = segmented_to_virtual(seg2_dialog_table);
+    if (gCurrAreaIndex==1){
+		dialogTable = segmented_to_virtual(seg2_dialog_table);
+	}else
+		dialogTable = segmented_to_virtual(seg2_dialog_table_EE);
 #endif
     dialog = segmented_to_virtual(dialogTable[gDialogID]);
 

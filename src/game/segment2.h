@@ -5,7 +5,9 @@
 #include <PR/gbi.h>
 
 extern u8 seg2_course_name_table[];
+// extern u8 seg2_course_name_table_EE[];
 extern u8 seg2_act_name_table[];
+// extern u8 seg2_act_name_table_EE[];
 extern Gfx dl_rgba16_text_begin[];
 extern Gfx dl_rgba16_text_end[];
 extern Gfx dl_ia_text_begin[];
@@ -53,6 +55,7 @@ extern u8* main_hud_camera_lut[6];
 extern Gfx dl_draw_text_bg_box[];
 extern Gfx dl_draw_triangle[];
 extern void *seg2_dialog_table[];
+extern void *seg2_dialog_table_EE[];
 extern Gfx dl_billboard_num_0[];
 extern Gfx dl_billboard_num_1[];
 extern Gfx dl_billboard_num_2[];
