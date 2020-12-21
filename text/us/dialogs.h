@@ -70,7 +70,7 @@ Here are two tips:\n\
 \n\
 1. When you see a grey\n\
 wall try using the\n\
-Walljump.\n\
+wallkick.\n\
 2. Triple jumps may help\n\
 you pass some of the\n\
 green slopes.\n\
@@ -141,7 +141,7 @@ from Toad.\n\
 Do you want to Save?\n\
 //Yes////No"))
 
-DEFINE_DIALOG(DIALOG_014,1,4,30,200, _("OMG! A star!\n\
+DEFINE_DIALOG(DIALOG_014,1,4,30,200, _("WOW! A star!\n\
 I've never seen anything\n\
 that UNspecial before.\n\
 Do you still have the\n\
@@ -296,7 +296,7 @@ check out the\n\
 'Medal-Challenges' that\n\
 came with this game."))
 
-DEFINE_DIALOG(DIALOG_031,1,5,30,200, _("DAMN! You cheated again!\n\
+DEFINE_DIALOG(DIALOG_031,1,5,30,200, _("HOW?! You cheated again!\n\
 I know it!\n\
 \n\
 Take the star..."))
@@ -341,7 +341,7 @@ I'm not going to give\n\
 you any hints where the\n\
 stars are.\n\
 \n\
-And there are exactly\n\
+There are almost exactly\n\
 100 coins in this level.\n\
 So don't waste any."))
 
@@ -446,7 +446,7 @@ more."))
 DEFINE_DIALOG(DIALOG_053,1,5,30,200, _("Hey there, Mario!\n\
 \n\
 Tough luck, buddy!\n\
-Bowser kindnapped Peach\n\
+Bowser kidnapped Peach\n\
 again (who cares...)\n\
 AND\n\
 he stole even more stars\n\
@@ -462,7 +462,7 @@ of the stars have been in \n\
 the toilet. You collect \n\
 ALL of them, okay?\n\
 \n\
-Oh,and one important\n\
+Oh, and one important\n\
 thing:\n\
 Talk to the 5 Info-Toads\n\
 in this area before \n\
@@ -528,7 +528,7 @@ Put together to create\n\
 a masterpiece.\n\
 \n\
 This object happens to\n\
-have a mistery so...\n\
+have a mystery so...\n\
 mysterious that people\n\
 still ask themselves\n\
 questions about it.\n\
@@ -621,7 +621,7 @@ I'm kinda greedy and want\n\
 a lot of money to buy\n\
 a car and a house and\n\
 a spaceship and some\n\
-galaxies aswell.\n\
+galaxies as well.\n\
 \n\
 But you know what?\n\
 I don't have enough coins\n\
@@ -640,13 +640,11 @@ more than 100. And I \n\
 want those. If you \n\
 collect 100 coins in \n\
 one of those levels...\n\
-...you get a ★!\n\
-\n\
-:)"))
+...you get a ★!))
 
 DEFINE_DIALOG(DIALOG_062,1,3,30,200, _("Hello! I'm Info-Toad...\n\
-number...\n\
-oh, I forgot...\n\
+number... uhh...\n\
+hmm, I forgot...\n\
 \n\
 4? yes, I think 4.\n\
 \n\
@@ -669,20 +667,20 @@ out. 1996 or 1997 \n\
 depending on where you \n\
 live.\n\
 \n\
-But WHO CARES.\n\
+But who CARES.\n\
 \n\
 If a place is too high\n\
 for you, try a combination\n\
 of a triple jump or\n\
-side sommersault and a\n\
+side somersault and a\n\
 wall kick.\n\
 Or get on drugs, harhar.\n\
 Oh, wait... bad idea.\n\
 This is a family game\n\
-after all. DAMN!"))
+after all. DARN!"))
 
 DEFINE_DIALOG(DIALOG_063,1,5,30,200, _("I'm the impressive\n\
-and unbelivable\n\
+and unbelievable\n\
 Info-Toad numero 5!\n\
 \n\
 Some people don't even\n\
@@ -699,7 +697,7 @@ I'll just entertain you\n\
 with some funny sentences.\n\
 \n\
 Is this okay for you?\n\
-No? You want infos?\n\
+No? You want info?\n\
 How about this one:\n\
 \n\
 'Press [A] to jump'\n\
@@ -728,7 +726,7 @@ glitch out!\n\
 excuse.\n\
 \n\
 But you have to live\n\
-with it :P"))
+with it."))
 
 DEFINE_DIALOG(DIALOG_065,1,6,30,200, _("Wrong game.\n\
 What are you doing here?"))
@@ -759,7 +757,7 @@ lation software since \n\
 I already blew everything\n\
 on 2D-castles but at \n\
 least these spike balls \n\
-are higher than before :P"))
+are higher than before."))
 
 DEFINE_DIALOG(DIALOG_068,1,5,30,200, _("68"))
 
@@ -817,7 +815,7 @@ This day is just perfect.\n\
 \n\
 Here, you can have this\n\
 star. I don't need it\n\
-to be happy. :)"))
+to be happy."))
 
 DEFINE_DIALOG(DIALOG_077,1,2,150,200, _("Mysterious hidden object\n\
 3 of 5\n\
@@ -880,8 +878,8 @@ if you want to and then\n\
 leave me alone, please."))
 
 DEFINE_DIALOG(DIALOG_083,1,6,30,200, _("Did you know that\n\
-there are quiet a lot\n\
-of stars on the \n\
+there are quite a lot\n\
+of stars in the \n\
 overworld?\n\
 \n\
 There are 4 in the first\n\
@@ -897,7 +895,7 @@ East'.\n\
 And there's one here\n\
 at the 'Magma Temple'.\n\
 And I have that one.\n\
-You can have it :)"))
+You can have it!"))
 
 DEFINE_DIALOG(DIALOG_084,1,3,30,200, _("-This rabbit can't speak\n\
 but I think he likes\n\
@@ -910,11 +908,11 @@ DEFINE_DIALOG(DIALOG_085,1,5,30,200, _("This is the\n\
 'Kubus of Light'.\n\
 It provides energy for\n\
 every video game sun in\n\
-existance."))
+existence."))
 
 DEFINE_DIALOG(DIALOG_086,1,3,30,200, _("Try out the Lakitu\n\
 perspective when you\n\
-attempt some walljumps."))
+attempt some wallkicks."))
 
 DEFINE_DIALOG(DIALOG_087,1,4,30,200, _("10 stars are required to\n\
 open this door."))
@@ -925,7 +923,7 @@ I've heard there are\n\
 4 stars in a level\n\
 called 'Frozen Slide'."))
 
-DEFINE_DIALOG(DIALOG_089,1,5,95,200, _("Sometime I can see a \n\
+DEFINE_DIALOG(DIALOG_089,1,5,95,200, _("Sometimes I can see a \n\
 little rabbit over there.\n\
 \n\
 He's so cute. Maybe he \n\
@@ -937,12 +935,12 @@ easy to defeat but\n\
 YOU ARE WRONG!!\n\
 \n\
 I didn't have the money \n\
-for some arena manipu-\n\
-lation software since \n\
+for some arena\n\
+edit software since \n\
 I already blew everything\n\
-on 2D-castles but at \n\
+on 2D castles but at \n\
 least these spike balls \n\
-are higher than before :P"))
+are higher than before."))
 
 DEFINE_DIALOG(DIALOG_091,2,2,30,200, _("Pst! I know a colorful\n\
 secret!\n\
@@ -954,7 +952,7 @@ Do you get it?"))
 DEFINE_DIALOG(DIALOG_092,1,5,30,200, _("Mario!\n\
 I'll be honest to you:\n\
 I don't like you.\n\
-(dramatic music)\n\
+Hahahaha!\n\
 \n\
 Well, as you can see\n\
 I didn't have the time\n\
@@ -987,7 +985,7 @@ the game.\n\
 Do not enter."))
 
 DEFINE_DIALOG(DIALOG_096,1,4,30,200, _("Do you see the floating\n\
-plattforms over there?\n\
+platforms over there?\n\
 To get their treasure\n\
 you need to start your\n\
 flight from the highest\n\
@@ -1102,13 +1100,12 @@ DEFINE_DIALOG(DIALOG_114,1,5,95,200, _("Harharhar!!\n\
 You will never defeat\n\
 me. I can't even\n\
 believe I can stand on\n\
-this tiny plattform.\n\
+this tiny platform.\n\
 \n\
 Or do you think you\n\
 can stomp on my back\n\
 three times without\n\
-falling down?\n\
-:P"))
+falling down?"))
 
 DEFINE_DIALOG(DIALOG_115,1,5,95,200, _("o.O\n\
 ...I didn't expect\n\
@@ -1207,7 +1204,7 @@ colorful rocks."))
 
 DEFINE_DIALOG(DIALOG_128,1,4,95,200, _("HA! That doesn't count!\n\
 You have to throw me\n\
-onto the plattform!"))
+onto the platform!"))
 
 DEFINE_DIALOG(DIALOG_129,1,5,30,200, _("Hello! You just entered...\n\
 \n\
@@ -1215,12 +1212,12 @@ Hello?\n\
 Mario?\n\
 \n\
 WHERE ARE YOU???\n\
-I can't see you :("))
+I can't see you?!"))
 
 DEFINE_DIALOG(DIALOG_130,1,5,30,200, _("Waaaaaaah!\n\
 Look at your skin! It's\n\
 like... like METAL!\n\
-That scares me o.O\n\
+How terrifying...\n\
 I don't want to touch\n\
 you! And I believe your\n\
 enemies don't want to\n\
@@ -1233,7 +1230,7 @@ Anyways, the red Switch\n\
 is somewhere around.\n\
 Press it and...\n\
 \n\
-well, I guess you already\n\
+well, I think you already\n\
 know what happens."))
 
 DEFINE_DIALOG(DIALOG_132,1,4,30,200, _("132"))
@@ -1257,7 +1254,7 @@ as she's kidnapped. :(\n\
 \n\
 I have to pay the rent\n\
 and the kids want these\n\
-new Gaming Systems for\n\
+new game Systems for\n\
 Christmas and that's so\n\
 expensive you know.\n\
 \n\
@@ -1282,7 +1279,7 @@ zoom in with [C]^.\n\
 But sometimes it can\n\
 help to switch back to\n\
 Lakitu's perspective.\n\
-Give it a try :)"))
+Give it a try!"))
 
 DEFINE_DIALOG(DIALOG_135,1,5,30,200, _("This level right here\n\
 can be pretty tricky.\n\
@@ -1347,7 +1344,7 @@ star door."))
 DEFINE_DIALOG(DIALOG_144,1,6,150,200, _("You've collected 60 stars!\n\
 \n\
 Oh wait, you didn't!\n\
-You are still so damn\n\
+You are still so darn\n\
 slow!\n\
 \n\
 What? No, I'm NOT \n\
@@ -1399,9 +1396,7 @@ DEFINE_DIALOG(DIALOG_149,1,3,30,200, _("Welcome to the\n\
 Frozen Slide.\n\
 Don't worry about a time \n\
 limit. This time you'll\n\
-face other problems\n\
-\n\
-:P"))
+face other problems"))
 
 DEFINE_DIALOG(DIALOG_150,1,5,30,200, _("-"))
 
@@ -1421,7 +1416,7 @@ nothing left I could\n\
 give you except for my\n\
 happiness.\n\
 But I don't want to give\n\
-it away :)"))
+it away."))
 
 DEFINE_DIALOG(DIALOG_156,1,5,30,200, _("There are 4 stars in\n\
 the first part of the\n\
@@ -1457,8 +1452,8 @@ It's me - Yoshi!\n\
 \n\
 What do you mean with\n\
 'I don't remember you'?\n\
-Don't be so mean to me.\n\
-:(\n\
+Don't be so mean to me,\n\
+you'll make me cry.\n\
 Well, okay, how about this?\n\
 I've heard there are\n\
 151 stars in the game.\n\
