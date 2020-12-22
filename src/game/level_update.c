@@ -1244,13 +1244,13 @@ s32 init_level(void) {
                             // val4 = 1;
 // #else
                         {
-#if !SKIP_INTRO_CUTSCENE
-                        set_mario_action(gMarioState, ACT_INTRO_CUTSCENE, 0);
-                        val4 = 1;
-#else
+// #if !SKIP_INTRO_CUTSCENE
+                        // set_mario_action(gMarioState, ACT_INTRO_CUTSCENE, 0);
+                        // val4 = 1;
+// #else
                         set_mario_action(gMarioState, ACT_IDLE, 0);
                         val4 = 0;
-#endif
+// #endif
 // #endif
                     }
                 }
