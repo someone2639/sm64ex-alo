@@ -584,8 +584,13 @@ static void big_boo_spawn_ghost_hunt_star(void) {
     spawn_default_star(980.0f, 1100.0f, 250.0f);
 }
 
+//74 c12 spawn location
+static void big_boo_spawn_balcony_star_EE(void) {
+    spawn_default_star(139.0f, 2986.0f, -622.0f);
+}
+//EE c4 spawn location
 static void big_boo_spawn_balcony_star(void) {
-    spawn_default_star(700.0f, 3200.0f, 1900.0f);
+    spawn_default_star(1352.0f, 636.0f, -4037.0f);
 }
 
 static void big_boo_spawn_merry_go_round_star(void) {
@@ -618,7 +623,10 @@ static void big_boo_act_3(void) {
             } else if (o->oBehParams2ndByte == 1) {
                 big_boo_spawn_merry_go_round_star();
             } else {
-                big_boo_spawn_balcony_star();
+				if (gCurrAreaIndex==1)
+					big_boo_spawn_balcony_star();
+				else
+					big_boo_spawn_balcony_star_EE();
             }
         }
     } else {

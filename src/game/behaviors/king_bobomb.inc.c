@@ -169,6 +169,9 @@ void king_bobomb_act_6(void) {
 }
 
 void king_bobomb_act_7(void) {
+	f32 x;
+	f32 y;
+	f32 z;
     cur_obj_init_animation_with_sound(2);
     if (cur_obj_update_dialog_with_cutscene(2, 2, CUTSCENE_DIALOG, DIALOG_116)) {
         create_sound_spawner(SOUND_OBJ_KING_WHOMP_DEATH);
@@ -177,11 +180,22 @@ void king_bobomb_act_7(void) {
         spawn_mist_particles_variable(0, 0, 200.0f);
         spawn_triangle_break_particles(20, 138, 3.0f, 4);
         cur_obj_shake_screen(SHAKE_POS_SMALL);
+		//74
+		if (gCurrAreaIndex==1){
+			x=4423.0f;
+			y=150.0f;
+			z=5607.0f;
+		} //EE
+		else{
+			x=-4635.0f;
+			y=750.0f;
+			z=5108.0f;
+		}
 #ifndef VERSION_JP
-        cur_obj_spawn_star_at_y_offset(2000.0f, 4500.0f, -4500.0f, 200.0f);
+        cur_obj_spawn_star_at_y_offset(x, y, z, 200.0f);
 #else
         o->oPosY += 100.0f;
-        spawn_default_star(2000.0f, 4500.0f, -4500.0f);
+        spawn_default_star(x, y, z);
 #endif
         o->oAction = 8;
     }

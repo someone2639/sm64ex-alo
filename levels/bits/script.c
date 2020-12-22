@@ -39,6 +39,7 @@ LOAD_RAW(13,_group14_geoSegmentRomStart,_group14_geoSegmentRomEnd),
 ALLOC_LEVEL_POOL(),
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
+LOAD_MODEL_FROM_GEO(24, spiky_tree_geo),
 JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_2),
 JUMP_LINK(script_func_global_15),
@@ -140,6 +141,7 @@ OBJECT_WITH_ACTS(223,3021,-1504,3594,0,0,0,0x0, bhvChuckya,31),
 OBJECT_WITH_ACTS(0,4900,-1198,4795,0,0,0,0xb0000, bhvDeathWarp,31),
 RETURN()
 };
+
 const LevelScript local_warps_bits_1_[] = {
 WARP_NODE(10,9,1,10,0),
 WARP_NODE(11,9,1,12,0),

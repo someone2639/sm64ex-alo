@@ -61,7 +61,12 @@ struct KoopaTheQuickProperties {
  * Properties for the BoB race and the THI race.
  */
 static struct KoopaTheQuickProperties sKoopaTheQuickProperties[] = {
-    { DIALOG_005, DIALOG_007, bob_seg7_trajectory_koopa, { 3030, 4500, -4600 } },
+    { DIALOG_005, DIALOG_007, bob_seg7_trajectory_koopa, { 1174, 0, 4091 } },
+    { DIALOG_009, DIALOG_031, thi_seg7_trajectory_koopa, { 7100, -1300, -6000 } }
+};
+
+static struct KoopaTheQuickProperties sKoopaTheQuickProperties_EE[] = {
+    { DIALOG_005, DIALOG_007, bob_seg7_trajectory_koopa, { 1107, 189, -4781 } },
     { DIALOG_009, DIALOG_031, thi_seg7_trajectory_koopa, { 7100, -1300, -6000 } }
 };
 
@@ -737,9 +742,14 @@ static void koopa_the_quick_act_after_race(void) {
             o->oTimer = 0;
         }
     } else if (o->parentObj->oKoopaRaceEndpointRaceStatus != 0) {
-        spawn_default_star(sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[0],
+		if (gCurrAreaIndex==1)
+			spawn_default_star(sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[0],
                    sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[1],
                    sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[2]);
+		else
+			spawn_default_star(sKoopaTheQuickProperties_EE[o->oKoopaTheQuickRaceIndex].starPos[0],
+                   sKoopaTheQuickProperties_EE[o->oKoopaTheQuickRaceIndex].starPos[1],
+                   sKoopaTheQuickProperties_EE[o->oKoopaTheQuickRaceIndex].starPos[2]);
 
         o->parentObj->oKoopaRaceEndpointRaceStatus = 0;
     }

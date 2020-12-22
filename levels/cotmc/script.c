@@ -14,8 +14,9 @@
 #include "levels/cotmc/header.h"
 const LevelScript level_cotmc_entry[] = {
 INIT_LEVEL(),
-JUMP_AREA(0,2,level_cotmc_entry+7),
+JUMP_AREA(0,2,level_cotmc_entry+10),
 LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
+JUMP_AREA(0,1,level_cotmc_entry+13),
 LOAD_MIO0(0xA,_bidw_skybox_mio0SegmentRomStart,_bidw_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(0x07, _cotmc_segment_7SegmentRomStart, _cotmc_segment_7SegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),

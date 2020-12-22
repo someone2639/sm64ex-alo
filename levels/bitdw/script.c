@@ -14,8 +14,9 @@
 #include "levels/bitdw/header.h"
 const LevelScript level_bitdw_entry[] = {
 INIT_LEVEL(),
-JUMP_AREA(0,2,level_bitdw_entry+7),
+JUMP_AREA(0,2,level_bitdw_entry+10),
 LOAD_MIO0(0xA,_bbh_skybox_mio0SegmentRomStart,_bbh_skybox_mio0SegmentRomEnd),
+JUMP_AREA(0,1,level_bitdw_entry+13),
 LOAD_MIO0(0xA,_water_skybox_mio0SegmentRomStart,_water_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(0x07, _bitdw_segment_7SegmentRomStart, _bitdw_segment_7SegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
