@@ -275,7 +275,8 @@ void handle_save_menu(struct MarioState *m) {
             // figure out what dialog to show, if we should
             dialogID = get_star_collection_dialog(m);
             if (dialogID != 0) {
-                play_peachs_jingle();
+				//I don't want to deal with this
+                // play_peachs_jingle();
                 // look up for dialog
                 set_mario_action(m, ACT_READING_AUTOMATIC_DIALOG, dialogID);
             } else {

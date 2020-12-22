@@ -664,7 +664,7 @@ u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
     u32 starFlags;
 
     if (courseIndex == -1) {
-        starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
+        starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][sWarpDest.areaIdx-1].flags);
     } else {
         starFlags = gSaveBuffer.files[fileIndex][sWarpDest.areaIdx-1].courseStars[courseIndex] & 0x7F;
     }
