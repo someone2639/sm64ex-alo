@@ -659,13 +659,14 @@ u32 save_file_get_flags(void) {
  * Return the bitset of obtained stars in the specified course.
  * If course is -1, return the bitset of obtained castle secret stars.
  */
+//I use the warp dest since area index is set to -1 in star select
 u32 save_file_get_star_flags(s32 fileIndex, s32 courseIndex) {
     u32 starFlags;
 
     if (courseIndex == -1) {
         starFlags = SAVE_FLAG_TO_STAR_FLAG(gSaveBuffer.files[fileIndex][0].flags);
     } else {
-        starFlags = gSaveBuffer.files[fileIndex][gCurrAreaIndex-1].courseStars[courseIndex] & 0x7F;
+        starFlags = gSaveBuffer.files[fileIndex][sWarpDest.areaIdx-1].courseStars[courseIndex] & 0x7F;
     }
 
     return starFlags;

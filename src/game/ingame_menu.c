@@ -2397,19 +2397,19 @@ void render_pause_course_options(s16 x, s16 y, s8 *index, s16 yIndex) {
         { TEXT_EXIT_COURSE_DE }
     };
 
-    u8 textCameraAngleR[][24] = {
-        { TEXT_CAMERA_ANGLE_R },
-        { TEXT_CAMERA_ANGLE_R_FR },
-        { TEXT_CAMERA_ANGLE_R_DE }
-    };
+    // u8 textCameraAngleR[][24] = {
+        // { TEXT_CAMERA_ANGLE_R },
+        // { TEXT_CAMERA_ANGLE_R_FR },
+        // { TEXT_CAMERA_ANGLE_R_DE }
+    // };
 #define textContinue     textContinue[gInGameLanguage]
 #define textExitCourse   textExitCourse[gInGameLanguage]
-#define textCameraAngleR textCameraAngleR[gInGameLanguage]
+// #define textCameraAngleR textCameraAngleR[gInGameLanguage]
 #else
     u8 textContinue[] = { TEXT_CONTINUE };
     u8 textExitCourse[] = { TEXT_EXIT_COURSE };
     u8 textSwitchVersion[] = { TEXT_SWAP_VER };
-    u8 textCameraAngleR[] = { TEXT_CAMERA_ANGLE_R };
+    // u8 textCameraAngleR[] = { TEXT_CAMERA_ANGLE_R };
 #endif
 	u8 MaxScroll = 2;
 	u16 SwapOffset = 17;
@@ -2418,37 +2418,19 @@ void render_pause_course_options(s16 x, s16 y, s8 *index, s16 yIndex) {
 	//Don't put exit course in castle grounds
 	if (gCurrCourseNum >= COURSE_MIN && gCurrCourseNum <= COURSE_MAX) {
     print_generic_string(x + 10, y - 17, textExitCourse);
-	MaxScroll = 4;
+	MaxScroll = 3;
 	SwapOffset = 33;
 	};
     handle_menu_scrolling(MENU_SCROLL_VERTICAL, index, 1, MaxScroll);
     print_generic_string(x + 10, y - 2, textContinue);
     print_generic_string(x + 10, y - SwapOffset, textSwitchVersion);
-	
-if (gCurrCourseNum >= COURSE_MIN && gCurrCourseNum <= COURSE_MAX) {
-		if (index[0] != MaxScroll) {
-			print_generic_string(x + 10, y - SwapOffset - 21, textCameraAngleR);
-			gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
+	gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 
-			create_dl_translation_matrix(MENU_MTX_PUSH, x - X_VAL8, (y - ((index[0] - 1) * yIndex)) - Y_VAL8, 0);
+	create_dl_translation_matrix(MENU_MTX_PUSH, x - X_VAL8, (y - ((index[0] - 1) * yIndex)) - Y_VAL8, 0);
 
-			gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-			gSPDisplayList(gDisplayListHead++, dl_draw_triangle);
-			gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
-		}
-
-		if (index[0] == MaxScroll) {
-			render_pause_camera_options(x - 42, y - 42, &gDialogCameraAngleIndex, 110);
-		}
-	} else{
-		gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
-
-		create_dl_translation_matrix(MENU_MTX_PUSH, x - X_VAL8, (y - ((index[0] - 1) * yIndex)) - Y_VAL8, 0);
-
-		gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
-		gSPDisplayList(gDisplayListHead++, dl_draw_triangle);
-		gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
-	}
+	gDPSetEnvColor(gDisplayListHead++, 255, 255, 255, gDialogTextAlpha);
+	gSPDisplayList(gDisplayListHead++, dl_draw_triangle);
+	gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
 }
 
 //box is 130 wide by -80 units tall
