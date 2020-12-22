@@ -54,7 +54,6 @@ LOAD_RAW(12,_group4_geoSegmentRomStart,_group4_geoSegmentRomEnd),
 LOAD_MIO0(6,_group13_mio0SegmentRomStart,_group13_mio0SegmentRomEnd),
 LOAD_RAW(13,_group13_geoSegmentRomStart,_group13_geoSegmentRomEnd),
 ALLOC_LEVEL_POOL(),
-JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_5),
 JUMP_LINK(script_func_global_14),
 JUMP(level_jrb_POSTLOAD)

@@ -12,6 +12,20 @@
 #include "make_const_nonconst.h"
 
 #include "levels/ddd/header.h"
+
+//AREA 2 LOADS
+const static LevelScript level_ddd_area2load[] = {
+JUMP_LINK(local_area_ddd_2_),
+FREE_LEVEL_POOL(),
+MARIO_POS(1,135,-6558,0,6464),
+CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),
+CALL_LOOP(/*arg*/ 1, /*func*/ lvl_init_or_update),
+CLEAR_LEVEL(),
+SLEEP_BEFORE_EXIT(/*frames*/ 1),
+EXIT(),
+};
+
+
 const LevelScript level_ddd_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _ddd_segment_7SegmentRomStart, _ddd_segment_7SegmentRomEnd),
@@ -28,8 +42,9 @@ LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
 JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_4),
 JUMP_LINK(script_func_global_15),
+//AREA 2 LOADS. Completely separate areas to reduce loaded data.
+JUMP_AREA(0,2,level_ddd_area2load),
 JUMP_LINK(local_area_ddd_1_),
-JUMP_LINK(local_area_ddd_2_),
 FREE_LEVEL_POOL(),
 MARIO_POS(1,135,-6558,0,6464),
 CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),

@@ -12,6 +12,20 @@
 #include "make_const_nonconst.h"
 
 #include "levels/rr/header.h"
+
+
+//AREA 2 LOADS
+const static LevelScript level_rr_area2load[] = {
+JUMP_LINK(local_area_rr_2_),
+FREE_LEVEL_POOL(),
+MARIO_POS(1,135,-6558,0,6464),
+CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),
+CALL_LOOP(/*arg*/ 1, /*func*/ lvl_init_or_update),
+CLEAR_LEVEL(),
+SLEEP_BEFORE_EXIT(/*frames*/ 1),
+EXIT(),
+};
+
 const LevelScript level_rr_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _rr_segment_7SegmentRomStart, _rr_segment_7SegmentRomEnd),
@@ -28,8 +42,9 @@ LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
 JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_12),
 JUMP_LINK(script_func_global_18),
+//AREA 2 LOADS. Completely separate areas to reduce loaded data.
+JUMP_AREA(0,2,level_rr_area2load),
 JUMP_LINK(local_area_rr_1_),
-JUMP_LINK(local_area_rr_2_),
 FREE_LEVEL_POOL(),
 MARIO_POS(1,135,-6558,0,6464),
 CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),
@@ -38,6 +53,7 @@ CLEAR_LEVEL(),
 SLEEP_BEFORE_EXIT(/*frames*/ 1),
 EXIT(),
 };
+
 const LevelScript local_area_rr_1_[] = {
 AREA(1,Geo_rr_1_0x19001700),
 TERRAIN(col_rr_1_0xe060688),

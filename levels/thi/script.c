@@ -12,22 +12,11 @@
 #include "make_const_nonconst.h"
 
 #include "levels/thi/header.h"
-const LevelScript level_thi_entry[] = {
-INIT_LEVEL(),
-LOAD_MIO0(0x07, _thi_segment_7SegmentRomStart, _thi_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_bitfs_skybox_mio0SegmentRomStart,_bitfs_skybox_mio0SegmentRomEnd),
-LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
-LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
-LOAD_MIO0(5,_group2_mio0SegmentRomStart,_group2_mio0SegmentRomEnd),
-LOAD_RAW(12,_group2_geoSegmentRomStart,_group2_geoSegmentRomEnd),
-LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
-LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
-ALLOC_LEVEL_POOL(),
+
+const static LevelScript level_thi_POSTLOAD[] = {
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
 JUMP_LINK(script_func_global_1),
-JUMP_LINK(script_func_global_3),
-JUMP_LINK(script_func_global_18),
 JUMP_LINK(local_area_thi_1_),
 JUMP_LINK(local_area_thi_2_),
 FREE_LEVEL_POOL(),
@@ -38,6 +27,37 @@ CLEAR_LEVEL(),
 SLEEP_BEFORE_EXIT(/*frames*/ 1),
 EXIT(),
 };
+
+//AREA 2 LOADS
+const static LevelScript level_thi_area2load[] = {
+LOAD_MIO0(5,_group1_mio0SegmentRomStart,_group1_mio0SegmentRomEnd),
+LOAD_RAW(12,_group1_geoSegmentRomStart,_group1_geoSegmentRomEnd),
+LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
+LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_2),
+JUMP_LINK(script_func_global_18),
+JUMP(level_thi_POSTLOAD)
+};
+
+const LevelScript level_thi_entry[] = {
+INIT_LEVEL(),
+LOAD_MIO0(0x07, _thi_segment_7SegmentRomStart, _thi_segment_7SegmentRomEnd),
+LOAD_MIO0(0xA,_bitfs_skybox_mio0SegmentRomStart,_bitfs_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
+LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
+//AREA 2 LOADS
+JUMP_AREA(0,2,level_thi_area2load),
+LOAD_MIO0(5,_group2_mio0SegmentRomStart,_group2_mio0SegmentRomEnd),
+LOAD_RAW(12,_group2_geoSegmentRomStart,_group2_geoSegmentRomEnd),
+LOAD_MIO0(6,_group16_mio0SegmentRomStart,_group16_mio0SegmentRomEnd),
+LOAD_RAW(13,_group16_geoSegmentRomStart,_group16_geoSegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+JUMP_LINK(script_func_global_3),
+JUMP_LINK(script_func_global_17),
+JUMP(level_thi_POSTLOAD)
+};
+
 const LevelScript local_area_thi_1_[] = {
 AREA(1,Geo_thi_1_0x19001700),
 TERRAIN(col_thi_1_0xe034268),
@@ -48,6 +68,7 @@ JUMP_LINK(local_warps_thi_1_),
 END_AREA(),
 RETURN()
 };
+
 const LevelScript local_objects_thi_1_[] = {
 OBJECT_WITH_ACTS(0,0,232,0,0,0,0,0xa0000, bhvSpinAirborneWarp,31),
 OBJECT_WITH_ACTS(122,-6409,4920,-6669,0,0,0,0x0, bhvStar,31),

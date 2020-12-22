@@ -14,14 +14,17 @@
 #include "levels/cotmc/header.h"
 const LevelScript level_cotmc_entry[] = {
 INIT_LEVEL(),
-LOAD_MIO0(0x07, _cotmc_segment_7SegmentRomStart, _cotmc_segment_7SegmentRomEnd),
+JUMP_AREA(0,2,level_cotmc_entry+7),
 LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(0xA,_bidw_skybox_mio0SegmentRomStart,_bidw_skybox_mio0SegmentRomEnd),
+LOAD_MIO0(0x07, _cotmc_segment_7SegmentRomStart, _cotmc_segment_7SegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
 LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
 LOAD_MIO0(5,_group8_mio0SegmentRomStart,_group8_mio0SegmentRomEnd),
 LOAD_RAW(12,_group8_geoSegmentRomStart,_group8_geoSegmentRomEnd),
 LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
 LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
+
 ALLOC_LEVEL_POOL(),
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
