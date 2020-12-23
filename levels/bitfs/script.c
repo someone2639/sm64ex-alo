@@ -30,6 +30,7 @@ EXIT(),
 
 //AREA 2 LOADS
 const static LevelScript level_bitfs_area2load[] = {
+LOAD_MIO0(0xA,_ssl_skybox_mio0SegmentRomStart,_ssl_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(5,_group5_mio0SegmentRomStart,_group5_mio0SegmentRomEnd),
 LOAD_RAW(12,_group5_geoSegmentRomStart,_group5_geoSegmentRomEnd),
 LOAD_MIO0(6,_group14_mio0SegmentRomStart,_group14_mio0SegmentRomEnd),
@@ -43,11 +44,11 @@ JUMP(level_bitfs_POSTLOAD)
 const LevelScript level_bitfs_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _bitfs_segment_7SegmentRomStart, _bitfs_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_cloud_floor_skybox_mio0SegmentRomStart,_cloud_floor_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
 LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
 JUMP_AREA(0,2,level_bitfs_area2load),
 //AREA 1 LOADS
+LOAD_MIO0(0xA,_cloud_floor_skybox_mio0SegmentRomStart,_cloud_floor_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(5,_group4_mio0SegmentRomStart,_group4_mio0SegmentRomEnd),
 LOAD_RAW(12,_group4_geoSegmentRomStart,_group4_geoSegmentRomEnd),
 LOAD_MIO0(6,_group13_mio0SegmentRomStart,_group13_mio0SegmentRomEnd),

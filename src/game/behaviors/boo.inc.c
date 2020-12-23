@@ -585,11 +585,11 @@ static void big_boo_spawn_ghost_hunt_star(void) {
 }
 
 //74 c12 spawn location
-static void big_boo_spawn_balcony_star_EE(void) {
+static void big_boo_spawn_balcony_star(void) {
     spawn_default_star(139.0f, 2986.0f, -622.0f);
 }
 //EE c4 spawn location
-static void big_boo_spawn_balcony_star(void) {
+static void big_boo_spawn_balcony_star_EE(void) {
     spawn_default_star(1352.0f, 636.0f, -4037.0f);
 }
 

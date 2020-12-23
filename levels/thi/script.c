@@ -30,6 +30,7 @@ EXIT(),
 
 //AREA 2 LOADS
 const static LevelScript level_thi_area2load[] = {
+LOAD_MIO0(0xA,_ssl_skybox_mio0SegmentRomStart,_ssl_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(5,_group1_mio0SegmentRomStart,_group1_mio0SegmentRomEnd),
 LOAD_RAW(12,_group1_geoSegmentRomStart,_group1_geoSegmentRomEnd),
 LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
@@ -43,11 +44,11 @@ JUMP(level_thi_POSTLOAD)
 const LevelScript level_thi_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _thi_segment_7SegmentRomStart, _thi_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_bitfs_skybox_mio0SegmentRomStart,_bitfs_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
 LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
 //AREA 2 LOADS
 JUMP_AREA(0,2,level_thi_area2load),
+LOAD_MIO0(0xA,_bitfs_skybox_mio0SegmentRomStart,_bitfs_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(5,_group2_mio0SegmentRomStart,_group2_mio0SegmentRomEnd),
 LOAD_RAW(12,_group2_geoSegmentRomStart,_group2_geoSegmentRomEnd),
 LOAD_MIO0(6,_group16_mio0SegmentRomStart,_group16_mio0SegmentRomEnd),

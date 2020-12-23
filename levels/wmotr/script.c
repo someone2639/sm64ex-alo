@@ -141,7 +141,7 @@ RETURN()
 const LevelScript local_area_wmotr_2_[] = {
 AREA(2,Geo_wmotr_2_0x19001700),
 TERRAIN(col_wmotr_2_0xe024698),
-SET_BACKGROUND_MUSIC(0,0x33),
+SET_BACKGROUND_MUSIC(0,0x30),
 TERRAIN_TYPE(0),
 JUMP_LINK(local_objects_wmotr_2_),
 JUMP_LINK(local_warps_wmotr_2_),

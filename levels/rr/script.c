@@ -16,6 +16,13 @@
 
 //AREA 2 LOADS
 const static LevelScript level_rr_area2load[] = {
+LOAD_MIO0(0xA,_bits_skybox_mio0SegmentRomStart,_bits_skybox_mio0SegmentRomEnd),
+ALLOC_LEVEL_POOL(),
+MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
+LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
+JUMP_LINK(script_func_global_1),
+JUMP_LINK(script_func_global_12),
+JUMP_LINK(script_func_global_18),
 JUMP_LINK(local_area_rr_2_),
 FREE_LEVEL_POOL(),
 MARIO_POS(1,135,-6558,0,6464),
@@ -29,21 +36,21 @@ EXIT(),
 const LevelScript level_rr_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _rr_segment_7SegmentRomStart, _rr_segment_7SegmentRomEnd),
-LOAD_MIO0(0xA,_bbh_skybox_mio0SegmentRomStart,_bbh_skybox_mio0SegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
 LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
 LOAD_MIO0(5,_group11_mio0SegmentRomStart,_group11_mio0SegmentRomEnd),
 LOAD_RAW(12,_group11_geoSegmentRomStart,_group11_geoSegmentRomEnd),
 LOAD_MIO0(6,_group17_mio0SegmentRomStart,_group17_mio0SegmentRomEnd),
 LOAD_RAW(13,_group17_geoSegmentRomStart,_group17_geoSegmentRomEnd),
+//AREA 2 LOADS. Completely separate areas to reduce loaded data.
+JUMP_AREA(0,2,level_rr_area2load),
+LOAD_MIO0(0xA,_bbh_skybox_mio0SegmentRomStart,_bbh_skybox_mio0SegmentRomEnd),
 ALLOC_LEVEL_POOL(),
 MARIO(/*model*/ MODEL_MARIO, /*behParam*/ 0x00000001, /*beh*/ bhvMario),
 LOAD_MODEL_FROM_GEO(22, warp_pipe_geo),
 JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_12),
 JUMP_LINK(script_func_global_18),
-//AREA 2 LOADS. Completely separate areas to reduce loaded data.
-JUMP_AREA(0,2,level_rr_area2load),
 JUMP_LINK(local_area_rr_1_),
 FREE_LEVEL_POOL(),
 MARIO_POS(1,135,-6558,0,6464),
