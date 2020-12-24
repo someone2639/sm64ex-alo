@@ -87,22 +87,22 @@ s16 bhv_mips_find_furthest_waypoint_to_mario(void) {
  */
 void bhv_mips_act_wait_for_nearby_mario(void) {
     UNUSED s16 collisionFlags = 0;
-
-    o->oForwardVel = 0.0f;
-    collisionFlags = object_step();
+//no way points loaded so game crashes
+    // o->oForwardVel = 0.0f;
+    // collisionFlags = object_step();
 
     // If Mario is within 500 units...
-    if (is_point_within_radius_of_mario(o->oPosX, o->oPosY, o->oPosZ, 500)) {
+    // if (is_point_within_radius_of_mario(o->oPosX, o->oPosY, o->oPosZ, 500)) {
         // If we fail to find a suitable waypoint...
-        if (bhv_mips_find_furthest_waypoint_to_mario() == -1) {
+        // if (bhv_mips_find_furthest_waypoint_to_mario() == -1) {
             // Call it quits.
-            o->oAction = MIPS_ACT_WAIT_FOR_ANIMATION_DONE;
-        } else {
+            // o->oAction = MIPS_ACT_WAIT_FOR_ANIMATION_DONE;
+        // } else {
             // Resume path following.
-            cur_obj_init_animation(1);
-            o->oAction = MIPS_ACT_FOLLOW_PATH;
-        }
-    }
+            // cur_obj_init_animation(1);
+            // o->oAction = MIPS_ACT_FOLLOW_PATH;
+        // }
+    // }
 }
 
 /**

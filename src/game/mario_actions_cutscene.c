@@ -231,10 +231,12 @@ static void stub_is_textbox_active(u16 *a0) {
  * if so, return the dialog ID. Otherwise, return 0. A dialog is returned if
  * numStars has reached a milestone and prevNumStarsForDialog has not reached it.
  */
+//always return 0 to stay removed
 s32 get_star_collection_dialog(struct MarioState *m) {
     s32 i;
     s32 dialogID = 0;
     s32 numStarsRequired;
+	return 0;
 
     for (i = 0; i < ARRAY_COUNT(sStarsNeededForDialog); i++) {
         numStarsRequired = sStarsNeededForDialog[i];

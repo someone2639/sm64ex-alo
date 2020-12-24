@@ -21,9 +21,9 @@
 .word  0x00000000               /* Unknown */
 .word  0x00000000               /* Unknown */
 .if VERSION_SH == 1
-.ascii "SM74 AND EE          "   /* Internal ROM name */
+.ascii "SM74ANDEE\0\0\0\0\0\0\0\0\0"   /* Internal ROM name */
 .else
-.ascii "SM74 AND EE          "   /* Internal ROM name */
+.ascii "SM74ANDEE\0\0\0\0\0\0\0\0\0"   /* Internal ROM name */
 .endif
 .word  0x00000000               /* Unknown */
 .word  0x0000004E               /* Cartridge */

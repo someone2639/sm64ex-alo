@@ -7328,7 +7328,7 @@ const Ambient_t Light_bbh_1_0xe000008 = {
 
 const Gfx DL_bbh_1_0xe026c20[] = {
 gsDPPipeSync(),
-gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE, TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE),
+gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, TEXEL0, TEXEL0, 0, SHADE, 0, 0, 0, 0,TEXEL0),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
 gsSPTexture(65535, 65535, 0, 0, 1),
 gsDPTileSync(),
@@ -7345,7 +7345,6 @@ gsDPLoadBlock(7, 0, 0, 1023, 256),
 gsDPPipeSync(),
 gsDPSetTile(0, 2, 8, 0, 0, 0, 0, 5, 0, 0, 5, 0),
 gsDPSetTileSize(0, 0, 0, 32, 32),
-gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0, TEXEL0, 0, SHADE, 0),
 gsDPTileSync(),
 gsSPVertex(VB_bbh_1_0xe01a2b0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
