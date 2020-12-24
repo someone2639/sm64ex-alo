@@ -208,6 +208,11 @@ s8 sWarpCheckpointActive = FALSE;
 u8 unused3[4];
 u8 unused4[2];
 
+// Frameskip
+s8 gGameLagged = 0;
+OSTime sOldTime = 0;
+OSTime sDeltaTime = 0;
+
 u16 level_control_timer(s32 timerOp) {
     switch (timerOp) {
         case TIMER_CONTROL_SHOW:
@@ -992,6 +997,7 @@ void basic_update(UNUSED s16 *arg) {
 int gPressedStart = 0;
 
 s32 play_mode_normal(void) {
+	OSTime newTime = osGetTime();
     if (gCurrDemoInput != NULL) {
         print_intro_text();
         if (gPlayer1Controller->buttonPressed & END_DEMO) {
@@ -1006,12 +1012,35 @@ s32 play_mode_normal(void) {
 
     warp_area();
     check_instant_warp();
+// Only N64 - shouldn't be necessary in pc-port
+#ifdef TARGET_N64
+    sDeltaTime += newTime - sOldTime;
+    sOldTime = newTime;
+    gGameLagged = -1;
+    while (sDeltaTime > 1562744) {
+        sDeltaTime -= 1562744;
+        if (sTimerRunning && gHudDisplay.timer < 17999) {
+            gHudDisplay.timer += 1;
+        }
+        gGameLagged += 1;
+        area_update_objects();
+        // put fast64's scroll_textures() function here
+        // scroll_textures();
+        if (gGameLagged && gCurrentArea != NULL && gCurrentArea->camera->cutscene != 0) {
+            play_cutscene(gCurrentArea->camera);
+        }
+    }
 
+#else
     if (sTimerRunning && gHudDisplay.timer < 17999) {
         gHudDisplay.timer += 1;
     }
 
-    area_update_objects();
+     area_update_objects();
+    // put fast64's scroll_textures() function here for pc-port
+    // scroll_textures();
+#endif
+
     update_hud_values();
 
     if (gCurrentArea != NULL) {
@@ -1174,15 +1203,23 @@ s32 update_level(void) {
             break;
         case PLAY_MODE_PAUSED:
             changeLevel = play_mode_paused();
+            sDeltaTime = 0;
+            sOldTime = osGetTime();
             break;
         case PLAY_MODE_CHANGE_AREA:
             changeLevel = play_mode_change_area();
+            sDeltaTime = 0;
+            sOldTime = osGetTime();
             break;
         case PLAY_MODE_CHANGE_LEVEL:
             changeLevel = play_mode_change_level();
+            sDeltaTime = 0;
+            sOldTime = osGetTime();
             break;
         case PLAY_MODE_FRAME_ADVANCE:
             changeLevel = play_mode_frame_advance();
+            sDeltaTime = 0;
+            sOldTime = osGetTime();
             break;
     }
 
@@ -1258,6 +1295,7 @@ s32 init_level(void) {
         }
 
 
+
         if (val4 != 0) {
             play_transition(WARP_TRANSITION_FADE_FROM_COLOR, 0x5A, 0xFF, 0xFF, 0xFF);
         } else {
@@ -1289,6 +1327,8 @@ s32 lvl_init_or_update(s16 initOrUpdate, UNUSED s32 unused) {
     switch (initOrUpdate) {
         case 0:
             result = init_level();
+            sDeltaTime = 0;
+            sOldTime = osGetTime();
             break;
         case 1:
             result = update_level();
