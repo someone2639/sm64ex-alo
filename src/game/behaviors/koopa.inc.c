@@ -57,17 +57,30 @@ struct KoopaTheQuickProperties {
     Vec3s starPos;
 };
 
+static const Trajectory KoopaTHI_path_EE[] = {
+	TRAJECTORY_POS(0,261,-1830,3597),
+	TRAJECTORY_POS(1,313,-1830,-4372),
+	TRAJECTORY_POS(2,730,-1830,-4632),
+	TRAJECTORY_POS(3,990,-273,-4788),
+	TRAJECTORY_END(),
+};
+
+static const Trajectory KoopaTHI_path[] = {
+	TRAJECTORY_POS(0,-43,-1695,-5242),
+	TRAJECTORY_POS(1,478,-1695,-3679),
+	TRAJECTORY_POS(2,-199,-1695,3144),
+	TRAJECTORY_POS(3,133,-1695,3665),
+	TRAJECTORY_POS(4,426,-1695,3821),
+	TRAJECTORY_POS(5,1032,-138,3993),
+	TRAJECTORY_END(),
+};
+
 /**
  * Properties for the BoB race and the THI race.
  */
 static struct KoopaTheQuickProperties sKoopaTheQuickProperties[] = {
-    { DIALOG_005, DIALOG_007, bob_seg7_trajectory_koopa, { 1174, 0, 4091 } },
-    { DIALOG_009, DIALOG_031, thi_seg7_trajectory_koopa, { 7100, -1300, -6000 } }
-};
-
-static struct KoopaTheQuickProperties sKoopaTheQuickProperties_EE[] = {
-    { DIALOG_005, DIALOG_007, bob_seg7_trajectory_koopa, { 1107, 189, -4781 } },
-    { DIALOG_009, DIALOG_031, thi_seg7_trajectory_koopa, { 7100, -1300, -6000 } }
+    { DIALOG_009, DIALOG_031, KoopaTHI_path, { 1174, 0, 4091 } },
+    { DIALOG_009, DIALOG_031, KoopaTHI_path_EE, { 1107, 189, -4781 } }
 };
 
 /**
@@ -521,7 +534,7 @@ static void koopa_the_quick_act_wait_before_race(void) {
  */
 static void koopa_the_quick_act_show_init_text(void) {
     s32 response = obj_update_race_proposition_dialog(
-        sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].initText);
+        sKoopaTheQuickProperties[gCurrAreaIndex-1].initText);
 
     if (response == 1) {
         UNUSED s32 unused;
@@ -532,7 +545,7 @@ static void koopa_the_quick_act_show_init_text(void) {
 
         o->parentObj = cur_obj_nearest_object_with_behavior(bhvKoopaRaceEndpoint);
         o->oPathedStartWaypoint = o->oPathedPrevWaypoint =
-            segmented_to_virtual(sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].path);
+            segmented_to_virtual(sKoopaTheQuickProperties[gCurrAreaIndex-1].path);
 
         o->oKoopaTurningAwayFromWall = FALSE;
         o->oFlags |= OBJ_FLAG_ACTIVE_FROM_AFAR;
@@ -624,11 +637,9 @@ static void koopa_the_quick_act_race(void) {
                         // Move faster if mario has already finished the race or
                         // cheated by shooting from cannon
                         o->oKoopaAgility = 8.0f;
-                    } else if (o->oKoopaTheQuickRaceIndex != KOOPA_THE_QUICK_BOB_INDEX) {
-                        o->oKoopaAgility = 6.0f;
-                    } else {
-                        o->oKoopaAgility = 4.0f;
                     }
+					//Always be fast in sm74 since both are technically THI races
+                    o->oKoopaAgility = 6.0f;
 
                     obj_forward_vel_approach(o->oKoopaAgility * 6.0f * downhillSteepness,
                                              o->oKoopaAgility * 0.1f);
@@ -726,7 +737,7 @@ static void koopa_the_quick_act_after_race(void) {
                 } else {
                     // Mario won
                     o->parentObj->oKoopaRaceEndpointUnk100 =
-                        sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].winText;
+                        sKoopaTheQuickProperties[gCurrAreaIndex-1].winText;
                 }
             } else {
                 // KtQ won
@@ -742,14 +753,9 @@ static void koopa_the_quick_act_after_race(void) {
             o->oTimer = 0;
         }
     } else if (o->parentObj->oKoopaRaceEndpointRaceStatus != 0) {
-		if (gCurrAreaIndex==1)
-			spawn_default_star(sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[0],
-                   sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[1],
-                   sKoopaTheQuickProperties[o->oKoopaTheQuickRaceIndex].starPos[2]);
-		else
-			spawn_default_star(sKoopaTheQuickProperties_EE[o->oKoopaTheQuickRaceIndex].starPos[0],
-                   sKoopaTheQuickProperties_EE[o->oKoopaTheQuickRaceIndex].starPos[1],
-                   sKoopaTheQuickProperties_EE[o->oKoopaTheQuickRaceIndex].starPos[2]);
+		spawn_default_star(sKoopaTheQuickProperties[gCurrAreaIndex-1].starPos[0],
+                   sKoopaTheQuickProperties[gCurrAreaIndex-1].starPos[1],
+                   sKoopaTheQuickProperties[gCurrAreaIndex-1].starPos[2]);
 
         o->parentObj->oKoopaRaceEndpointRaceStatus = 0;
     }
