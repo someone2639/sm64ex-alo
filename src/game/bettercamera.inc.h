@@ -510,6 +510,13 @@ static void newcam_zoom_button(void)
 static void newcam_update_values(void) {
     //For tilt, this just limits it so it doesn't go further than 90 degrees either way. 90 degrees is actually 16384, but can sometimes lead to issues, so I just leave it shy of 90.
     u8 waterflag = 0;
+	struct Camera *c;
+	//check if enable puppycam in options menu is checked and if so, init camera
+	newcam_toggle(configEnableCamera);
+	if (!newcam_active){
+		init_camera(gCurrentArea->camera);
+		gCurrentArea->camera->mode = CAMERA_MODE_8_DIRECTIONS;
+	}
 
     if (newcam_modeflags & NC_FLAG_XTURN)
         newcam_yaw -= ((newcam_yaw_acc*(newcam_sensitivityX/10))*ivrt(0));
