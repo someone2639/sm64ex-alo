@@ -2717,7 +2717,7 @@ s16 render_pause_courses_and_castle(void) {
             break;
         case DIALOG_STATE_HORIZONTAL:
             shade_screen();
-			if (gDialogLineNum == 0){
+			if (gDialogLineNum == 0 || gDialogLineNum > 2){
 				gDialogLineNum = 1;
 			};
             render_pause_castle_menu_box(20, 200);

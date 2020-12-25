@@ -1414,9 +1414,9 @@ void bhv_menu_button_manager_init(void) {
         gCurrentObject, MODEL_MAIN_MENU_RED_ERASE_BUTTON, bhvMenuButton, 2134, -3500, 0, 0, 0, 0);
     sMainMenuButtons[MENU_BUTTON_ERASE]->oMenuButtonScale = 1.0f;
     // Sound mode menu button (Option Mode in EU)
-    sMainMenuButtons[MENU_BUTTON_SOUND_MODE] = spawn_object_rel_with_rot(
-        gCurrentObject, MODEL_MAIN_MENU_PURPLE_SOUND_BUTTON, bhvMenuButton, 6400, -3500, 0, 0, 0, 0);
-    sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oMenuButtonScale = 1.0f;
+    // sMainMenuButtons[MENU_BUTTON_SOUND_MODE] = spawn_object_rel_with_rot(
+        // gCurrentObject, MODEL_MAIN_MENU_PURPLE_SOUND_BUTTON, bhvMenuButton, 6400, -3500, 0, 0, 0, 0);
+    // sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oMenuButtonScale = 1.0f;
 
     sTextBaseAlpha = 0;
 }
@@ -1437,11 +1437,11 @@ void check_main_menu_clicked_buttons(void) {
 #endif
         // Sound mode menu is handled separately because the button ID for it
         // is not grouped with the IDs of the other submenus.
-        if (check_clicked_button(sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oPosX,
-                                sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oPosY, 200.0f) == TRUE) {
-            sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oMenuButtonState = MENU_BUTTON_STATE_GROWING;
-            sSelectedButtonID = MENU_BUTTON_SOUND_MODE;
-        } else {
+        // if (check_clicked_button(sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oPosX,
+                                // sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oPosY, 200.0f) == TRUE) {
+            // sMainMenuButtons[MENU_BUTTON_SOUND_MODE]->oMenuButtonState = MENU_BUTTON_STATE_GROWING;
+            // sSelectedButtonID = MENU_BUTTON_SOUND_MODE;
+        // } else {
             // Main Menu buttons
             s8 buttonID;
             // Configure Main Menu button group
@@ -1460,7 +1460,7 @@ void check_main_menu_clicked_buttons(void) {
                     break;
                 }
             }
-        }
+        // }
 #ifdef VERSION_EU
         // Open Options Menu if sOpenLangSettings is TRUE (It's TRUE when there's no saves)
         if (sOpenLangSettings == TRUE) {
@@ -1522,13 +1522,13 @@ void check_main_menu_clicked_buttons(void) {
 #endif
                 render_erase_menu_buttons(sMainMenuButtons[MENU_BUTTON_ERASE]);
                 break;
-            case MENU_BUTTON_SOUND_MODE:
-                play_sound(SOUND_MENU_CAMERA_ZOOM_IN, gGlobalSoundSource);
-#ifdef RUMBLE_FEEDBACK
-                queue_rumble_data(5, 80);
-#endif
-                render_sound_mode_menu_buttons(sMainMenuButtons[MENU_BUTTON_SOUND_MODE]);
-                break;
+            // case MENU_BUTTON_SOUND_MODE:
+                // play_sound(SOUND_MENU_CAMERA_ZOOM_IN, gGlobalSoundSource);
+// #ifdef RUMBLE_FEEDBACK
+                // queue_rumble_data(5, 80);
+// #endif
+                // render_sound_mode_menu_buttons(sMainMenuButtons[MENU_BUTTON_SOUND_MODE]);
+                // break;
         }
 #ifdef VERSION_EU
     }
@@ -1898,10 +1898,10 @@ void print_main_menu_strings(void) {
     // print_generic_string(SCORE_X, 39, textScore);
     print_generic_string(COPY_X, 39, textCopy);
     print_generic_string(ERASE_X, 39, textErase);
-#ifndef VERSION_JP
-    sSoundTextX = get_str_x_pos_from_center(254, textSoundModes[sSoundMode], 10.0f);
-#endif
-    print_generic_string(SOUNDMODE_X1, 39, textSoundModes[sSoundMode]);
+// #ifndef VERSION_JP
+    // sSoundTextX = get_str_x_pos_from_center(254, textSoundModes[sSoundMode], 10.0f);
+// #endif
+    // print_generic_string(SOUNDMODE_X1, 39, textSoundModes[sSoundMode]);
     gSPDisplayList(gDisplayListHead++, dl_ia_text_end);
 #endif
     // Print file names
