@@ -100,4 +100,9 @@ extern const GeoLayout water_ring_geo[];
 extern const Gfx water_ring_seg6_dl_06013AC0[];
 extern const struct Animation *const water_ring_seg6_anims_06013F7C[];
 
+//grill
+extern const GeoLayout grate_door_geo[];
+extern const Collision grate_door_col[];
+extern const Gfx grate_door_model[];
+
 #endif

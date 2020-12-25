@@ -36,3 +36,6 @@ UNUSED static const u64 binid_5 = 5;
 
 #include "treasure_chest/model.inc.c"
 UNUSED static const u64 binid_6 = 6;
+
+#include "grate_door/model.inc.c"
+#include "grate_door/collision.inc.c"

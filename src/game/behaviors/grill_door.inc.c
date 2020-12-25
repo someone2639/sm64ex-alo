@@ -1,6 +1,6 @@
 // grill_door.c.inc
 
-struct OpenableGrill gOpenableGrills[] = { { 320, MODEL_BOB_BARS_GRILLS, bob_seg7_collision_gate },
+struct OpenableGrill gOpenableGrills[] = { { 320, MODEL_BOB_BARS_GRILLS, grate_door_col },
                                            { 410, MODEL_HMC_RED_GRILLS,  hmc_seg7_collision_0702B65C } };
 
 void bhv_openable_cage_door_loop(void) {
