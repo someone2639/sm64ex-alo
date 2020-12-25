@@ -3,6 +3,8 @@ const Gfx DL_bits_2_0xe04ceb0[] = {
 gsDPPipeSync(),
 gsDPSetCombineLERP(0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
+gsSPLight(&Light_bits_2_0xe000000.col, 1),
+gsSPLight(&Light_bits_2_0xe000008.col, 2),
 gsSPTexture(65535, 65535, 0, 0, 1),
 gsDPTileSync(),
 gsDPSetTile(0, 2, 8, 0, 0, 0, 0, 5, 0, 0, 5, 0),
@@ -4920,8 +4922,6 @@ gsSPVertex(VB_bits_2_0xe01b2c0, 15, 0),
 gsSP1Triangle(0, 1, 2, 0),
 gsSPTexture(65535, 65535, 0, 0, 0),
 gsDPPipeSync(),
-gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, SHADE, 0, 0, 0, SHADE, 0, 0, 0, SHADE),
-gsSPGeometryMode(0, G_CULL_BACK|G_LIGHTING),
 gsSPEndDisplayList(),
 };
 

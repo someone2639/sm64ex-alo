@@ -14,18 +14,6 @@
 #include "levels/bits/header.h"
 
 
-//AREA 2 LOADS
-const static LevelScript level_bits_area2load[] = {
-JUMP_LINK(local_area_bits_2_),
-FREE_LEVEL_POOL(),
-MARIO_POS(1,135,-6558,0,6464),
-CALL(/*arg*/ 0, /*func*/ lvl_init_or_update),
-CALL_LOOP(/*arg*/ 1, /*func*/ lvl_init_or_update),
-CLEAR_LEVEL(),
-SLEEP_BEFORE_EXIT(/*frames*/ 1),
-EXIT(),
-};
-
 const LevelScript level_bits_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _bits_segment_7SegmentRomStart, _bits_segment_7SegmentRomEnd),
@@ -46,7 +34,7 @@ JUMP_LINK(script_func_global_1),
 JUMP_LINK(script_func_global_2),
 JUMP_LINK(script_func_global_15),
 //AREA 2 LOADS. Completely separate areas to reduce loaded data.
-JUMP_AREA(0,2,level_bits_area2load),
+JUMP_LINK(local_area_bits_2_),
 JUMP_LINK(local_area_bits_1_),
 FREE_LEVEL_POOL(),
 MARIO_POS(1,135,-6558,0,6464),
