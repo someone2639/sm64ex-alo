@@ -481,26 +481,16 @@ LUGMILLORD"))
 
 DEFINE_DIALOG(DIALOG_054,1,5,30,200, _("Hi! I'm Info Toad 1.\n\
 \n\
-Since Lakitu is fired\n\
-some other useless dude\n\
-is trying to make all\n\
-the camera work.\n\
-\n\
-But he sucks. Please keep\n\
-that in mind.\n\
-\n\
-I recommend to use the\n\
-Mario perspective (push [R])\n\
-and zoom out ([C]|).\n\
-It will help you,\n\
-trust me.\n\
-\n\
-If you enter a narrow\n\
-tunnel or small room,\n\
-zoom in until the camera\n\
-is inside the room\n\
-(then you can zoom out\n\
-again)."))
+Now that it's the future we\n\
+have puppy camera. This new\n\
+camera can go up/down and side\n\
+to side. You can switch modes\n\
+with L between analogue and 8\n\
+directional.\n\
+If you don't like it, go into\n\
+the options menu by pressing\n\
+pause and disable it to get \n\
+the good old original stuff."))
 
 DEFINE_DIALOG(DIALOG_055,1,4,30,200, _("Hey-ey, Mario, buddy,\n\
 howzit goin'? Step right\n\
