@@ -50,6 +50,13 @@ Gfx *geo_update_projectile_pos_from_parent(s32 callContext, UNUSED struct GraphN
     return NULL;
 }
 
+Gfx *geo_Choose_Area(s32 callContext, UNUSED struct GraphNode *node, Mat4 mtx) {
+	struct GraphNodeSwitchCase *switchCase;
+	switchCase = (struct GraphNodeSwitchCase *) node;
+	switchCase->selectedCase = sWarpDest.areaIdx-1;
+    return NULL;
+}
+
 Gfx *geo_update_layer_transparency(s32 callContext, struct GraphNode *node, UNUSED void *context) {
     Gfx *dlStart, *dlHead;
     struct Object *objectGraphNode;

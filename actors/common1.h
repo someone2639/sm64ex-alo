@@ -202,6 +202,7 @@ extern const Gfx sand_seg3_dl_0302BCD0[];
 extern const GeoLayout star_geo[];
 extern const Gfx star_seg3_dl_0302B7B0[];
 extern const Gfx star_seg3_dl_0302B870[];
+extern const Gfx star_seg3_dl_0302B870_EE[];
 extern const Gfx star_seg3_dl_0302B9C0[];
 extern const Gfx star_seg3_dl_0302BA18[];
 
