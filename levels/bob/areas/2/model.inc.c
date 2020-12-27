@@ -1,7 +1,7 @@
 #include "model.inc.h"
 const Gfx DL_bob_2_0xe025bd0[] = {
 gsDPPipeSync(),
-gsDPSetCombineLERP(0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0, 0, 0, 0, TEXEL0),
+gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE, TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
 gsSPTexture(65535, 65535, 0, 0, 1),
 gsDPTileSync(),
@@ -22,6 +22,8 @@ gsSPVertex(VB_bob_2_0xe007810, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
+gsSPVertex(VB_bob_2_0xe007900, 15, 0),
+gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsDPSetTextureImage(0, 2, 1, texture_bob_2_0xe007010_custom),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
 gsDPLoadSync(),
