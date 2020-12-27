@@ -21,6 +21,11 @@ RM2C is the tool I developed to be able to port romhacks: [RM2C](https://gitlab.
  * Custom version of Puppycam
  * Extended Bounds
  * Various Bugfixes
+ * Skip Intro
+ 
+### Todo Changes
+
+ * Move level specific objects to generic banks
 
 ## Building
  * To build for sm64ex platforms, [click here](https://github.com/sm64pc/sm64ex/blob/nightly/README.md).
