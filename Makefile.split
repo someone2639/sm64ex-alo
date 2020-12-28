@@ -167,6 +167,10 @@ include $(BUILD_DIR)/level_rules.mk
 endif
 endif
 
+#custom leveldata rules
+$(BUILD_DIR)/levels/%/custom.leveldata.elf: SEGMENT_ADDRESS := 0x0E000000
+
+
 # --------------------------------------
 # Extra Level Rules
 # --------------------------------------

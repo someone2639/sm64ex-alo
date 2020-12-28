@@ -51,6 +51,15 @@ OUTPUT_ARCH (mips)
    } \
    END_SEG(name)
 
+#define CUSTOM_LEVEL(name) \
+   BEGIN_SEG(name##_segment_E, 0x0E000000) \
+   { \
+      BUILD_DIR/levels/name/custom.leveldata.o(.data); \
+	  BUILD_DIR/levels/name/custom.geo.o(.data); \
+      . = ALIGN(0x10); \
+   } \
+   END_SEG(name##_segment_E) \
+
 #define STANDARD_OBJECTS(name, segAddr, geoAddr) \
    BEGIN_SEG(name##_mio0, segAddr) \
    { \
@@ -1090,6 +1099,17 @@ SECTIONS
 
 #undef STUB_LEVEL
 #undef DEFINE_LEVEL
+
+#if RM2C
+#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
+#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) CUSTOM_LEVEL(folder)
+
+   #include "levels/level_defines.h"
+
+#undef STUB_LEVEL
+#undef DEFINE_LEVEL
+#endif
+
 
    /* 4E9FA0-? [?] */
    BEGIN_SEG(assets, __romPos)

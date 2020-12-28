@@ -27,6 +27,9 @@ NON_MATCHING ?= 1
 # Compiler to use in N64 (ido or gcc)
 COMPILER_N64 ?= gcc
 
+# Accept RM2C level folder output
+RM2C ?= 0
+
 # Build for original N64 (no pc code)
 TARGET_N64 = 1
 # Build and optimize for Raspberry Pi(s)
@@ -483,7 +486,7 @@ endif
 include Makefile.split
 
 # Source code files
-LEVEL_C_FILES := $(wildcard levels/*/leveldata.c) $(wildcard levels/*/script.c) $(wildcard levels/*/geo.c)
+LEVEL_C_FILES := $(wildcard levels/*/leveldata.c) $(wildcard levels/*/script.c) $(wildcard levels/*/geo.c) $(wildcard levels/*/custom.geo.c) $(wildcard levels/*/custom.leveldata.c)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
 
 ifeq ($(TARGET_N64),1)
@@ -1225,7 +1228,7 @@ $(BUILD_DIR)/%.elf: $(BUILD_DIR)/%.o
 # Override for level.elf, which otherwise matches the above pattern
 .SECONDEXPANSION:
 $(BUILD_DIR)/levels/%/leveldata.elf: $(BUILD_DIR)/levels/%/leveldata.o $(BUILD_DIR)/bin/$$(TEXTURE_BIN).elf
-	$(call print,Linking ELF file:,$<,$@)
+	$(call print,Linking Level ELF file:,$<,$@)
 	$(V)$(LD) -e 0 -Ttext=$(SEGMENT_ADDRESS) -Map $@.map --just-symbols=$(BUILD_DIR)/bin/$(TEXTURE_BIN).elf -o $@ $<
 
 $(BUILD_DIR)/%.bin: $(BUILD_DIR)/%.elf
