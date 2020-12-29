@@ -579,7 +579,15 @@ static void big_boo_act_2(void) {
         o->oAction = 1;
     }
 }
+#if RM2C
+static void big_boo_spawn_ghost_hunt_star(void) {
+    spawn_default_star(GhostHuntBooStarPos);
+}
 
+static void big_boo_spawn_balcony_star(void) {
+    spawn_default_star(BalconyBooStarPos);
+}
+#else
 static void big_boo_spawn_ghost_hunt_star(void) {
     spawn_default_star(980.0f, 1100.0f, 250.0f);
 }
@@ -587,11 +595,14 @@ static void big_boo_spawn_ghost_hunt_star(void) {
 static void big_boo_spawn_balcony_star(void) {
     spawn_default_star(700.0f, 3200.0f, 1900.0f);
 }
-
+#endif
 static void big_boo_spawn_merry_go_round_star(void) {
     struct Object *merryGoRound;
-
+	#if RM2C
+    spawn_default_star(MerryGoRoundStarPos);
+	#else
     spawn_default_star(-1600.0f, -2100.0f, 205.0f);
+	#endif
 
     merryGoRound = cur_obj_nearest_object_with_behavior(bhvMerryGoRound);
 

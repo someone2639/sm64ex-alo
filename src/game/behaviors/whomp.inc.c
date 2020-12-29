@@ -217,7 +217,11 @@ void whomp_act_8(void) {
             spawn_triangle_break_particles(20, 138, 3.0f, 4);
             cur_obj_shake_screen(SHAKE_POS_SMALL);
             o->oPosY += 100.0f;
+			#if RM2C
+            spawn_default_star(KingWhompStarPos);
+			#else
             spawn_default_star(180.0f, 3880.0f, 340.0f);
+			#endif
             cur_obj_play_sound_2(SOUND_OBJ_KING_WHOMP_DEATH);
             o->oAction = 9;
         }

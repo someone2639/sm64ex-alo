@@ -7,6 +7,12 @@
 #include "macros.h"
 #include "types.h"
 
+#if RM2C
+#include "Trajectories.inc.c"
+#include "Star_Pos.inc.c"
+#include "Item_Box.inc.c"
+#endif
+
 void set_yoshi_as_not_dead(void);
 s32 coin_step(s16 *collisionFlagsPtr);
 void moving_coin_flicker(void);
