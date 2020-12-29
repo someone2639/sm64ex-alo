@@ -15,6 +15,8 @@ Each branch of this repository should be a hack that has finished being ported o
 
 RM2C is the tool I developed to be able to port romhacks: [RM2C](https://gitlab.com/scuttlebugraiser/rom-manger-2-c)
 
+When using the data from RM2C, make sure to set RM2C to 1 in the makefile.
+
 ### Changes to Master Branch
 
  * Skinned Mario Model
@@ -22,10 +24,7 @@ RM2C is the tool I developed to be able to port romhacks: [RM2C](https://gitlab.
  * Extended Bounds
  * Various Bugfixes
  * Skip Intro
- 
-### Todo Changes
-
- * Move level specific objects to generic banks
+ * Separated Custom Leveldata From Vanilla Leveldata
 
 ## Building
  * To build for sm64ex platforms, [click here](https://github.com/sm64pc/sm64ex/blob/nightly/README.md).

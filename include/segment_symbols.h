@@ -14,6 +14,10 @@
     DECLARE_SEGMENT(name) \
     DECLARE_SEGMENT(name##_segment_7)
 
+#define DECLARE_CUSTOM_LEVEL_SEGMENT(name) \
+    DECLARE_SEGMENT(name) \
+    DECLARE_SEGMENT(name##_segment_E)
+
 DECLARE_ACTOR_SEGMENT(common0)
 DECLARE_ACTOR_SEGMENT(common1)
 DECLARE_ACTOR_SEGMENT(group0)
@@ -58,6 +62,16 @@ DECLARE_LEVEL_SEGMENT(ending)
 
 #undef STUB_LEVEL
 #undef DEFINE_LEVEL
+
+#if RM2C
+#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
+#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) DECLARE_CUSTOM_LEVEL_SEGMENT(folder)
+
+#include "levels/level_defines.h"
+
+#undef STUB_LEVEL
+#undef DEFINE_LEVEL
+#endif
 
 DECLARE_SEGMENT(segment2_mio0)
 
