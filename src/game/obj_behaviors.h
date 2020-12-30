@@ -7,10 +7,11 @@
 #include "macros.h"
 #include "types.h"
 
-#if RM2C
-#include "Trajectories.inc.c"
-#include "Star_Pos.inc.c"
-#include "Item_Box.inc.c"
+#ifdef RM2C
+extern const Trajectory KoopaBoB_path[];
+extern const Trajectory KoopaTHI_path[]; //#include "Trajectories.inc.c"
+#include "Star_Pos.inc.c" //just defines
+extern struct Struct802C0DF0 sExclamationBoxContents[];//#include "Item_Box.inc.c"
 #endif
 
 void set_yoshi_as_not_dead(void);

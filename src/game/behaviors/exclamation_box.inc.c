@@ -12,7 +12,7 @@ struct ObjectHitbox sExclamationBoxHitbox = {
     /* hurtboxHeight: */ 30,
 };
 
-#if RM2C
+#ifdef RM2C
 #else
 struct Struct802C0DF0 sExclamationBoxContents[] = { { 0, 0, 0, MODEL_MARIOS_WING_CAP, bhvWingCap },
                                                     { 1, 0, 0, MODEL_MARIOS_METAL_CAP, bhvMetalCap },

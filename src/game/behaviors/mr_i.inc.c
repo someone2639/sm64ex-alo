@@ -109,7 +109,7 @@ void mr_i_act_3(void) {
             o->oMrISize = sp1C * 0.6;
             if (o->oBehParams2ndByte) {
                 o->oPosY += 100.0f;
-				#if RM2C
+				#ifdef RM2C
                 spawn_default_star(MrIStarPos);
 				#else
                 spawn_default_star(1370, 2000.0f, -320.0f);

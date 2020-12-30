@@ -204,7 +204,7 @@ void bully_act_level_death(void) {
             spawn_mist_particles();
 
             if (o->oBullySubtype == BULLY_STYPE_CHILL)
-				#if RM2C
+				#ifdef RM2C
 					spawn_default_star(ChillBullyStarPos);
 				else {
 					spawn_default_star(BigBullyStarPos);

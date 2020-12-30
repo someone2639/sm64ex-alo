@@ -588,7 +588,7 @@ void *get_quad_collection_from_id(u32 id) {
             return castle_courtyard_movtex_star_statue_water;
         case TTM_MOVTEX_PUDDLE:
             return ttm_movtex_puddle;
-        #if RM2C
+        #ifdef RM2C
 		default:
             return GetRomhackWaterBox(id);
 		#else

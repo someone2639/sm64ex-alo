@@ -111,7 +111,7 @@ extern f32 gPaintingMarioYEntry;
 #define MOVTEX_TREADMILL_BIG         (0 | MOVTEX_AREA_TTC)
 #define MOVTEX_TREADMILL_SMALL       (1 | MOVTEX_AREA_TTC)
 
-#if RM2C
+#ifdef RM2C
 extern void *GetRomhackWaterBox(u32 id);
 #endif
 
