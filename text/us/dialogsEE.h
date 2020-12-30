@@ -26,23 +26,22 @@ crap all over the place!\n\
 Is it not allowed to make\n\
 some jokes?"))
 
-DEFINE_DIALOG(DIALOG_EE_004,1,3,95,200, _("ARRRRRH! You landlubber!\n\
+DEFINE_DIALOG(DIALOG_EE_004,1,3,95,200, _("ARRRRGH! You landlubber!\n\
 Here starts the big\n\
-treasure hunt!\n\
-Dive down and find the \n\
-gold!"))
+treasure hunt! Dive\n\
+down and find gold!"))
 
 DEFINE_DIALOG(DIALOG_EE_005,1,3,30,200, _("Hey, Mario! Is it true\n\
 that you beat the Big\n\
 Bob-omb? Cool!\n\
-You must be strong. And\n\
-pretty fast. So, how fast\n\
-are you, anyway?\n\
+You must be strong and\n\
+pretty fast. So, just how\n\
+fast are you, anyway?\n\
 Fast enough to beat me...\n\
 Koopa the Quick? I don't\n\
 think so. Just try me.\n\
 How about a race to the\n\
-mountaintop, where the\n\
+mountain top, where the\n\
 Big Bob-omb was?\n\
 Whaddya say? When I say\n\
 『Go,』 let the race begin!\n\
@@ -68,12 +67,10 @@ DEFINE_DIALOG(DIALOG_EE_008,1,4,30,200, _("Whoever wants to get all\n\
 the stars needs nerves\n\
 of steel.\n\
 Even when the camera is\n\
-a bitch, keep on strugg-\n\
-ling and you may be\n\
-revarded. I mean...\n\
-I tested it, it's \n\
-possible. (except you use\n\
-the wrong way, who knows)"))
+rough, keep on trying\n\
+and you may be\n\
+rewarded. I mean...\n\
+It's possible."))
 
 DEFINE_DIALOG(DIALOG_EE_009,1,5,30,200, _("Hey, little boy!\n\
 Have I seen you before?\n\
@@ -105,7 +102,7 @@ cap and finished the\n\
 easiest task in this\n\
 level.\n\
 You'll have fun with\n\
-the rest xD\n\
+the rest...\n\
 \n\
 Save?\n\
 \n\
@@ -147,7 +144,7 @@ In addition, the 2nd\n\
 overworld has been\n\
 improved so you don't\n\
 have to walk that long\n\
-to the level entrances :)"))
+to the level entrances"))
 
 DEFINE_DIALOG(DIALOG_EE_016,1,3,30,200, _("Do you know the\n\
 'fast wall kicks'?\n\
@@ -178,7 +175,7 @@ But you won't defeat me\n\
 a third time.\n\
 Just look at this\n\
 newfangled anti-plumber-\n\
-apparats. HA!"))
+apparatus. HA!"))
 
 DEFINE_DIALOG(DIALOG_EE_018,1,4,30,200, _("On the second platform\n\
 there's an invisible\n\
@@ -186,20 +183,10 @@ wall. Don't know why,\n\
 but you can pass it\n\
 at the left side."))
 
-DEFINE_DIALOG(DIALOG_EE_019,1,2,30,200, _("Beliebe me...\n\
+DEFINE_DIALOG(DIALOG_EE_019,1,2,30,200, _("Believe me...\n\
 You don't want to go\n\
 down there.\n\
-But if I can't stop you\n\
-here's a hint cause the\n\
-camera sucks a certain\n\
-body peace.\n\
-Keep in Lakitu perspective,\n\
-not zoomed out.\n\
-And maybe it's just my\n\
-imagination but it could\n\
-be helpful to hold\n\
-[C]| while in water.\n\
-Good luck."))
+But if I can't stop you."))
 
 DEFINE_DIALOG(DIALOG_EE_020,1,6,95,150, _("INTRO"))
 
@@ -209,7 +196,7 @@ evil, harhar!\n\
 I froze this ugly clean\n\
 beach. Now every dive\n\
 is so refreshing!\n\
-Aren't I awesome? :D"))
+Aren't I awesome?"))
 
 DEFINE_DIALOG(DIALOG_EE_022,1,2,95,200, _("YOU SHALL NOT PASS!"))
 
@@ -300,7 +287,7 @@ When you are looking for\n\
 100 coins or the red\n\
 coins, keep a save coin\n\
 for last cause some\n\
-coins are just bull★★★★\n\
+coins are just AWFUL\n\
 if you get them last.\n\
 And now, leave me alone."))
 
@@ -345,11 +332,11 @@ I could cry...\n\
 Why did I buy that\n\
 villa...\n\
 and that boat...\n\
-and all te other\n\
-fancy crap. What am I\n\
+and all the other\n\
+fancy junk. What am I\n\
 supposed to do now..."))
 
-DEFINE_DIALOG(DIALOG_EE_036,1,5,30,200, _("The emmission of the lava\n\
+DEFINE_DIALOG(DIALOG_EE_036,1,5,30,200, _("The emissions of the lava\n\
 caused this door to turn\n\
 black. But it still needs\n\
 10 stars to open.\n\
@@ -372,9 +359,9 @@ building and I am not\n\
 allowed to get rid\n\
 of them."))
 
-DEFINE_DIALOG(DIALOG_EE_038,1,3,95,200, _("The (censored) blood\n\
-of a suicidle star dis-\n\
-gusts the door so much\n\
+DEFINE_DIALOG(DIALOG_EE_038,1,3,95,200, _("The blood\n\
+of a star disgusts\n\
+the door so much\n\
 that you can open it\n\
 now."))
 
@@ -399,7 +386,7 @@ Now the ground is too\n\
 hard to bury the corpses.\n\
 Only a few spots still\n\
 desire more souls, hehehe.\n\
-Anways, the people then\n\
+Anyways, the people then\n\
 started to place the \n\
 bodies inside those \n\
 towers. I heard not\n\
@@ -410,7 +397,7 @@ But you won't find any\n\
 living creature here\n\
 except for some young\n\
 fellows who seek for\n\
-adrinalin."))
+adrenaline."))
 
 DEFINE_DIALOG(DIALOG_EE_041,1,3,30,200, _("YEAH! I knew I could\n\
 pull it off!\n\
@@ -430,21 +417,20 @@ So keep this in mind:\n\
 No one will give you\n\
 advice for the camera.\n\
 Either you know\n\
-how to use these 5\n\
+how to use these 6\n\
 buttons properly or\n\
-you are in the wrong\n\
-game!"))
+you're a goner."))
 
 DEFINE_DIALOG(DIALOG_EE_043,1,5,30,200, _("If you already can't\n\
-get passed the start\n\
+get past the start\n\
 I recommend you continue\n\
 playing pony and\n\
 gardening games."))
 
 DEFINE_DIALOG(DIALOG_EE_044,1,5,95,200, _("You dare to enter the\n\
 levels of the Plasma-\n\
-Temple, you insane\n\
-person?\n\
+Temple, you crazy\n\
+nerd?\n\
 Be warned, we won't\n\
 give you a hand but\n\
 rather a chainsaw.\n\
@@ -475,7 +461,7 @@ The cannon shall be\n\
 Ohohohohopen!"))
 
 DEFINE_DIALOG(DIALOG_EE_048,1,4,30,200, _("I'm the king of all\n\
-signs but an imbecil\n\
+signs but an imbecile\n\
 like you wouldn't notice\n\
 that. When you don't\n\
 look I'm wearing a \n\
@@ -513,7 +499,7 @@ went into this and I\n\
 hope I won't receive\n\
 murder threats now.\n\
 And if I do get some,\n\
-I did my job correctly :P\n\
+I did my job correctly\n\
 Congratulations for\n\
 accomplishing every\n\
 goal. You are truly a\n\
@@ -707,7 +693,7 @@ that far.\n\
 Now you may think\n\
 'Nah, it can't get that\n\
 much harder.'\n\
-Well, you're wrong. :P"))
+Well, you're wrong."))
 
 DEFINE_DIALOG(DIALOG_EE_065,1,6,30,200, _("That you are reading \n\
 this...\n\
@@ -776,7 +762,7 @@ temple. But it is so\n\
 strong that you need\n\
 all 150 stars to break it.\n\
 ...just look at your\n\
-face xD\n\
+face\n\
 To uncover the last\n\
 secret of this game you\n\
 have to use all of your\n\
@@ -957,7 +943,7 @@ DEFINE_DIALOG(DIALOG_EE_082,1,4,30,200, _("Argh, I'm so pissed off!\n\
 The other Toads around\n\
 here are always in such\n\
 a bad mood. That even\n\
-had an effect on me :(\n\
+had an effect on me\n\
 Back then I loved flowers.\n\
 Now I just want to tear\n\
 that stupid weed out of\n\
@@ -1206,7 +1192,7 @@ I bet you already had\n\
 a lot of problems to get\n\
 this far but I can promise\n\
 that it will be much much\n\
-worse :P"))
+worse"))
 
 DEFINE_DIALOG(DIALOG_EE_145,1,6,150,200, _("50... may sound like much\n\
 but it isn't much.\n\
