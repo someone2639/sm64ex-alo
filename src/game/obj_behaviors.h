@@ -8,10 +8,10 @@
 #include "types.h"
 
 #ifdef RM2C
+#include "behavior_actions.h"
 extern const Trajectory KoopaBoB_path[];
 extern const Trajectory KoopaTHI_path[]; //#include "Trajectories.inc.c"
 #include "Star_Pos.inc.c" //just defines
-extern struct Struct802C0DF0 sExclamationBoxContents[];//#include "Item_Box.inc.c"
 #endif
 
 void set_yoshi_as_not_dead(void);

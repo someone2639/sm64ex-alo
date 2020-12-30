@@ -642,6 +642,12 @@ ifeq ($(BETTERCAMERA),1)
   EXT_OPTIONS_MENU := 1
 endif
 
+# Add RM2C to flags
+ifeq ($(RM2C),1)
+  CC_CHECK += -DRM2C
+  CFLAGS += -DRM2C
+endif
+
 # Check for extended options menu option
 ifeq ($(EXT_OPTIONS_MENU),1)
   CC_CHECK += -DEXT_OPTIONS_MENU -DCHEATS_ACTIONS
