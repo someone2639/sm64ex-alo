@@ -1100,15 +1100,11 @@ SECTIONS
 #undef STUB_LEVEL
 #undef DEFINE_LEVEL
 
-#if RM2C
-#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
-#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) CUSTOM_LEVEL(folder)
-
-   #include "levels/level_defines.h"
-
-#undef STUB_LEVEL
+// For RM2C, ifdef RM2C don't work here :(
+#define DEFINE_LEVEL(folder) CUSTOM_LEVEL(folder)
+   #include "levels/custom_level_defines.h"
 #undef DEFINE_LEVEL
-#endif
+
 
 
    /* 4E9FA0-? [?] */
