@@ -63,16 +63,6 @@ DECLARE_LEVEL_SEGMENT(ending)
 #undef STUB_LEVEL
 #undef DEFINE_LEVEL
 
-#if RM2C
-#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
-#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) DECLARE_CUSTOM_LEVEL_SEGMENT(folder)
-
-#include "levels/level_defines.h"
-
-#undef STUB_LEVEL
-#undef DEFINE_LEVEL
-#endif
-
 DECLARE_SEGMENT(segment2_mio0)
 
 DECLARE_SEGMENT(water_skybox_mio0)

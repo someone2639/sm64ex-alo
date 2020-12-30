@@ -69,13 +69,7 @@ struct Struct8032F698 {
     s16 unk4;
 };
 
-struct Struct802C0DF0 {
-    u8 unk0;
-    u8 unk1;
-    u8 unk2;
-    u8 model;
-    const BehaviorScript *behavior;
-};
+
 
 struct Struct8032F754 {
     s32 unk0;

@@ -1,5 +1,14 @@
 #ifndef BEHAVIOR_ACTIONS_H
 #define BEHAVIOR_ACTIONS_H
+#include "types.h"
+
+struct Struct802C0DF0 {
+    u8 unk0;
+    u8 unk1;
+    u8 unk2;
+    u8 model;
+    const BehaviorScript *behavior;
+};
 
 void spawn_mist_particles_variable(s32 count, s32 offsetY, f32 size);
 void bhv_spawn_star_no_level_exit(u32);
