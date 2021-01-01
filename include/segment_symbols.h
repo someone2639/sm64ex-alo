@@ -64,6 +64,13 @@ DECLARE_LEVEL_SEGMENT(ending)
 #undef STUB_LEVEL
 #undef DEFINE_LEVEL
 
+#define DEFINE_LEVEL(folder,_0) DECLARE_CUSTOM_LEVEL_SEGMENT(folder)
+
+#include "levels/custom_level_defines.h"
+
+#undef DEFINE_LEVEL
+
+
 DECLARE_SEGMENT(segment2_mio0)
 
 DECLARE_SEGMENT(water_skybox_mio0)

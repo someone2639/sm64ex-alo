@@ -1106,7 +1106,7 @@ SECTIONS
 #undef DEFINE_LEVEL
 
 //So RM2C can partially output custom levels instead of forcing all levels to have custom content
-#define DEFINE_LEVEL(folder) CUSTOM_LEVEL(folder)
+#define DEFINE_LEVEL(folder,_0) CUSTOM_LEVEL(folder)
    #include "levels/custom_level_defines.h"
 #undef DEFINE_LEVEL
 
