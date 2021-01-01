@@ -148,12 +148,16 @@ static const LevelScript script_L5[] = {
 
 // Include the level jumptable.
 
-#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 
-#define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) JUMP_IF(OP_EQ, levelenum, script_exec_ ## folder),
 
 static const LevelScript script_exec_level_table[] = {
     GET_OR_SET(/*op*/ OP_GET, /*var*/ VAR_CURR_LEVEL_NUM),
+#define DEFINE_LEVEL(folder) JUMP_IF(OP_EQ, levelenum, custom_script_exec_ ## folder),
+
+    #include "levels/custom_level_defines.h"
+
+#define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
+#define DEFINE_LEVEL(_0, levelenum, _2, folder, _4, _5, _6, _7, _8, _9, _10) JUMP_IF(OP_EQ, levelenum, script_exec_ ## folder),
     #include "levels/level_defines.h"
     EXIT(),
 };
@@ -162,8 +166,8 @@ static const LevelScript script_exec_level_table[] = {
 #ifdef RM2C
 
 #define DEFINE_LEVEL(folder) \
-static const LevelScript script_exec_ ## folder [] = { \
-    EXECUTE(0x19, _ ## folder ## _segment_19SegmentRomStart, _ ## folder ## _segment_19SegmentRomEnd, level_ ## folder ## _entry), \
+static const LevelScript custom_script_exec_ ## folder [] = { \
+    EXECUTE(0x19, _ ## folder ## _segment_19SegmentRomStart, _ ## folder ## _segment_19SegmentRomEnd, level_ ## folder ## _custom_entry), \
     RETURN(), \
 };
 

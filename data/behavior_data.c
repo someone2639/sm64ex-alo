@@ -2124,6 +2124,36 @@ const BehaviorScript bhvBlueFish[] = {
     END_LOOP(),
 };
 
+const BehaviorScript bhvFish2[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    SET_HOME(),
+    LOAD_ANIMATIONS(oAnimations, blue_fish_seg3_anims_0301C2B0),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_blue_fish_movement_loop),
+    END_LOOP(),
+};
+const BehaviorScript bhvFish3[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, (OBJ_FLAG_SET_FACE_YAW_TO_MOVE_YAW | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
+    SET_HOME(),
+    LOAD_ANIMATIONS(oAnimations, blue_fish_seg3_anims_0301C2B0),
+    ANIMATE(0),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_blue_fish_movement_loop),
+    END_LOOP(),
+};
+
+const BehaviorScript bhvLargeFishGroup[] = {
+    BEGIN(OBJ_LIST_DEFAULT),
+    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
+    SET_HOME(),
+    BEGIN_LOOP(),
+        CALL_NATIVE(bhv_tank_fish_group_loop),
+    END_LOOP(),
+};
+
 const BehaviorScript bhvTankFishGroup[] = {
     BEGIN(OBJ_LIST_DEFAULT),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
