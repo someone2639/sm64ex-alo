@@ -55,10 +55,15 @@ OUTPUT_ARCH (mips)
    BEGIN_SEG(name##_segment_E, 0x0E000000) \
    { \
       BUILD_DIR/levels/name/custom.leveldata.o(.data); \
-	  BUILD_DIR/levels/name/custom.geo.o(.data); \
-      . = ALIGN(0x10); \
    } \
    END_SEG(name##_segment_E) \
+   BEGIN_SEG(name##_segment_19, 0x19000000) \
+   { \
+	  BUILD_DIR/levels/name/custom.geo.o(.data); \
+	  BUILD_DIR/levels/name/custom.script.o(.data); \
+      . = ALIGN(0x10); \
+   } \
+   END_SEG(name##_segment_19)
 
 #define STANDARD_OBJECTS(name, segAddr, geoAddr) \
    BEGIN_SEG(name##_mio0, segAddr) \

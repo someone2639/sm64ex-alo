@@ -16,7 +16,8 @@
 
 #define DECLARE_CUSTOM_LEVEL_SEGMENT(name) \
     DECLARE_SEGMENT(name) \
-    DECLARE_SEGMENT(name##_segment_E)
+    DECLARE_SEGMENT(name##_segment_E) \
+    DECLARE_SEGMENT(name##_segment_19)
 
 DECLARE_ACTOR_SEGMENT(common0)
 DECLARE_ACTOR_SEGMENT(common1)

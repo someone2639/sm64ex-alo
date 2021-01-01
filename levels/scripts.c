@@ -159,6 +159,17 @@ static const LevelScript script_exec_level_table[] = {
 };
 #undef DEFINE_LEVEL
 
+#ifdef RM2C
+
+#define DEFINE_LEVEL(folder) \
+static const LevelScript script_exec_ ## folder [] = { \
+    EXECUTE(0x19, _ ## folder ## _segment_19SegmentRomStart, _ ## folder ## _segment_19SegmentRomEnd, level_ ## folder ## _entry), \
+    RETURN(), \
+};
+
+#include "levels/custom_level_defines.h"
+
+#undef DEFINE_LEVEL
 #define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
 static const LevelScript script_exec_ ## folder [] = { \
     EXECUTE(0x1A, _ ## folder ## SegmentRomStart, _ ## folder ## SegmentRomEnd, level_ ## folder ## _entry), \
@@ -168,6 +179,20 @@ static const LevelScript script_exec_ ## folder [] = { \
 #include "levels/level_defines.h"
 #undef STUB_LEVEL
 #undef DEFINE_LEVEL
+
+#else
+
+#define DEFINE_LEVEL(_0, _1, _2, folder, _4, _5, _6, _7, _8, _9, _10) \
+static const LevelScript script_exec_ ## folder [] = { \
+    EXECUTE(0x1A, _ ## folder ## SegmentRomStart, _ ## folder ## SegmentRomEnd, level_ ## folder ## _entry), \
+    RETURN(), \
+};
+
+#include "levels/level_defines.h"
+#undef STUB_LEVEL
+#undef DEFINE_LEVEL
+
+#endif
 
 const LevelScript script_func_global_1[] = {
     LOAD_MODEL_FROM_GEO(MODEL_BLUE_COIN_SWITCH,        blue_coin_switch_geo),

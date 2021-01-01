@@ -486,7 +486,7 @@ endif
 include Makefile.split
 
 # Source code files
-LEVEL_C_FILES := $(wildcard levels/*/leveldata.c) $(wildcard levels/*/script.c) $(wildcard levels/*/geo.c) $(wildcard levels/*/custom.geo.c) $(wildcard levels/*/custom.leveldata.c)
+LEVEL_C_FILES := $(wildcard levels/*/leveldata.c) $(wildcard levels/*/script.c) $(wildcard levels/*/geo.c) $(wildcard levels/*/custom.geo.c) $(wildcard levels/*/custom.script.c) $(wildcard levels/*/custom.leveldata.c)
 C_FILES := $(foreach dir,$(SRC_DIRS),$(wildcard $(dir)/*.c)) $(LEVEL_C_FILES)
 
 ifeq ($(TARGET_N64),1)
