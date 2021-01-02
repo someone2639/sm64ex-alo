@@ -1,6 +1,11 @@
 # sm64ex_alo
 Fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex/tree/nightly) with additional features. 
 
+## Additional Pre reqs
+
+ * pypng
+ * bitstring
+
 ## Changes
  * Restored N64 build.
  * Additional backends merged from other forks (3DS, Wii U, Switch) (more incoming)
@@ -19,12 +24,14 @@ When using the data from RM2C, make sure to set RM2C to 1 in the makefile.
 
 ### Changes to Master Branch
 
+ * CI texture support
  * Skinned Mario Model
  * Custom version of Puppycam
  * Extended Bounds
  * Various Bugfixes
  * Skip Intro
  * Separated Custom Leveldata From Vanilla Leveldata
+ * Various defines added to accept RM2C output configurations in single config file
 
 ## Building
  * To build for sm64ex platforms, [click here](https://github.com/sm64pc/sm64ex/blob/nightly/README.md).
