@@ -1214,7 +1214,7 @@ ifeq ($(EXTERNAL_DATA),0)
 # Color Index CI8
 $(BUILD_DIR)/%.ci8.inc.c: %.ci8.png
 	$(call print,Converting CI:,$<,$@)
-	$(V)$(N64GRAPHICS_CI) -i $@ -g $< -f ci8
+	python3 $(BINPNG) $< $@ 8
 
 # Color Index CI4
 $(BUILD_DIR)/%.ci4.inc.c: %.ci4.png
