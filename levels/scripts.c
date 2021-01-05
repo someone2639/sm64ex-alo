@@ -40,6 +40,9 @@
 #define DEFINE_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) + 3
 static const LevelScript script_exec_level_table[2
   #include "level_defines.h"
+  #undef DEFINE_LEVEL
+  #define DEFINE_LEVEL(_0, _1) + 3
+  #include "custom_level_defines.h"
 ];
 #undef DEFINE_LEVEL
 #undef STUB_LEVEL
