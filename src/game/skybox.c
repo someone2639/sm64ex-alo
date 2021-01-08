@@ -248,6 +248,10 @@ Vtx *make_skybox_rect(s32 tileIndex, s8 colorIndex) {
 void draw_skybox_tile_grid(Gfx **dlist, s8 background, s8 player, s8 colorIndex) {
     s32 row;
     s32 col;
+	//Custom skyboxes have an arg of 10. This is a bandaid fix so game behaves predictably.
+	if (background>9){
+		background = 9;
+	};
 
     for (row = 0; row < 3; row++) {
         for (col = 0; col < 3; col++) {

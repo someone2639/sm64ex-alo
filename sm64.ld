@@ -1082,6 +1082,9 @@ SECTIONS
    MIO0_SEG(bidw_skybox, 0x0A000000)
    MIO0_SEG(bits_skybox, 0x0A000000)
 
+   // Custom Skyboxes from RM2C. In base repo dummy file exists
+   #include "textures/skyboxes/Skybox_Rules.ld"
+
    // Texture bins
    MIO0_SEG(fire, 0x09000000)
    MIO0_SEG(spooky, 0x09000000)
