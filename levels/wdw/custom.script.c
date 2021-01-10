@@ -19,6 +19,7 @@ const LevelScript level_wdw_custom_entry[] = {
 INIT_LEVEL(),
 LOAD_MIO0(0x07, _bbh_segment_7SegmentRomStart, _bbh_segment_7SegmentRomEnd),
 LOAD_RAW(0x1A, _bbhSegmentRomStart, _bbhSegmentRomEnd),
+LOAD_MIO0(        /*seg*/ 0x0A, _SkyboxCustom26050240_skybox_mio0SegmentRomStart, _SkyboxCustom26050240_skybox_mio0SegmentRomEnd),
 LOAD_RAW(0x0E, _wdw_segment_ESegmentRomStart, _wdw_segment_ESegmentRomEnd),
 LOAD_MIO0(8,_common0_mio0SegmentRomStart,_common0_mio0SegmentRomEnd),
 LOAD_RAW(15,_common0_geoSegmentRomStart,_common0_geoSegmentRomEnd),
