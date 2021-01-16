@@ -38,10 +38,10 @@ static void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
 	}
     for (i = 0; i < vertcount; i++) {
 		Varray = &verts[i].n;
-		if (correction){
-			Varray[bhv] += correction;
-		}else
+		if (correction==0){
 			Varray[bhv] += speed;
+		}else
+			Varray[bhv] -= correction;
     }
     verts[0].n.flag++;
 }
@@ -61,12 +61,13 @@ static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
 
 
 static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scrolltype) {
-    switch (scrolltype) {
+    switch (scrollbhv) {
         case MODE_SCROLL_UV:
-			shift_UV_NORMAL(vert, vertcount, spd, scrollbhv);
+			shift_UV_NORMAL(vert, vertcount, spd, scrolltype);
+			break;
         case MODE_SCROLL_SINE:
         case MODE_SCROLL_JUMP:
-			shift_UV_SINE(vert, vertcount, spd, scrollbhv);
+			shift_UV_SINE(vert, vertcount, spd, scrolltype);
             break;
     }
 }
