@@ -1,7 +1,7 @@
 //This is a series of defines to edit commonly changed parameters in romhacks
 //These are commonly referred to as tweaks
 #define MARIO_START_LIVES 10
-#define INFINITE_LIVES 1
+#define INFINITE_LIVES 201991066
 #define START_LEVEL 26
 #define COINS_REQ_COINSTAR 80
 #define REDS_REQ 6
@@ -14,12 +14,12 @@
 #define TOAD_STAR_2_REQUIREMENT 25
 #define TOAD_STAR_3_REQUIREMENT 35
 #define SLIDE_TIME 390
-#define MC_TIME 2400
-#define WC_TIME 3600
-#define VC_TIME 1800
-#define MC_LEVEL_TIME 1200
-#define WC_LEVEL_TIME 2400
-#define VC_LEVEL_TIME 364
+#define MC_TIME 1800
+#define WC_TIME 2700
+#define VC_TIME 1350
+#define MC_LEVEL_TIME 900
+#define WC_LEVEL_TIME 1800
+#define VC_LEVEL_TIME 273
 #define HUD_LIVES_MARIO_X GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(22)
 #define HUD_LIVES_MARIO_Y 189
 #define HUD_LIVES_CROSS_X GFX_DIMENSIONS_RECT_FROM_LEFT_EDGE(38)
