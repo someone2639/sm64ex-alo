@@ -78,7 +78,6 @@ DECLARE_LEVEL_SEGMENT(ending)
 
 #undef MiO0_SEG
 
-
 DECLARE_SEGMENT(segment2_mio0)
 
 DECLARE_SEGMENT(water_skybox_mio0)
