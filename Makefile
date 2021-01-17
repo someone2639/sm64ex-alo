@@ -642,7 +642,7 @@ ifeq ($(BETTERCAMERA),1)
   EXT_OPTIONS_MENU := 1
 endif
 
-# Add RM2C to flags
+# Add RM2C to flags, add var for internal name
 ifeq ($(RM2C),1)
   CC_CHECK += -DRM2C
   CFLAGS += -DRM2C
