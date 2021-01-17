@@ -929,9 +929,9 @@ s32 update_8_directions_camera(struct Camera *c, Vec3f focus, Vec3f pos) {
     calc_y_to_curr_floor(&posY, 1.f, 200.f, &focusY, 0.9f, 200.f);
     focus_on_mario(focus, pos, posY + yOff, focusY + yOff, sLakituDist + baseDist, pitch, camYaw);
     pan_ahead_of_player(c);
-    if (gCurrLevelArea == AREA_DDD_SUB) {
-        camYaw = clamp_positions_and_find_yaw(pos, focus, 6839.f, 995.f, 5994.f, -3945.f);
-    }
+    // if (gCurrLevelArea == AREA_DDD_SUB) {
+        // camYaw = clamp_positions_and_find_yaw(pos, focus, 6839.f, 995.f, 5994.f, -3945.f);
+    // }
 
     return camYaw;
 }
@@ -2163,12 +2163,13 @@ s16 update_default_camera(struct Camera *c) {
         // Turn rapidly if very close to Mario
         c->pos[0] += (250 - xzDist) * sins(yaw);
         c->pos[2] += (250 - xzDist) * coss(yaw);
+		
         if (sCSideButtonYaw == 0) {
             nextYawVel = 0x1000;
             sYawSpeed = 0;
             vec3f_get_dist_and_angle(sMarioCamState->pos, c->pos, &dist, &pitch, &yaw);
         }
-        closeToMario |= 1;
+		closeToMario |= 1;
     }
 
     if (-16 < gPlayer1Controller->stickY) {
@@ -2220,7 +2221,8 @@ s16 update_default_camera(struct Camera *c) {
             yawVel = 0;
         }
         if (yawVel != 0 && get_dialog_id() == -1) {
-            camera_approach_s16_symmetric_bool(&yaw, yawGoal, yawVel);
+			// stop mario cam from swinging behind mario
+            // camera_approach_s16_symmetric_bool(&yaw, yawGoal, yawVel);
         }
     }
 
@@ -3460,11 +3462,12 @@ void init_camera(struct Camera *c) {
     c->nextYaw = gLakituState.yaw;
 
 #ifdef BETTERCAMERA
-	newcam_active = 1;
-	gLakituState.mode = CAMERA_MODE_NEWCAM;
-	gLakituState.defMode = CAMERA_MODE_NEWCAM;
-    newcam_init(c, 0);
-    newcam_init_settings();
+	if (newcam_active){
+		gLakituState.mode = CAMERA_MODE_NEWCAM;
+		gLakituState.defMode = CAMERA_MODE_NEWCAM;
+		newcam_init(c, 0);
+		newcam_init_settings();
+	}
 #endif
 }
 
