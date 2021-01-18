@@ -5,6 +5,7 @@ Fork of [sm64pc/sm64ex](https://github.com/sm64pc/sm64ex/tree/nightly) with addi
 
  * pypng
  * bitstring
+ * pillow
 
 ## Changes
  * Restored N64 build.
@@ -34,6 +35,14 @@ When using the data from RM2C, make sure to set RM2C to 1 in the makefile.
  * Various defines added to accept RM2C output configurations in single config file
 
 ## Building
+
+### Recommended BUILD cmds
+
+ 1. WINDOWS_BUILD
+	*make clean && make -j4 TARGET_N64=0 TARGET_ARCH=native WINDOWS_BUILD=1 TARGET_GAME_CONSOLE=0 DEBUG=1 NODRAWINGDISTANCE=1
+ 2. N64 BUILD
+	* make -j4
+
  * To build for sm64ex platforms, [click here](https://github.com/sm64pc/sm64ex/blob/nightly/README.md).
  * To build for N64, [click here](https://github.com/n64decomp/sm64/blob/master/README.md). (TARGET_N64=1)
  * To build for Wii U, [click here](https://github.com/aboood40091/sm64-port/blob/master/README.md). (TARGET_WII_U=1)
