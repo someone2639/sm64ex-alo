@@ -2150,28 +2150,15 @@ void shade_screen(void) {
     gSPDisplayList(gDisplayListHead++, dl_draw_text_bg_box);
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);
 }
-
+extern Gfx DL_red_coin_geo_0x80263e8[];
 void print_animated_red_coin(s16 x, s16 y) {
     s32 timer = gGlobalTimer;
 
-    create_dl_translation_matrix(MENU_MTX_PUSH, x, y, 0);
+    create_dl_translation_matrix(MENU_MTX_PUSH, x, y-6, 0);
     create_dl_scale_matrix(MENU_MTX_NOPUSH, 0.2f, 0.2f, 1.0f);
+    create_dl_rotation_matrix(MENU_MTX_NOPUSH, (f32) timer*5 ,0.0f, 0.0f, 1.0f);
     gDPSetRenderMode(gDisplayListHead++, G_RM_TEX_EDGE, G_RM_TEX_EDGE2);
-
-    switch (timer & 6) {
-        case 0:
-            gSPDisplayList(gDisplayListHead++, coin_seg3_dl_03007940);
-            break;
-        case 2:
-            gSPDisplayList(gDisplayListHead++, coin_seg3_dl_03007968);
-            break;
-        case 4:
-            gSPDisplayList(gDisplayListHead++, coin_seg3_dl_03007990);
-            break;
-        case 6:
-            gSPDisplayList(gDisplayListHead++, coin_seg3_dl_030079B8);
-            break;
-    }
+	gSPDisplayList(gDisplayListHead++, DL_red_coin_geo_0x80263e8);
 
     gDPSetRenderMode(gDisplayListHead++, G_RM_AA_ZB_OPA_SURF, G_RM_AA_ZB_OPA_SURF2);
     gSPPopMatrix(gDisplayListHead++, G_MTX_MODELVIEW);

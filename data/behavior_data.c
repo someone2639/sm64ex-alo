@@ -875,7 +875,7 @@ const BehaviorScript bhvMrIBlueCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     SET_INT(oInteractType, INTERACT_COIN),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    // BILLBOARD(),
     SET_INT(oIntangibleTimer, 0),
     SET_FLOAT(oMrIUnk110, 20),
     SET_INT(oAnimState, -1),
@@ -885,7 +885,8 @@ const BehaviorScript bhvMrIBlueCoin[] = {
     SET_HITBOX(/*Radius*/ 120, /*Height*/ 64),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_loop),
-        ADD_INT(oAnimState, 1),
+        // ADD_INT(oAnimState, 1),
+		ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
@@ -895,20 +896,25 @@ const BehaviorScript bhvCoinInsideBoo[] = {
     SET_INT(oInteractType, INTERACT_COIN),
     OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -70, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
-    BILLBOARD(),
+    // BILLBOARD(),
     CALL_NATIVE(bhv_init_room),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_inside_boo_loop),
-        ADD_INT(oAnimState, 1),
+        // ADD_INT(oAnimState, 1),
+		ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
 const BehaviorScript bhvCoinFormationSpawn[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    // BILLBOARD(),
+	SET_INT(oFaceAnglePitch, 0),
+	SET_INT(oFaceAngleRoll, 0),
+	SET_INT(oFaceAngleYaw, 0),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_formation_spawn_loop),
+		ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
@@ -930,21 +936,23 @@ const BehaviorScript bhvOneCoin[] = {
 const BehaviorScript bhvYellowCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     // Yellow coin - common:
-    BILLBOARD(),
+    // BILLBOARD(),
     OR_INT(oFlags, (OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
     CALL_NATIVE(bhv_yellow_coin_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_yellow_coin_loop),
+		ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
 const BehaviorScript bhvTemporaryYellowCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
-    BILLBOARD(),
+    // BILLBOARD(),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
     CALL_NATIVE(bhv_yellow_coin_init),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_temp_coin_loop),
+		ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
@@ -969,12 +977,12 @@ const BehaviorScript bhvTenCoinsSpawn[] = {
 const BehaviorScript bhvSingleCoinGetsSpawned[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    // BILLBOARD(),
     CALL_NATIVE(bhv_coin_init),
     SET_OBJ_PHYSICS(/*Wall hitbox radius*/ 30, /*Gravity*/ -400, /*Bounciness*/ -70, /*Drag strength*/ 1000, /*Friction*/ 1000, /*Buoyancy*/ 200, /*Unused*/ 0, 0),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_coin_loop),
-        ADD_INT(oAnimState, 1),
+        ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
@@ -2864,14 +2872,14 @@ const BehaviorScript bhvHiddenBlueCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     SET_INT(oInteractType, INTERACT_COIN),
     OR_INT(oFlags, (OBJ_FLAG_ACTIVE_FROM_AFAR | OBJ_FLAG_COMPUTE_DIST_TO_MARIO | OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE)),
-    BILLBOARD(),
+    // BILLBOARD(),
     SET_HITBOX(/*Radius*/ 100, /*Height*/ 64),
     SET_INT(oDamageOrCoinValue, 5),
     SET_INT(oIntangibleTimer, 0),
     SET_INT(oAnimState, -1),
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_hidden_blue_coin_loop),
-        ADD_INT(oAnimState, 1),
+        ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
@@ -4682,7 +4690,7 @@ const BehaviorScript bhvHiddenRedCoinStar[] = {
 const BehaviorScript bhvRedCoin[] = {
     BEGIN(OBJ_LIST_LEVEL),
     OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    BILLBOARD(),
+    // BILLBOARD(),
     SET_INT(oIntangibleTimer, 0),
     SET_INT(oAnimState, -1),
     CALL_NATIVE(bhv_init_room),
@@ -4690,6 +4698,7 @@ const BehaviorScript bhvRedCoin[] = {
     BEGIN_LOOP(),
         CALL_NATIVE(bhv_red_coin_loop),
         ADD_INT(oAnimState, 1),
+        ADD_INT(oFaceAngleYaw, 2560),
     END_LOOP(),
 };
 
