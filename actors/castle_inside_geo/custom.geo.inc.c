@@ -1,0 +1,42 @@
+const GeoLayout castle_geo_000F18[]= {
+GEO_CULLING_RADIUS(600),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_castle_geo_000F18_0x703bcb8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout castle_geo_001940[]= {
+GEO_CULLING_RADIUS(550),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_castle_geo_001940_0x7068b10),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout castle_geo_001530[]= {
+GEO_CULLING_RADIUS(300),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_castle_geo_001530_0x7058950),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout castle_geo_001548[]= {
+GEO_CULLING_RADIUS(300),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_castle_geo_001548_0x7059190),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout castle_geo_001518[]= {
+GEO_CULLING_RADIUS(600),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_castle_geo_001518_0x70512f8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout castle_geo_000F00[]= {
+GEO_CULLING_RADIUS(400),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_castle_geo_000F00_0x703bfa8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};

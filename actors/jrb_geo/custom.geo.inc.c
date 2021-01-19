@@ -1,0 +1,79 @@
+const GeoLayout jrb_geo_000978[]= {
+GEO_CULLING_RADIUS(5000),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000978_0x7008fd8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_0009B0[]= {
+GEO_CULLING_RADIUS(5000),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_0009B0_0x7009a58),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_0009E8[]= {
+GEO_CULLING_RADIUS(5000),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_0009E8_0x700a608),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000A00[]= {
+GEO_CULLING_RADIUS(5000),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000A00_0x700ac68),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000990[]= {
+GEO_CULLING_RADIUS(5000),
+GEO_OPEN_NODE(),
+GEO_ASM(0, geo_update_layer_transparency),
+GEO_DISPLAY_LIST(5,DL_jrb_geo_000990_0x70090b0),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_0009C8[]= {
+GEO_CULLING_RADIUS(5000),
+GEO_OPEN_NODE(),
+GEO_ASM(0, geo_update_layer_transparency),
+GEO_DISPLAY_LIST(5,DL_jrb_geo_0009C8_0x7009b30),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000930[]= {
+GEO_CULLING_RADIUS(1100),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000930_0x7007ac8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000960[]= {
+GEO_CULLING_RADIUS(300),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000960_0x70080f8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000900[]= {
+GEO_CULLING_RADIUS(1600),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000900_0x700ae48),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000918[]= {
+GEO_CULLING_RADIUS(300),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000918_0x700afb0),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout jrb_geo_000948[]= {
+GEO_CULLING_RADIUS(900),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_jrb_geo_000948_0x7007dc8),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
