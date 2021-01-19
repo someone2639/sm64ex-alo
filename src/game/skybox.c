@@ -87,6 +87,9 @@ SkyboxTexture *sSkyboxTextures[10] = {
     &bidw_skybox_ptrlist,
     &clouds_skybox_ptrlist,
     &bits_skybox_ptrlist,
+	#define MIO0_SEG(skybox, _2) &skybox_##ptrlist,
+	#include "textures/skyboxes/Skybox_Rules.ld"
+	#undef MIO0_SEG
 };
 
 /**
