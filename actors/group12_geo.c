@@ -10,6 +10,7 @@
 #include "bowser_flame/geo.inc.c"
 #include "impact_ring/geo.inc.c"
 #include "yellow_sphere/geo.inc.c"
-#include "bowser/geo.inc.c"
+#include "bowser/custom.model.inc.h"
+#include "bowser/custom.geo.inc.c"
 #include "bomb/geo.inc.c"
 #include "impact_smoke/geo.inc.c"

@@ -24,7 +24,10 @@ UNUSED static const u64 binid_3 = 3;
 #include "warp_pipe/collision.inc.c"
 UNUSED static const u64 binid_4 = 4;
 
+#include "door/custom.model.inc.h"
+#include "door/custom.model.inc.c"
 #include "door/model.inc.c"
+#include "door/textureNew.inc.c"
 #include "door/anims/data.inc.c"
 #include "door/anims/table.inc.c"
 UNUSED static const u64 binid_5 = 5;

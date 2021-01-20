@@ -1,0 +1,21 @@
+const GeoLayout sl_geo_000390[]= {
+GEO_CULLING_RADIUS(350),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_sl_geo_000390_0x700a780),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout sl_geo_000360[]= {
+GEO_NODE_START(),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(5,DL_sl_geo_000360_0x700a890),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
+const GeoLayout sl_geo_000378[]= {
+GEO_NODE_START(),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(5,DL_sl_geo_000378_0x700a980),
+GEO_OPEN_NODE(),
+GEO_END(),
+};
