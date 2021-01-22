@@ -1,0 +1,32 @@
+#ifndef exclamation_box_outline_model_HEADER_H
+#define exclamation_box_outline_model_HEADER_H
+#include "types.h"
+extern const Vtx VB_exclamation_box_outline_geo_0x8024d18[];
+extern const Vtx VB_exclamation_box_outline_geo_0x8024e08[];
+extern const Vtx VB_exclamation_box_outline_geo_0x8025008[];
+extern const Vtx VB_exclamation_box_outline_geo_0x80250e8[];
+extern const Vtx VB_exclamation_box_outline_seg8_dl_08025F08_0x8025e80[];
+extern const Light_t Light_exclamation_box_outline_geo_0x8024cc0;
+extern const Ambient_t Light_exclamation_box_outline_geo_0x8024cb8;
+extern const Gfx DL_exclamation_box_outline_geo_0x8024f88[];
+extern const Gfx DL_exclamation_box_outline_geo_0x8024f30[];
+extern const Gfx DL_exclamation_box_outline_geo_0x8024f58[];
+extern const Gfx DL_exclamation_box_outline_geo_0x8024eb8[];
+extern const Light_t Light_exclamation_box_outline_geo_0x8024cd8;
+extern const Ambient_t Light_exclamation_box_outline_geo_0x8024cd0;
+extern const Gfx DL_exclamation_box_outline_geo_0x8024fa8[];
+extern const Light_t Light_exclamation_box_outline_geo_0x8024cf0;
+extern const Ambient_t Light_exclamation_box_outline_geo_0x8024ce8;
+extern const Gfx DL_exclamation_box_outline_geo_0x8024fc8[];
+extern const Light_t Light_exclamation_box_outline_geo_0x8024d08;
+extern const Ambient_t Light_exclamation_box_outline_geo_0x8024d00;
+extern const Gfx DL_exclamation_box_outline_geo_0x8024fe8[];
+extern const u8 texture_exclamation_box_outline_geo_0x8025168_custom[];
+extern const Gfx DL_exclamation_box_outline_geo_0x80259f8[];
+extern const Gfx DL_exclamation_box_outline_geo_0x8025968[];
+extern const u8 texture_exclamation_box_outline_seg8_dl_08025F08_0x8025a80_custom[];
+extern const Light_t Light_exclamation_box_outline_seg8_dl_08025F08_0x8025a70;
+extern const Ambient_t Light_exclamation_box_outline_seg8_dl_08025F08_0x8025a68;
+extern const Gfx DL_exclamation_box_outline_seg8_dl_08025F08_0x8025f08[];
+extern const Gfx DL_exclamation_box_outline_seg8_dl_08025F08_0x8025ec0[];
+#endif

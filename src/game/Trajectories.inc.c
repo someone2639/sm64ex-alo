@@ -1,0 +1,21 @@
+#include <PR/ultratypes.h>
+#include "level_misc_macros.h"
+#include "macros.h"
+#include "types.h""
+const Trajectory KoopaBoB_path[] = {
+	TRAJECTORY_POS(0,-416,-1319,6741),
+	TRAJECTORY_POS(1,-422,-1500,8168),
+	TRAJECTORY_POS(2,-8472,-1500,7736),
+	TRAJECTORY_POS(3,-8448,-1500,-5803),
+	TRAJECTORY_POS(4,-3921,-1500,-11891),
+	TRAJECTORY_POS(5,-282,-1500,-11984),
+	TRAJECTORY_END(),
+};
+const Trajectory KoopaTHI_path[] = {
+	TRAJECTORY_POS(0,-5039,-2568,-5772),
+	TRAJECTORY_POS(1,-1745,-2394,-3963),
+	TRAJECTORY_POS(2,-844,-2394,669),
+	TRAJECTORY_POS(3,3857,-4216,13116),
+	TRAJECTORY_POS(4,10828,-3191,13217),
+	TRAJECTORY_END(),
+};

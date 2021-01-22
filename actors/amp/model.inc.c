@@ -2,22 +2,22 @@
 
 // 0x08000F18
 ALIGNED8 static const Texture amp_seg8_texture_08000F18[] = {
-#include "actors/amp/amp_electricity.rgba16.inc.c"
+#include "actors/amp/amp_geo_0x8000f18_custom.rgba16.inc.c"
 };
 
 // 0x08001318
 ALIGNED8 static const Texture amp_seg8_texture_08001318[] = {
-#include "actors/amp/amp_eyes.rgba16.inc.c"
+#include "actors/amp/amp_geo_0x8001318_custom.rgba16.inc.c"
 };
 
 // 0x08001B18
 ALIGNED8 static const Texture amp_seg8_texture_08001B18[] = {
-#include "actors/amp/amp_body.rgba16.inc.c"
+#include "actors/amp/amp_geo_0x8001b18_custom.rgba16.inc.c"
 };
 
 // 0x08002318
 ALIGNED8 static const Texture amp_seg8_texture_08002318[] = {
-#include "actors/amp/amp_mouth.rgba16.inc.c"
+#include "actors/amp/amp_geo_0x8002318_custom.rgba16.inc.c"
 };
 
 // 0x08002B18
@@ -85,7 +85,7 @@ const Gfx amp_seg8_dl_08002C88[] = {
     gsDPTileSync(),
     gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, G_TX_RENDERTILE, 0, G_TX_CLAMP, 5, G_TX_NOLOD, G_TX_CLAMP, 5, G_TX_NOLOD),
     gsDPSetTileSize(0, 0, 0, (32 - 1) << G_TEXTURE_IMAGE_FRAC, (32 - 1) << G_TEXTURE_IMAGE_FRAC),
-    gsSPDisplayList(amp_seg8_dl_08002C50),
+    // gsSPDisplayList(amp_seg8_dl_08002C50),
     gsSPTexture(0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_OFF),
     gsDPPipeSync(),
     gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
@@ -121,7 +121,7 @@ const Gfx amp_seg8_dl_08002D70[] = {
     gsDPTileSync(),
     gsDPSetTile(G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 0, G_TX_RENDERTILE, 0, G_TX_CLAMP, 5, G_TX_NOLOD, G_TX_CLAMP, 5, G_TX_NOLOD),
     gsDPSetTileSize(0, 0, 0, (32 - 1) << G_TEXTURE_IMAGE_FRAC, (32 - 1) << G_TEXTURE_IMAGE_FRAC),
-    gsSPDisplayList(amp_seg8_dl_08002D38),
+    // gsSPDisplayList(amp_seg8_dl_08002D38),
     gsSPTexture(0xFFFF, 0xFFFF, 0, G_TX_RENDERTILE, G_OFF),
     gsDPPipeSync(),
     gsDPSetCombineMode(G_CC_SHADE, G_CC_SHADE),
