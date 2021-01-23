@@ -133,11 +133,11 @@ static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
 static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scrolltype) {
     switch (scrollbhv) {
         case MODE_SCROLL_UV:
-			// shift_UV_NORMAL(vert, vertcount, spd, scrolltype);
+			shift_UV_NORMAL(vert, vertcount, spd, scrolltype);
 			break;
         case MODE_SCROLL_SINE:
         case MODE_SCROLL_JUMP:
-			// shift_UV_SINE(vert, vertcount, spd, scrolltype);
+			shift_UV_SINE(vert, vertcount, spd, scrolltype);
             break;
     }
 }
