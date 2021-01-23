@@ -199,9 +199,9 @@ OBJECT_WITH_ACTS(122,5103,-2852,7233,0,0,0,0x10000, bhvFlyGuy,31),
 OBJECT_WITH_ACTS(137,4853,455,-3353,0,0,0,0x50000, bhvExclamationBox,31),
 OBJECT_WITH_ACTS(137,217,-2884,5895,0,0,0,0x50000, bhvExclamationBox,31),
 OBJECT_WITH_ACTS(124,2360,148,-10640,0,-45,0,0x490000, bhvMessagePanel,31),
-OBJECT_WITH_ACTS(0,8512,9792,8448,0,0,0,0x7e1a0000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8512,16320,8448,0,0,0,0x664a0000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8512,9088,9216,0,0,0,0xd63a0000, bhvBetaHoldableObject,31),
+OBJECT_WITH_ACTS(0,341,5,36,0,0,0,&VB_ssl_1_0xe057d60[11],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,5,36,0,0,0,&VB_ssl_1_0xe0565f0[5],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,5,36,0,0,0,&VB_ssl_1_0xe05d580[11],editor_Scroll_Texture,31),
 RETURN()
 };
 const LevelScript local_warps_ssl_1_[] = {

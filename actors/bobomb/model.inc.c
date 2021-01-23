@@ -20,6 +20,7 @@ ALIGNED8 static const Texture bobomb_seg8_texture_08020A60[] = {
 };
 
 
+
 // 0x08022A60
 static const Vtx bobomb_seg8_vertex_08022A60[] = {
     {{{   133,    -47,      0}, 0, {   480,      0}, {0xff, 0xff, 0xff, 0xff}}},

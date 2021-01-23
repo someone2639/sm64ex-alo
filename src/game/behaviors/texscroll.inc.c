@@ -12,40 +12,44 @@
 #define MODE_SCROLL_SINE 1
 #define MODE_SCROLL_JUMP 2
 
+// typedef struct {
+// #ifndef GBI_FLOATS
+	// short		ob[3];	/* x, y, z */
+// #else
+	// float		ob[3];	/* x, y, z */
+// #endif
+	// unsigned short	flag;
+	// short		tc[2];	/* texture coord */
+	// signed char	n[3];	/* normal */
+	// unsigned char   a;      /* alpha  */
+// } Vtx_tn;
+
 // typedef union {
     // Vtx_t		v;  /* Use this one for colors  */
     // Vtx_tn              n;  /* Use this one for normals */
     // long long int	force_structure_alignment;
 // } Vtx;
 
-// typedef struct {
-	// short		ob[3];	/* x, y, z */
-	// unsigned short	flag;
-	// short		tc[2];	/* texture coord */
-	// unsigned char	cn[4];	/* color & alpha */
-// } Vtx_t;
-
+#ifndef F3DEX_GBI_2E
 static void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
-    u16 overflownum;
+    u16 overflownum = 0x1000;
     u32 i;
     Vtx *verts = segmented_to_virtual(vert);
-	overflownum = 0x1000;
 	u16 *Varray;
 	s16 correction=0;
 	if (verts[0].n.flag * absi(speed) > overflownum) {
-		correction = overflownum * signum_positive(speed);
+		correction = (u16) overflownum * signum_positive(speed);
 		verts[0].n.flag = 0;
 	}
     for (i = 0; i < vertcount; i++) {
 		Varray = &verts[i].n;
-		if (correction==0){
+		if (correction==0)
 			Varray[bhv] += speed;
-		}else
+		else
 			Varray[bhv] -= correction;
     }
     verts[0].n.flag++;
 }
-
 
 static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
     u32 i;
@@ -56,6 +60,72 @@ static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
 		Varray = &verts[i].n;
         Varray[bhv] += sins(verts[0].n.flag) * speed;
     }
+    verts[0].n.flag += cycle * 0x20;
+}
+
+static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scrolltype) {
+    switch (scrollbhv) {
+        case MODE_SCROLL_UV:
+			shift_UV_NORMAL(vert, vertcount, spd, scrolltype);
+			break;
+        case MODE_SCROLL_SINE:
+        case MODE_SCROLL_JUMP:
+			shift_UV_SINE(vert, vertcount, spd, scrolltype);
+            break;
+    }
+}
+#else
+static void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
+    u16 overflownum = 0x1000;
+    u16 i;
+    Vtx *verts = &vert;
+	float *VFarray;
+	u16 correction=0;
+	Vtx_tn TempVert;
+	if (verts[0].n.flag * absi(speed) > overflownum) {
+		correction = overflownum * signum_positive(speed);
+		verts[0].n.flag = 0;
+	}
+	//float pos
+	if (bhv<4){
+		for (i = 0; i < vertcount; i++) {
+			VFarray = &(verts[i].n);
+			if (correction==0){
+				VFarray[bhv] += (float) speed;
+			}else
+				VFarray[bhv] -= (float) correction;
+		}
+	}
+	else{
+		for (i = 0; i < vertcount; i++) {
+			TempVert = verts[i].n;
+			if (correction==0)
+				TempVert.tc[bhv-4] += speed;
+			else
+				TempVert.tc[bhv-4] -= correction;
+		}
+	}
+    verts[0].n.flag++;
+}
+
+static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
+    u32 i;
+    Vtx *verts = &vert;
+	u16 cycle = o->oFaceAngleRoll;
+	float *VFarray;
+	Vtx_tn TempVert;
+	//float pos
+	if (bhv<4){
+		for (i = 0; i < vertcount; i++) {
+			VFarray = &verts[i].n;
+			VFarray[bhv] += (float) (sins(verts[0].n.flag) * speed);
+		}
+	}else{
+		for (i = 0; i < vertcount; i++) {
+			TempVert = verts[i].n;
+			TempVert.tc[bhv-4] += sins(verts[0].n.flag) * speed;
+		}
+	}
     verts[0].n.flag += cycle * 0x20;
 }
 
@@ -71,7 +141,7 @@ static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scroll
             break;
     }
 }
-
+#endif
 // format I will use is bparam=addr,z=vert amount,x=spd,y=bhv,ry=type, rz=cycle
 void uv_update_scroll() {
 	shift_uv(/*scrolling type*/ o->oFaceAngleYaw, /*pointer to verts*/ o->oBehParams, 

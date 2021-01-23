@@ -168,12 +168,12 @@ OBJECT_WITH_ACTS(206,1153,-3248,-5249,0,0,0,0x0, bhvSnufit,31),
 OBJECT_WITH_ACTS(206,-4572,1012,0,0,0,0,0x0, bhvSnufit,31),
 OBJECT_WITH_ACTS(206,4564,1012,-310,0,0,0,0x0, bhvSnufit,31),
 OBJECT_WITH_ACTS(206,17,-154,-2233,0,0,0,0x0, bhvSnufit,31),
-OBJECT_WITH_ACTS(0,8320,11840,8448,0,0,0,0xe0180000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8320,11840,8320,0,0,0,0xe01a0000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8512,8256,8448,0,0,0,0x87380000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8512,8256,8704,0,0,0,0x873a0000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8512,16320,8704,0,0,0,0x6f9a0000, bhvBetaHoldableObject,31),
-OBJECT_WITH_ACTS(0,8512,16320,8448,0,0,0,0x6f980000, bhvBetaHoldableObject,31),
+OBJECT_WITH_ACTS(0,341,4,36,0,0,0,&VB_totwc_1_0xe01e000[1],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,5,36,0,0,0,&VB_totwc_1_0xe01e000[1],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,4,36,0,0,0,&VB_totwc_1_0xe0186f0[4],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,5,36,0,0,0,&VB_totwc_1_0xe0186f0[4],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,5,36,0,0,0,&VB_totwc_1_0xe016f80[1],editor_Scroll_Texture,31),
+OBJECT_WITH_ACTS(0,341,4,36,0,0,0,&VB_totwc_1_0xe016f80[1],editor_Scroll_Texture,31),
 RETURN()
 };
 const LevelScript local_warps_totwc_1_[] = {

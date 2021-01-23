@@ -13,7 +13,8 @@
 
 #include "levels/rr/header.h"
 
-#include "levels/rr/areas/1/2/geo.inc.c"
+#include "levels/rr/areas/1/2/custom.model.inc.h"
+#include "levels/rr/areas/1/2/custom.geo.inc.c"
 #include "levels/rr/areas/1/3/geo.inc.c"
 #include "levels/rr/areas/1/4/geo.inc.c"
 #include "levels/rr/areas/1/5/geo.inc.c"
@@ -30,7 +31,8 @@
 #include "levels/rr/areas/1/16/geo.inc.c"
 #include "levels/rr/areas/1/17/geo.inc.c"
 #include "levels/rr/areas/1/18/geo.inc.c"
-#include "levels/rr/areas/1/19/geo.inc.c"
+#include "levels/rr/areas/1/19/custom.model.inc.h"
+#include "levels/rr/areas/1/19/custom.geo.inc.c"
 #include "levels/rr/areas/1/20/geo.inc.c"
 #include "levels/rr/areas/1/21/geo.inc.c"
 #include "levels/rr/flying_carpet/geo.inc.c"

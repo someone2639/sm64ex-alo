@@ -1,0 +1,38 @@
+This is a list of existing texture scroll issues
+
+
+Texture Scroll Object in level 7 area 1 at 0xe05da60 likely has a bad address.
+Texture Scroll Object in level 7 area 1 at 0xe05c290 likely has a bad address.
+Texture Scroll Object in level 7 area 1 at 0xe05aac0 likely has a bad address.
+
+Texture Scroll Object in level 9 area 1 at 0xe056770 likely has a bad address.
+
+
+
+
+Texture Scroll Object in level 14 area 1 at 0xe0571d0 likely has a bad address.
+
+
+
+Texture Scroll Object in level 18 area 1 at 0xe05cb70 likely has a bad address.
+Texture Scroll Object in level 18 area 1 at 0xe05e340 likely has a bad address.
+Texture Scroll Object in level 18 area 1 at 0xe05fb10 likely has a bad address.
+Texture Scroll Object in level 19 area 1 at 0xe0568d0 likely has a bad address.
+Texture Scroll Object in level 19 area 1 at 0xe058150 likely has a bad address.
+
+
+
+
+
+
+Texture Scroll Object in level 27 area 1 at 0xe056120 likely has a bad address.
+
+
+Texture Scroll Object in level 29 area 1 at 0xe05e010 likely has a bad address.
+Texture Scroll Object in level 29 area 1 at 0xe058730 likely has a bad address.
+Texture Scroll Object in level 29 area 1 at 0xe056f90 likely has a bad address.
+
+
+
+Texture Scroll Object in level 33 area 1 at 0xe056810 likely has a bad address.
+Texture Scroll Object in level 33 area 1 at 0xe055030 likely has a bad address.
