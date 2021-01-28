@@ -25,3 +25,45 @@
 #include "white_particle/geo.inc.c"
 #include "wooden_signpost/geo.inc.c"
 #include "tree/geo.inc.c"
+
+#if INCLUDE_MOP
+#include "Noteblock_MOP/custom.model.inc.h"
+#include "Noteblock_MOP/custom.geo.inc.c"
+
+#include "FlipBlock_MOP/custom.model.inc.h"
+#include "FlipBlock_MOP/custom.geo.inc.c"
+
+#include "Flipswap_Platform_MOP/custom.model.inc.h"
+#include "Flipswap_Platform_MOP/custom.geo.inc.c"
+
+#include "Flipswitch_Panel_MOP/custom.model.inc.h"
+#include "Flipswitch_Panel_MOP/custom.geo.inc.c"
+
+#include "Green_Switchboard_MOP/custom.model.inc.h"
+#include "Green_Switchboard_MOP/custom.geo.inc.c"
+
+#include "Moving_Rotating_Block_MOP/custom.model.inc.h"
+#include "Moving_Rotating_Block_MOP/custom.geo.inc.c"
+
+#include "SandBlock_MOP/custom.model.inc.h"
+#include "SandBlock_MOP/custom.geo.inc.c"
+
+#include "Shell_1_MOP/custom.model.inc.h"
+#include "Shell_1_MOP/custom.geo.inc.c"
+
+#include "Shell_2_MOP/custom.model.inc.h"
+#include "Shell_2_MOP/custom.geo.inc.c"
+
+#include "ShrinkPlatform_MOP/custom.model.inc.h"
+#include "ShrinkPlatform_MOP/custom.geo.inc.c"
+
+#include "Spring_MOP/custom.model.inc.h"
+#include "Spring_MOP/custom.geo.inc.c"
+
+#include "Switchblock_MOP/custom.model.inc.h"
+#include "Switchblock_MOP/custom.geo.inc.c"
+
+#include "Switchblock_Switch_MOP/custom.model.inc.h"
+#include "Switchblock_Switch_MOP/custom.geo.inc.c"
+
+#endif

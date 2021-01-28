@@ -1,0 +1,8 @@
+const GeoLayout unk_DL_03022708[]= {
+GEO_SWITCH_CASE(2, geo_switch_anim_state),
+GEO_OPEN_NODE(),
+GEO_DISPLAY_LIST(1,DL_unk_DL_03022708_0x5f70b0),
+GEO_DISPLAY_LIST(1,DL_unk_DL_03022708_0x5f7580),
+GEO_CLOSE_NODE(),
+GEO_END(),
+};

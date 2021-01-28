@@ -36,6 +36,7 @@
 
 #include "level_table.h"
 
+
 #define STUB_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8)
 #define DEFINE_LEVEL(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10) + 3
 static const LevelScript script_exec_level_table[2
@@ -116,6 +117,22 @@ const LevelScript level_main_scripts_entry[] = {
     LOAD_MODEL_FROM_GEO(MODEL_EXPLOSION,               explosion_geo),
     LOAD_MODEL_FROM_GEO(MODEL_DIRT_ANIMATION,          dirt_animation_geo),
     LOAD_MODEL_FROM_GEO(MODEL_CARTOON_STAR,            cartoon_star_geo),
+	#if INCLUDE_MOP
+    LOAD_MODEL_FROM_GEO( /* NOTEBLOCK */0x7B,            unk_DL_0301dbf8),
+    LOAD_MODEL_FROM_DL(0x2E,DL_Checkpoint_Flag_MOP_0x606660,1),
+    LOAD_MODEL_FROM_GEO(/* Flipblock */0xF0,unk_DL_0302272c),
+	LOAD_MODEL_FROM_DL(0x2F,DL_Flipswap_Platform_MOP_0x5f9ac0,1),
+	LOAD_MODEL_FROM_GEO(0x2A,Flipswitch_Panel_MOP),
+	LOAD_MODEL_FROM_DL(0x2B,DL_Green_Switchboard_MOP_0x5fd8b0,1),
+	LOAD_MODEL_FROM_DL(0x92 /* Spring*/,DL_unk_DL_0301fc98_0x301fc98,1),
+	LOAD_MODEL_FROM_GEO(0x2D,Moving_Rotating_Block_MOP),
+	LOAD_MODEL_FROM_GEO(/* Sandblock */0x99,unk_DL_030225e4),
+	LOAD_MODEL_FROM_GEO(/* Shell 1 */0x9B,unk_DL_0f000adc),
+	LOAD_MODEL_FROM_GEO(/* Shell 2 */0x9D,unk_DL_0f000b08),
+	LOAD_MODEL_FROM_GEO(/* Shrinkplat */0x98,unk_DL_030212f4),
+	LOAD_MODEL_FROM_GEO(/* Switchblock */0xF1,unk_DL_030226d4),
+	LOAD_MODEL_FROM_GEO(/* Switchblock switch */0xF2,unk_DL_03022708),
+	#endif
     FREE_LEVEL_POOL(),
     CALL(/*arg*/ 0, /*func*/ lvl_init_from_save_file),
     LOOP_BEGIN(),
