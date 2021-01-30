@@ -288,4 +288,5 @@ s32 set_obj_anim_with_accel_and_sound(s16 a0, s16 a1, s32 a2) {
 #include "behaviors/FlipSwap.inc.c"
 #include "behaviors/PSwitch.inc.c"
 #include "behaviors/GreenSwitchboard.inc.c"
+#include "behaviors/MovingRotating.inc.c"
 #endif

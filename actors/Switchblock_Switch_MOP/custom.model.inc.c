@@ -1,5 +1,5 @@
 #include "custom.model.inc.h"
-Vtx VB_unk_DL_03022708_0x5f6660[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6660[] = {
 {{{ 75, 9, -75 }, 0, { -44, 1016 }, { 87, 25, 168, 255}}},
 {{{ 75, -20, -75 }, 0, { -44, 1017 }, { 113, 0, 200, 255}}},
 {{{ -75, -20, -75 }, 0, { -44, 1026 }, { 200, 0, 143, 255}}},
@@ -17,7 +17,7 @@ Vtx VB_unk_DL_03022708_0x5f6660[] = {
 {{{ -75, 9, -75 }, 0, { -44, 1027 }, { 168, 25, 169, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6750[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6750[] = {
 {{{ 75, 9, -75 }, 0, { -44, 1016 }, { 87, 25, 168, 255}}},
 {{{ -75, -20, -75 }, 0, { -44, 1026 }, { 200, 0, 143, 255}}},
 {{{ -75, 9, -75 }, 0, { -44, 1027 }, { 168, 25, 169, 255}}},
@@ -35,7 +35,7 @@ Vtx VB_unk_DL_03022708_0x5f6750[] = {
 {{{ 75, 9, 75 }, 0, { -55, 1016 }, { 88, 25, 87, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6840[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6840[] = {
 {{{ 75, -20, -75 }, 0, { -44, 1017 }, { 113, 0, 200, 255}}},
 {{{ 75, 9, 75 }, 0, { -55, 1016 }, { 88, 25, 87, 255}}},
 {{{ 75, -20, 75 }, 0, { -54, 1017 }, { 56, 0, 113, 255}}},
@@ -53,7 +53,7 @@ Vtx VB_unk_DL_03022708_0x5f6840[] = {
 {{{ -64, 45, -64 }, 0, { -44, 1026 }, { 187, 87, 197, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6930[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6930[] = {
 {{{ 64, 45, -64 }, 0, { -44, 1016 }, { 59, 87, 187, 255}}},
 {{{ -64, 45, -64 }, 0, { -44, 1026 }, { 187, 87, 197, 255}}},
 {{{ 44, 61, -44 }, 0, { -46, 1017 }, { 27, 119, 222, 255}}},
@@ -71,7 +71,7 @@ Vtx VB_unk_DL_03022708_0x5f6930[] = {
 {{{ -64, 45, 64 }, 0, { -54, 1027 }, { 197, 87, 69, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6a20[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6a20[] = {
 {{{ 64, 45, 64 }, 0, { -55, 1016 }, { 69, 87, 59, 255}}},
 {{{ 44, 61, 44 }, 0, { -53, 1018 }, { 34, 119, 27, 255}}},
 {{{ -44, 61, 44 }, 0, { -53, 1025 }, { 229, 119, 34, 255}}},
@@ -89,7 +89,7 @@ Vtx VB_unk_DL_03022708_0x5f6a20[] = {
 {{{ 11, 71, 11 }, 0, { -50, 1020 }, { 18, 125, 9, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6b10[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6b10[] = {
 {{{ 44, 61, -44 }, 0, { -46, 1017 }, { 27, 119, 222, 255}}},
 {{{ -44, 61, -44 }, 0, { -45, 1025 }, { 222, 119, 229, 255}}},
 {{{ 11, 71, -11 }, 0, { -48, 1020 }, { 7, 125, 241, 255}}},
@@ -107,7 +107,7 @@ Vtx VB_unk_DL_03022708_0x5f6b10[] = {
 {{{ -44, 61, 44 }, 0, { -53, 1025 }, { 229, 119, 34, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6c00[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6c00[] = {
 {{{ 44, 61, 44 }, 0, { -53, 1018 }, { 34, 119, 27, 255}}},
 {{{ 11, 71, 11 }, 0, { -50, 1020 }, { 18, 125, 9, 255}}},
 {{{ -11, 71, 11 }, 0, { -50, 1022 }, { 249, 125, 15, 255}}},
@@ -125,7 +125,7 @@ Vtx VB_unk_DL_03022708_0x5f6c00[] = {
 {{{ 0, 2, 88 }, 0, { -2048, 1039 }, { 0, 105, 70, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6cf0[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6cf0[] = {
 {{{ 88, 2, 0 }, 0, { -1008, 0 }, { 70, 105, 0, 255}}},
 {{{ 0, 2, 0 }, 0, { -2048, 0 }, { 0, 127, 0, 255}}},
 {{{ 88, 2, 88 }, 0, { -1009, 1039 }, { 42, 84, 84, 255}}},
@@ -143,7 +143,7 @@ Vtx VB_unk_DL_03022708_0x5f6cf0[] = {
 {{{ 88, -102, -88 }, 0, { 658, 1953 }, { 40, 0, 136, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6de0[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6de0[] = {
 {{{ 88, 2, -88 }, 0, { 658, 2061 }, { 103, 51, 205, 255}}},
 {{{ 88, 2, 0 }, 0, { 566, 2061 }, { 70, 105, 0, 255}}},
 {{{ 88, -102, 88 }, 0, { 475, 1953 }, { 120, 0, 40, 255}}},
@@ -161,7 +161,7 @@ Vtx VB_unk_DL_03022708_0x5f6de0[] = {
 {{{ 0, 2, 88 }, 0, { 384, 2061 }, { 0, 105, 70, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6ed0[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6ed0[] = {
 {{{ -88, -102, -88 }, 0, { 840, 1953 }, { 136, 0, 216, 255}}},
 {{{ -88, -102, 88 }, 0, { 240, 1953 }, { 216, 0, 120, 255}}},
 {{{ -88, 2, 88 }, 0, { 240, 2061 }, { 153, 51, 51, 255}}},
@@ -179,7 +179,7 @@ Vtx VB_unk_DL_03022708_0x5f6ed0[] = {
 {{{ -88, 2, 0 }, 0, { 0, 1040 }, { 186, 105, 0, 255}}},
 };
 
-Vtx VB_unk_DL_03022708_0x5f6fc0[] = {
+Vtx VB_Switchblock_Switch_MOP_0x5f6fc0[] = {
 {{{ 0, 2, -88 }, 0, { 1040, 0 }, { 0, 105, 186, 255}}},
 {{{ -88, 2, -88 }, 0, { 1040, 1040 }, { 214, 84, 172, 255}}},
 {{{ 0, 2, 0 }, 0, { 0, 0 }, { 0, 127, 0, 255}}},
@@ -197,25 +197,25 @@ Vtx VB_unk_DL_03022708_0x5f6fc0[] = {
 {{{ 0, 0, 0 }, 0, { 0, 0 }, { 0, 0, 0, 255}}},
 };
 
-const Light_t Light_unk_DL_03022708_0x5f5e50 = {
+const Light_t Light_Switchblock_Switch_MOP_0x5f5e50 = {
 { 255, 0, 0}, 0, { 255, 0, 0}, 0, { 127, 0, 0}, 0
 };
 
-const Ambient_t Light_unk_DL_03022708_0x5f5e58 = {
+const Ambient_t Light_Switchblock_Switch_MOP_0x5f5e58 = {
 {127, 0, 0}, 0, {127, 0, 0}, 0
 };
 
-const Gfx DL_unk_DL_03022708_0x5f70b0[] = {
+const Gfx DL_Switchblock_Switch_MOP_0x5f70b0[] = {
 gsDPPipeSync(),
 gsSPGeometryMode(0, 0),
 gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE, TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE),
 gsSPTexture(65535, 65535, 0, 0, 1),
 gsDPTileSync(),
 gsDPLoadSync(),
-gsSPLight(&Light_unk_DL_03022708_0x5f5e50.col, 1),
-gsSPLight(&Light_unk_DL_03022708_0x5f5e58.col, 2),
-gsSPVertex(VB_unk_DL_03022708_0x5f6660, 15, 0),
-gsDPSetTextureImage(0, 2, 1, unk_DL_03022708__texture_005F5E60),
+gsSPLight(&Light_Switchblock_Switch_MOP_0x5f5e50.col, 1),
+gsSPLight(&Light_Switchblock_Switch_MOP_0x5f5e58.col, 2),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6660, 15, 0),
+gsDPSetTextureImage(0, 2, 1, Switchblock_Switch_MOP__texture_005F5E60),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
 gsDPLoadSync(),
 gsDPLoadBlock(7, 0, 0, 1023, 256),
@@ -225,43 +225,43 @@ gsDPSetTileSize(0, 0, 0, 124, 124),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6750, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6750, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6840, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6840, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6930, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6930, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6a20, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6a20, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6b10, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6b10, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6c00, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6c00, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6cf0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6cf0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6de0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6de0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6ed0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6ed0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6fc0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6fc0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
@@ -269,30 +269,30 @@ gsSPTexture(65535, 65535, 0, 0, 0),
 gsSPEndDisplayList(),
 };
 
-const Light_t Light_unk_DL_03022708_0x5f7578 = {
+const Light_t Light_Switchblock_Switch_MOP_0x5f7578 = {
 { 0, 0, 255}, 0, { 0, 0, 127}, 0, { 231, 0, 0}, 0
 };
 
-const Ambient_t Light_unk_DL_03022708_0x5f757c = {
+const Ambient_t Light_Switchblock_Switch_MOP_0x5f757c = {
 {0, 0, 127}, 0, {231, 0, 0}, 0
 };
 
-const Gfx DL_unk_DL_03022708_0x5f7580[] = {
+const Gfx DL_Switchblock_Switch_MOP_0x5f7580[] = {
 gsDPPipeSync(),
 gsSPGeometryMode(0, 0),
 gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE, TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE),
 gsSPTexture(65535, 65535, 0, 0, 1),
 gsDPTileSync(),
 gsDPLoadSync(),
-gsSPLight(&Light_unk_DL_03022708_0x5f7578.col, 1),
-gsSPLight(&Light_unk_DL_03022708_0x5f757c.col, 2),
-gsSPDisplayList(DL_unk_DL_03022708_0x5f70f0),
+gsSPLight(&Light_Switchblock_Switch_MOP_0x5f7578.col, 1),
+gsSPLight(&Light_Switchblock_Switch_MOP_0x5f757c.col, 2),
+gsSPDisplayList(DL_Switchblock_Switch_MOP_0x5f70f0),
 gsSPEndDisplayList(),
 };
 
-const Gfx DL_unk_DL_03022708_0x5f70f0[] = {
-gsSPVertex(VB_unk_DL_03022708_0x5f6660, 15, 0),
-gsDPSetTextureImage(0, 2, 1, unk_DL_03022708__texture_005F5E60),
+const Gfx DL_Switchblock_Switch_MOP_0x5f70f0[] = {
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6660, 15, 0),
+gsDPSetTextureImage(0, 2, 1, Switchblock_Switch_MOP__texture_005F5E60),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
 gsDPLoadSync(),
 gsDPLoadBlock(7, 0, 0, 1023, 256),
@@ -302,43 +302,43 @@ gsDPSetTileSize(0, 0, 0, 124, 124),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6750, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6750, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6840, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6840, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6930, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6930, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6a20, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6a20, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6b10, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6b10, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6c00, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6c00, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6cf0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6cf0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6de0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6de0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6ed0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6ed0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),
-gsSPVertex(VB_unk_DL_03022708_0x5f6fc0, 15, 0),
+gsSPVertex(VB_Switchblock_Switch_MOP_0x5f6fc0, 15, 0),
 gsSP2Triangles(0, 1, 2, 0,3, 4, 5, 0),
 gsSP2Triangles(6, 7, 8, 0,9, 10, 11, 0),
 gsSP1Triangle(12, 13, 14, 0),

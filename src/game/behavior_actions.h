@@ -43,6 +43,10 @@ void bhv_checkpoint_flag_init(void);
 void bhv_checkpoint_flag_loop(void);
 void bhv_flipswap_loop(void);
 void bhv_pswitch_loop(void);
+void bhv_move_rotate_init(void);
+void bhv_move_rotate_loop(void);
+void bhv_green_switchboard_loop(void);
+void bhv_green_switchboard_init(void);
 #endif
 
 void uv_update_scroll(void);

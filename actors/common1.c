@@ -104,6 +104,10 @@ UNUSED static const u64 binid_22 = 22;
 #include "Flipswap_Platform_MOP/custom.collision.inc.c"
 #include "Flipswap_Platform_MOP/custom.model.inc.c"
 #include "Flipswap_Platform_MOP/textureNew.inc.c"
+#include "Flipswap_Platform_Border_MOP/custom.model.inc.h"
+#include "Flipswap_Platform_Border_MOP/custom.model.inc.c"
+#include "Flipswap_Platform_Border_MOP/textureNew.inc.c"
+
 
 #include "Flipswitch_Panel_MOP/custom.model.inc.h"
 #include "Flipswitch_Panel_MOP/custom.model.inc.c"
@@ -112,7 +116,11 @@ UNUSED static const u64 binid_22 = 22;
 
 #include "Green_Switchboard_MOP/custom.model.inc.h"
 #include "Green_Switchboard_MOP/custom.model.inc.c"
+#include "Green_Switchboard_MOP/custom.collision.inc.c"
 #include "Green_Switchboard_MOP/textureNew.inc.c"
+#include "Green_Switchboard_Gears_MOP/custom.model.inc.h"
+#include "Green_Switchboard_Gears_MOP/custom.model.inc.c"
+#include "Green_Switchboard_Gears_MOP/textureNew.inc.c"
 
 #include "Moving_Rotating_Block_MOP/custom.model.inc.h"
 #include "Moving_Rotating_Block_MOP/custom.collision.inc.c"
@@ -132,10 +140,14 @@ UNUSED static const u64 binid_22 = 22;
 #include "Shell_2_MOP/custom.model.inc.c"
 #include "Shell_2_MOP/textureNew.inc.c"
 
-#include "ShrinkPlatform_MOP/custom.model.inc.h"
-#include "ShrinkPlatform_MOP/custom.model.inc.c"
-#include "ShrinkPlatform_MOP/custom.collision.inc.c"
-#include "ShrinkPlatform_MOP/textureNew.inc.c"
+#include "Shrink_Platform_MOP/custom.model.inc.h"
+#include "Shrink_Platform_MOP/custom.model.inc.c"
+#include "Shrink_Platform_MOP/custom.collision.inc.c"
+#include "Shrink_Platform_MOP/textureNew.inc.c"
+#include "Shrink_Platform_Border_MOP/custom.model.inc.h"
+#include "Shrink_Platform_Border_MOP/custom.model.inc.c"
+#include "Shrink_Platform_Border_MOP/textureNew.inc.c"
+
 
 #include "Spring_MOP/custom.model.inc.h"
 #include "Spring_MOP/custom.model.inc.c"

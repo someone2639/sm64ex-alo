@@ -1,4 +1,6 @@
-//Include this file at the bottom of behavior_data.c
+#if INCLUDE_MOP
+//bhvUnused05A8 is basically a stub.
+//SPAWN_CHILD(ID,bhvUnused05A8) to spawn model parts
 
 const BehaviorScript bhvFlipBlock_MOP[] = {
 BEGIN(OBJ_LIST_SURFACE),
@@ -64,6 +66,7 @@ const BehaviorScript bhvShrink_Platform_MOP[] = {
 BEGIN(OBJ_LIST_SURFACE),
 OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE ),
 LOAD_COLLISION_DATA(col_Shrink_Platform_MOP_0xad3720),
+SPAWN_CHILD(0x97,bhvUnused05A8),
 BEGIN_LOOP(),
 CALL_NATIVE(bhv_shrinkplatform_loop),
 CALL_NATIVE(load_object_collision_model),
@@ -135,6 +138,7 @@ BEGIN(OBJ_LIST_SURFACE),
 OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE ),
 SET_INT(oFaceAngleRoll,0),
 LOAD_COLLISION_DATA(col_Flipswap_Platform_MOP_0x7d9d88),
+SPAWN_CHILD(0x30,bhvUnused05A8),
 BEGIN_LOOP(),
 CALL_NATIVE(bhv_flipswap_loop),
 CALL_NATIVE(load_object_collision_model),
@@ -158,29 +162,26 @@ BEGIN(OBJ_LIST_UNIMPORTANT),
 DEACTIVATE(),
 };
 
-// not done
-//model edits
-//flip swap missing border
-//shrink plat missing border
-//flip block looks weird
-
-const BehaviorScript bhvGreen_Switchboard_MOP[] = {
-    BEGIN(OBJ_LIST_SURFACE),
-    OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
-    LOAD_COLLISION_DATA(purple_switch_seg8_collision_0800C7A8),
-    BEGIN_LOOP(),
-        // CALL_NATIVE(bhv_purple_switch_loop),
-        CALL_NATIVE(load_object_collision_model),
-    END_LOOP(),
-};
-
 const BehaviorScript bhvMoving_Rotating_Block_MOP[] = {
 BEGIN(OBJ_LIST_SURFACE),
-OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE ),
+OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE),
 LOAD_COLLISION_DATA(col_Moving_Rotating_Block_MOP_0x7e3ea0),
 SET_FLOAT(oDrawingDistance,19455),
+CALL_NATIVE(bhv_move_rotate_init),
 BEGIN_LOOP(),
-// CALL_NATIVE(bhv_purple_switch_loop),
+CALL_NATIVE(bhv_move_rotate_loop),
 CALL_NATIVE(load_object_collision_model),
 END_LOOP(),
 };
+
+const BehaviorScript bhvGreen_Switchboard_MOP[] = {
+BEGIN(OBJ_LIST_SURFACE),
+OR_INT(oFlags, OBJ_FLAG_UPDATE_GFX_POS_AND_ANGLE | OBJ_FLAG_MOVE_XZ_USING_FVEL),
+LOAD_COLLISION_DATA(col_Green_Switchboard_MOP_0x7ddc38),
+CALL_NATIVE(bhv_green_switchboard_init),
+BEGIN_LOOP(),
+CALL_NATIVE(bhv_green_switchboard_loop),
+CALL_NATIVE(load_object_collision_model),
+END_LOOP(),
+};
+#endif

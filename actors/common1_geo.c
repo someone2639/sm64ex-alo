@@ -54,8 +54,8 @@
 #include "Shell_2_MOP/custom.model.inc.h"
 #include "Shell_2_MOP/custom.geo.inc.c"
 
-#include "ShrinkPlatform_MOP/custom.model.inc.h"
-#include "ShrinkPlatform_MOP/custom.geo.inc.c"
+#include "Shrink_Platform_MOP/custom.model.inc.h"
+#include "Shrink_Platform_MOP/custom.geo.inc.c"
 
 #include "Spring_MOP/custom.model.inc.h"
 #include "Spring_MOP/custom.geo.inc.c"

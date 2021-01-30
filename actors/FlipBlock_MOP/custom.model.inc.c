@@ -288,16 +288,15 @@ Vtx VB_unk_DL_0302272c_0x5f1620[] = {
 };
 
 const Light_t Light_unk_DL_0302272c_0x5f0000 = {
-{ 16, 238, 225}, 0, { 209, 14, 241}, 0, { 177, 252, 225}, 0
+{ 0xff, 0xff, 0xff}, 0, { 0xff, 0xff, 0xff}, 0, { 0x28, 0x28, 0x28}, 0
 };
 
 const Ambient_t Light_unk_DL_0302272c_0x5f0008 = {
 {127, 127, 127}, 0, {127, 127, 127}, 0
 };
 
-const Gfx DL_unk_DL_0302272c_0x5f1710[] = {
+const Gfx DL_FlipBlock_MOP_0x5f1710[] = {
 gsDPPipeSync(),
-gsSPGeometryMode(0, 0),
 gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE, TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE),
 gsSPTexture(65535, 65535, 0, 0, 1),
 gsDPTileSync(),
@@ -305,7 +304,7 @@ gsDPLoadSync(),
 gsSPLight(&Light_unk_DL_0302272c_0x5f0000.col, 1),
 gsSPLight(&Light_unk_DL_0302272c_0x5f0008.col, 2),
 gsSPVertex(VB_unk_DL_0302272c_0x5f0810, 15, 0),
-gsDPSetTextureImage(0, 2, 1, unk_DL_0302272c__texture_005F0010),
+gsDPSetTextureImage(0, 2, 1, FlipBlock_MOP__texture_005F0010),
 gsDPSetTile(0, 2, 0, 0, 7, 0, 0, 0, 0, 0, 0, 0),
 gsDPLoadSync(),
 gsDPLoadBlock(7, 0, 0, 1023, 256),
