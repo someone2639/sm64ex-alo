@@ -1,23 +1,46 @@
 #define MAX_SPEED 20.0f
 #define SPEED_INC 2.0f
+// static char buf[12];
 
 void bhv_green_switchboard_loop(void) {
 	struct Object *child = o->oUnk1A4;
+	f32 dot;
+	f32 dotH;
 	if (cur_obj_is_mario_on_platform()==1){
 		f32 dx = gMarioState->pos[0] - o->oPosX;
 		f32 dz = gMarioState->pos[2] - o->oPosZ;
+		f32 dHx = o->oPosX - o->oHomeX;
+		f32 dHz = o->oPosZ - o->oHomeZ;
 		f32 facingZ = coss(o->oFaceAngleYaw);
 		f32 facingX = sins(o->oFaceAngleYaw);
 		//if dot is positive, mario is on front arrow
-		if((facingZ*dz+facingX*dx)>0){
-			o->oForwardVel = approach_by_increment(MAX_SPEED, o->oForwardVel, SPEED_INC);
+		dot = facingZ*dz+facingX*dx;
+		dotH = facingZ*dHz+facingX*dHx;
+		//debug
+		// sprintf(buf,"dotH %f",dotH);
+		// print_text(32,32,buf);
+		// sprintf(buf,"dot %f",dot);
+		// print_text(32,64,buf);
+		// sprintf(buf,"bp1 %d",(((o->oBehParams>>24)&0xFF)*16));
+		// print_text(32,96,buf);
+		if((dot)>0){
+			if(dotH<(((o->oBehParams>>24)&0xFF)*16)){
+				o->oForwardVel = approach_by_increment(MAX_SPEED, o->oForwardVel, SPEED_INC);
+			}else{
+				o->oForwardVel=0;
+			}
 			o->oFaceAnglePitch = (u32)approach_by_increment(2048.0f, o->oFaceAnglePitch, 128.0f);
 		}else{
-			o->oForwardVel = approach_by_increment(-MAX_SPEED, o->oForwardVel, SPEED_INC);
+			if (dotH>(o->oBehParams2ndByte*-16)){
+				o->oForwardVel = approach_by_increment(-MAX_SPEED, o->oForwardVel, SPEED_INC);
+			}else{
+				o->oForwardVel=0;
+			}
 			//this function doesn't work well with negatives thanks nintendo
 			if (o->oFaceAnglePitch>-2048){
 				o->oFaceAnglePitch = (u32)approach_by_increment(-2048.0f, o->oFaceAnglePitch, 128.0f);
 			}
+			
 		}
 	}else{
 		o->oForwardVel = approach_by_increment(0.0f, o->oForwardVel, SPEED_INC);
