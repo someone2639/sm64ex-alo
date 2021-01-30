@@ -17,9 +17,9 @@ UNUSED static const u64 binid_1 = 1;
 #include "butterfly/anims/table.inc.c"
 UNUSED static const u64 binid_2 = 2;
 
-#include "coin/custom.model.inc.h"
-#include "coin/custom.model.inc.c"
-#include "coin/textureNew.inc.c"
+#include "coin/model.inc.h"
+#include "coin/model.inc.c"
+#include "coin/texture.inc.c"
 UNUSED static const u64 binid_3 = 3;
 
 #include "warp_pipe/model.inc.c"
@@ -88,81 +88,81 @@ UNUSED static const u64 binid_21 = 21;
 UNUSED static const u64 binid_22 = 22;
 
 #if INCLUDE_MOP
-#include "Noteblock_MOP/custom.model.inc.h"
-#include "Noteblock_MOP/custom.model.inc.c"
-#include "Noteblock_MOP/custom.collision.inc.c"
-#include "Noteblock_MOP/textureNew.inc.c"
+#include "Noteblock_MOP/model.inc.h"
+#include "Noteblock_MOP/model.inc.c"
+#include "Noteblock_MOP/collision.inc.c"
+#include "Noteblock_MOP/texture.inc.c"
 
-#include "Checkpoint_Flag_MOP/custom.model.inc.h"
-#include "Checkpoint_Flag_MOP/custom.model.inc.c"
-#include "Checkpoint_Flag_MOP/textureNew.inc.c"
+#include "Checkpoint_Flag_MOP/model.inc.h"
+#include "Checkpoint_Flag_MOP/model.inc.c"
+#include "Checkpoint_Flag_MOP/texture.inc.c"
 
-#include "FlipBlock_MOP/custom.model.inc.h"
-#include "FlipBlock_MOP/custom.model.inc.c"
-#include "FlipBlock_MOP/custom.collision.inc.c"
-#include "FlipBlock_MOP/textureNew.inc.c"
+#include "FlipBlock_MOP/model.inc.h"
+#include "FlipBlock_MOP/model.inc.c"
+#include "FlipBlock_MOP/collision.inc.c"
+#include "FlipBlock_MOP/texture.inc.c"
 
-#include "Flipswap_Platform_MOP/custom.model.inc.h"
-#include "Flipswap_Platform_MOP/custom.collision.inc.c"
-#include "Flipswap_Platform_MOP/custom.model.inc.c"
-#include "Flipswap_Platform_MOP/textureNew.inc.c"
-#include "Flipswap_Platform_Border_MOP/custom.model.inc.h"
-#include "Flipswap_Platform_Border_MOP/custom.model.inc.c"
-#include "Flipswap_Platform_Border_MOP/textureNew.inc.c"
-
-
-#include "Flipswitch_Panel_MOP/custom.model.inc.h"
-#include "Flipswitch_Panel_MOP/custom.model.inc.c"
-#include "Flipswitch_Panel_MOP/custom.collision.inc.c"
-#include "Flipswitch_Panel_MOP/textureNew.inc.c"
-
-#include "Green_Switchboard_MOP/custom.model.inc.h"
-#include "Green_Switchboard_MOP/custom.model.inc.c"
-#include "Green_Switchboard_MOP/custom.collision.inc.c"
-#include "Green_Switchboard_MOP/textureNew.inc.c"
-#include "Green_Switchboard_Gears_MOP/custom.model.inc.h"
-#include "Green_Switchboard_Gears_MOP/custom.model.inc.c"
-#include "Green_Switchboard_Gears_MOP/textureNew.inc.c"
-
-#include "Moving_Rotating_Block_MOP/custom.model.inc.h"
-#include "Moving_Rotating_Block_MOP/custom.collision.inc.c"
-#include "Moving_Rotating_Block_MOP/custom.model.inc.c"
-#include "Moving_Rotating_Block_MOP/textureNew.inc.c"
-
-#include "SandBlock_MOP/custom.model.inc.h"
-#include "SandBlock_MOP/custom.model.inc.c"
-#include "SandBlock_MOP/custom.collision.inc.c"
-#include "SandBlock_MOP/textureNew.inc.c"
-
-#include "Shell_1_MOP/custom.model.inc.h"
-#include "Shell_1_MOP/custom.model.inc.c"
-#include "Shell_1_MOP/textureNew.inc.c"
-
-#include "Shell_2_MOP/custom.model.inc.h"
-#include "Shell_2_MOP/custom.model.inc.c"
-#include "Shell_2_MOP/textureNew.inc.c"
-
-#include "Shrink_Platform_MOP/custom.model.inc.h"
-#include "Shrink_Platform_MOP/custom.model.inc.c"
-#include "Shrink_Platform_MOP/custom.collision.inc.c"
-#include "Shrink_Platform_MOP/textureNew.inc.c"
-#include "Shrink_Platform_Border_MOP/custom.model.inc.h"
-#include "Shrink_Platform_Border_MOP/custom.model.inc.c"
-#include "Shrink_Platform_Border_MOP/textureNew.inc.c"
+#include "Flipswap_Platform_MOP/model.inc.h"
+#include "Flipswap_Platform_MOP/collision.inc.c"
+#include "Flipswap_Platform_MOP/model.inc.c"
+#include "Flipswap_Platform_MOP/texture.inc.c"
+#include "Flipswap_Platform_Border_MOP/model.inc.h"
+#include "Flipswap_Platform_Border_MOP/model.inc.c"
+#include "Flipswap_Platform_Border_MOP/texture.inc.c"
 
 
-#include "Spring_MOP/custom.model.inc.h"
-#include "Spring_MOP/custom.model.inc.c"
-#include "Spring_MOP/textureNew.inc.c"
+#include "Flipswitch_Panel_MOP/model.inc.h"
+#include "Flipswitch_Panel_MOP/model.inc.c"
+#include "Flipswitch_Panel_MOP/collision.inc.c"
+#include "Flipswitch_Panel_MOP/texture.inc.c"
 
-#include "Switchblock_MOP/custom.model.inc.h"
-#include "Switchblock_MOP/custom.model.inc.c"
-#include "Switchblock_MOP/custom.collision.inc.c"
-#include "Switchblock_MOP/textureNew.inc.c"
+#include "Green_Switchboard_MOP/model.inc.h"
+#include "Green_Switchboard_MOP/model.inc.c"
+#include "Green_Switchboard_MOP/collision.inc.c"
+#include "Green_Switchboard_MOP/texture.inc.c"
+#include "Green_Switchboard_Gears_MOP/model.inc.h"
+#include "Green_Switchboard_Gears_MOP/model.inc.c"
+#include "Green_Switchboard_Gears_MOP/texture.inc.c"
 
-#include "Switchblock_Switch_MOP/custom.model.inc.h"
-#include "Switchblock_Switch_MOP/custom.model.inc.c"
-#include "Switchblock_Switch_MOP/custom.collision.inc.c"
-#include "Switchblock_Switch_MOP/textureNew.inc.c"
+#include "Moving_Rotating_Block_MOP/model.inc.h"
+#include "Moving_Rotating_Block_MOP/collision.inc.c"
+#include "Moving_Rotating_Block_MOP/model.inc.c"
+#include "Moving_Rotating_Block_MOP/texture.inc.c"
+
+#include "SandBlock_MOP/model.inc.h"
+#include "SandBlock_MOP/model.inc.c"
+#include "SandBlock_MOP/collision.inc.c"
+#include "SandBlock_MOP/texture.inc.c"
+
+#include "Shell_1_MOP/model.inc.h"
+#include "Shell_1_MOP/model.inc.c"
+#include "Shell_1_MOP/texture.inc.c"
+
+#include "Shell_2_MOP/model.inc.h"
+#include "Shell_2_MOP/model.inc.c"
+#include "Shell_2_MOP/texture.inc.c"
+
+#include "Shrink_Platform_MOP/model.inc.h"
+#include "Shrink_Platform_MOP/model.inc.c"
+#include "Shrink_Platform_MOP/collision.inc.c"
+#include "Shrink_Platform_MOP/texture.inc.c"
+#include "Shrink_Platform_Border_MOP/model.inc.h"
+#include "Shrink_Platform_Border_MOP/model.inc.c"
+#include "Shrink_Platform_Border_MOP/texture.inc.c"
+
+
+#include "Spring_MOP/model.inc.h"
+#include "Spring_MOP/model.inc.c"
+#include "Spring_MOP/texture.inc.c"
+
+#include "Switchblock_MOP/model.inc.h"
+#include "Switchblock_MOP/model.inc.c"
+#include "Switchblock_MOP/collision.inc.c"
+#include "Switchblock_MOP/texture.inc.c"
+
+#include "Switchblock_Switch_MOP/model.inc.h"
+#include "Switchblock_Switch_MOP/model.inc.c"
+#include "Switchblock_Switch_MOP/collision.inc.c"
+#include "Switchblock_Switch_MOP/texture.inc.c"
 
 #endif
