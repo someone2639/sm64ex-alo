@@ -16266,7 +16266,7 @@ gsSP1Triangle(12, 13, 14, 0),
 gsSPTexture(65535, 65535, 0, 0, 0),
 gsDPPipeSync(),
 gsDPSetCycleType(G_CYC_1CYCLE),
-gsDPSetRenderMode(0, 4468856),
+gsDPSetRenderMode(G_RM_AA_ZB_OPA_SURF, G_RM_NOOP2),
 gsSPGeometryMode(G_FOG, 0),
 gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, SHADE, 0, 0, 0, COMBINED, 0, 0, 0, COMBINED),
 gsSPGeometryMode(0, G_CULL_BACK|G_LIGHTING),
@@ -16333,6 +16333,7 @@ gsDPSetCombineLERP(0, 0, 0, SHADE, 0, 0, 0, SHADE, 0, 0, 0, COMBINED, 0, 0, 0, C
 gsSPGeometryMode(0, G_CULL_BACK|G_LIGHTING),
 gsDPPipeSync(),
 gsDPSetCombineLERP(TEXEL0, 0, SHADE, 0, 0, 0, 0, SHADE, 0, 0, 0, COMBINED, 0, 0, 0, COMBINED),
+gsDPSetRenderMode(G_RM_AA_ZB_TEX_EDGE, G_RM_NOOP2),
 gsSPEndDisplayList(),
 };
 
