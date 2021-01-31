@@ -23,6 +23,15 @@ RM2C is the tool I developed to be able to port romhacks: [RM2C](https://gitlab.
  * Various Bugfixes
 
 ## Building
+
+### Recommended BUILD cmds
+
+ 1. WINDOWS_BUILD
+	* make clean && make RM2CPC
+ 2. N64 BUILD
+	* make -j4 RM2C=1
+
+
  * To build for sm64ex platforms, [click here](https://github.com/sm64pc/sm64ex/blob/nightly/README.md).
  * To build for N64, [click here](https://github.com/n64decomp/sm64/blob/master/README.md). (TARGET_N64=1)
  * To build for Wii U, [click here](https://github.com/aboood40091/sm64-port/blob/master/README.md). (TARGET_WII_U=1)
