@@ -1,7 +1,16 @@
 void bhv_noteblock_loop(void) {
+	f32 Yspd = 64;
+	u32 CarmackMeme;
 	if (cur_obj_is_mario_on_platform()){
-		set_mario_action(&gMarioStates[0],ACT_DOUBLE_JUMP,0);
-		gMarioStates[0].vel[1]=(f32) o->oBehParams2ndByte*2;
+		//this is awful
+		if (gMarioStates[0]->controller.buttonPressed & A_BUTTON){
+			Yspd = 200;
+		}
+		set_mario_action(gMarioState,ACT_DOUBLE_JUMP,0);
+		CarmackMeme = * (u32 *) &Yspd;
+		CarmackMeme+=(o->oBehParams2ndByte<<16);
+		Yspd = *(f32 *) &CarmackMeme;
+		gMarioStates[0].vel[1]=Yspd;
 		o->oAction=1;
 	}
 	if (o->oAction==1){
