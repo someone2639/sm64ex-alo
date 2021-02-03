@@ -6263,9 +6263,8 @@ END_LOOP(),
 const BehaviorScript bhvSpring_MOP[] = {
 BEGIN(OBJ_LIST_LEVEL),
 SET_HITBOX(160,160),
-SET_INTERACT_TYPE(INTERACT_COIN),
-SET_INT(oIntangibleTimer, 0),
 BEGIN_LOOP(),
+SET_INT(oIntangibleTimer, 0),
 CALL_NATIVE(bhv_Spring_loop),
 END_LOOP(),
 };
