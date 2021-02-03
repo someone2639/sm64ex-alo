@@ -3,7 +3,7 @@ void bhv_noteblock_loop(void) {
 	u32 CarmackMeme;
 	if (cur_obj_is_mario_on_platform()){
 		//this is awful
-		if (gMarioStates[0]->controller.buttonPressed & A_BUTTON){
+		if (gMarioStates[0].controller->buttonPressed & A_BUTTON){
 			Yspd = 200;
 		}
 		set_mario_action(gMarioState,ACT_DOUBLE_JUMP,0);
@@ -12,15 +12,17 @@ void bhv_noteblock_loop(void) {
 		Yspd = *(f32 *) &CarmackMeme;
 		gMarioStates[0].vel[1]=Yspd;
 		o->oAction=1;
+		gMarioStates[0].SelFallDmg=1;
 	}
 	if (o->oAction==1){
 		if (o->oTimer==4){
 			o->oAction=0;
+			o->oPosY = o->oHomeY;
 		}else{
 			if (o->oTimer>2){
-				o->oPosY += (f32)(o->oTimer%15)*6;
+				o->oPosY = o->oHomeY+(f32)(o->oTimer%3)*6;
 			}else{
-				o->oPosY -= (f32)(o->oTimer%15)*6;
+				o->oPosY = o->oHomeY-(f32)(o->oTimer)*6;
 			}
 		}
 	}
