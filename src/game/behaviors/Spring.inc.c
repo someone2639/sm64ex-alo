@@ -13,6 +13,7 @@ void bhv_Spring_loop(void) {
 			bounce_off_object(gMarioState,o,*(f32 *) &CarmackMeme);
 			gMarioStates[0].vel[1]=*(f32 *) &CarmackMeme; //?? Redundant but somehow necessary??
 			o->oAction=1;
+			gMarioStates[0].SelFallDmg=1;
 		}
 	}else{
 		if (o->oTimer==15){

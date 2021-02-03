@@ -12,6 +12,7 @@ void bhv_noteblock_loop(void) {
 		Yspd = *(f32 *) &CarmackMeme;
 		gMarioStates[0].vel[1]=Yspd;
 		o->oAction=1;
+		gMarioStates[0].SelFallDmg=1;
 	}
 	if (o->oAction==1){
 		if (o->oTimer==4){
