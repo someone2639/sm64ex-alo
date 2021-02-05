@@ -75,37 +75,33 @@ static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scroll
     }
 }
 #else
-static void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
+void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
     u16 overflownum = 0x1000;
     u16 i;
-    Vtx *verts = &vert;
-	float *VFarray;
+	Vtx *verts = segmented_to_virtual(vert);
 	u16 correction=0;
-	Vtx_tn TempVert;
-	if (verts[0].n.flag * absi(speed) > overflownum) {
-		correction = overflownum * signum_positive(speed);
-		verts[0].n.flag = 0;
-	}
-	//float pos
-	if (bhv<4){
-		for (i = 0; i < vertcount; i++) {
-			VFarray = &(verts[i].n);
-			if (correction==0){
-				VFarray[bhv] += (float) speed;
-			}else
-				VFarray[bhv] -= (float) correction;
-		}
-	}
-	else{
-		for (i = 0; i < vertcount; i++) {
-			TempVert = verts[i].n;
-			if (correction==0)
-				TempVert.tc[bhv-4] += speed;
-			else
-				TempVert.tc[bhv-4] -= correction;
-		}
-	}
-    verts[0].n.flag++;
+	printf("Vert flag %x\n",verts->n.flag);
+	// if (verts[0].n.flag * absi(speed) > overflownum) {
+		// correction = overflownum * signum_positive(speed);
+		// verts[0].n.flag = 0;
+	// }
+	// if (bhv<4){
+		// for (i = 0; i < vertcount; i++) {
+			// if (correction==0){
+				// verts[i].n.ob[bhv] += (float) speed;
+			// }else
+				// verts[i].n.ob[bhv] -= (float) correction;
+		// }
+	// }
+	// else{
+		// for (i = 0; i < vertcount; i++) {
+			// if (correction==0)
+				// verts[i].n.tc[bhv-4] += speed;
+			// else
+				// verts[i].n.tc[bhv-4] -= correction;
+		// }
+	// }
+    // verts[0].n.flag++;
 }
 
 static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
@@ -133,7 +129,7 @@ static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
 static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scrolltype) {
     switch (scrollbhv) {
         case MODE_SCROLL_UV:
-			// shift_UV_NORMAL(vert, vertcount, spd, scrolltype);
+			shift_UV_NORMAL(vert, vertcount, spd, scrolltype);
 			break;
         case MODE_SCROLL_SINE:
         case MODE_SCROLL_JUMP:
