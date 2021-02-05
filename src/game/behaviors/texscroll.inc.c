@@ -12,6 +12,7 @@
 #define MODE_SCROLL_SINE 1
 #define MODE_SCROLL_JUMP 2
 
+#define static
 // typedef struct {
 // #ifndef GBI_FLOATS
 	// short		ob[3];	/* x, y, z */
@@ -78,9 +79,13 @@ static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scroll
 void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
     u16 overflownum = 0x1000;
     u16 i;
-	Vtx *verts = segmented_to_virtual(vert);
-	u16 correction=0;
-	printf("Vert flag %x\n",verts->n.flag);
+    u16 correction=0;
+    if (vert[0].v.flag * absi(speed) > overflownum) {
+        correction = overflownum * signum_positive(speed);
+        vert[0].v.flag = 0;
+    }
+    vert[0].v.flag++;
+}
 	// if (verts[0].n.flag * absi(speed) > overflownum) {
 		// correction = overflownum * signum_positive(speed);
 		// verts[0].n.flag = 0;
@@ -102,7 +107,7 @@ void shift_UV_NORMAL(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
 		// }
 	// }
     // verts[0].n.flag++;
-}
+// }
 
 static void shift_UV_SINE(Vtx *vert, u16 vertcount, s16 speed, u16 bhv) {
     u32 i;
@@ -140,6 +145,8 @@ static void shift_uv(u8 scrollbhv, Vtx *vert, u16 vertcount, s16 spd, u16 scroll
 #endif
 // format I will use is bparam=addr,z=vert amount,x=spd,y=bhv,ry=type, rz=cycle
 void uv_update_scroll() {
-	shift_uv(/*scrolling type*/ o->oFaceAngleYaw, /*pointer to verts*/ o->oBehParams, 
+	shift_uv(/*scrolling type*/ o->oFaceAngleYaw, /*pointer to verts*/ (Vtx *) o->oBehParams, 
 	/*number of verts*/ (u16) o->oPosZ, /*speed*/ (s16) o->oPosX, /*type*/ (u16) o->oPosY);
 }
+
+#undef static 
